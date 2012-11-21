@@ -1,0 +1,73 @@
+{% load  i18n loop_extras cache %}
+
+{% if boxCountries %}
+{% cache 3600 boxCountries active_lang country %} 
+<div class="sidebare">
+    <div class="country_menu">
+        <div class="tab_box">
+             <div class="tabs_info rc5">
+                <h3 style="color:#565656;">{% trans "Другие страны" %}</h3>
+                <ul>
+                {% for c in boxCountries %}
+                    <li class="no_border_top" style="{% if c != boxCountries|last %} border-bottom:1px solid silver; {% endif %} font-size:12px;">
+                        <b><img src="{{ MEDIA_URL }}/design/images/flags/{{ c.name_en|slugify }}.png" width="16" height="16"></b>
+                        {% if active_lang == 'ru' %}
+                            <a href="/search/country/{{ c.id }}-{{ c.name_en|slugify }}">{% trans "Недвижимость в" %} {{ c.otmenok }}</a>
+                        {% else %}
+                            <a href="/search/country/{{ c.id }}-{{ c.name_en|slugify }}">{% trans "Недвижимость в" %} {{ c.name }}</a>
+                        {% endif %}
+                        <span>({{ c|count_objects }})</span>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div><!-- tabs_info END -->
+        </div>
+    </div>
+</div>
+{% endcache %}
+{% endif %}
+
+{% autoescape off %}
+{% if country %}
+{% cache 3600 estateTyBox country current_language %} 
+
+{% assign citiesBox data|citiesBox %}
+{% if citiesBox %}
+<div class="sidebare" style="margin-top:10px;color:#565656;">
+    <div class="country_menu">
+        <div class="tab_box">
+            <div class="tabs_info rc5">
+            <h3 style="color:#565656;">{% trans "Тип недвижимости" %}</h3>
+                <div class="seoLinks2">
+                    {{ citiesBox }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endcache %}
+{% endif %}
+{% endautoescape %}
+    
+{% if country %}
+    {% cache 3600 regionCitiesBox country current_language %} 
+        {% autoescape off %}
+        {% assign regionCities data|regionCities %}
+            {% if regionCities %}
+                <div class="sidebare" style="margin-top:10px;color:#565656;">
+                    <div class="country_menu">
+                        <div class="tab_box">
+                            <div class="tabs_info rc5">   
+                            <h3 style="color:#565656;">{% trans "Города" %}</h3>
+                                <div class="seoLinks2">
+                                    {{ regionCities }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endautoescape %}
+    {% endcache %}
+{% endif %}

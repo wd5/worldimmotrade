@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+
+{% block content %}
+	<style type="text/css">
+		.cinfo span:first-child {
+			font-weight:bold;
+		}
+	</style>
+
+	<h2 class="page_title">{% trans "Компании" %}</h2>
+
+    <div class="content_box rc5">
+		{% for c in models.object_list %}
+			<div style="border-bottom:1px dashed silver;padding:5px 0 5px 0;">
+          		<p class="cinfo">
+					{% for p in c.display_info %}
+    					<span>{{ p }}</span><br/>
+    				{% endfor %}
+                    <span>{{ c.contact_lang }}</span><br/>
+                </p>
+            </div>
+		{% endfor %}
+
+    {% if models.paginator.count > per_page %}
+    <div class="pagination">
+        {% if models.has_previous %}
+            <a href="?page={{ models.previous_page_number }}"> < </a>
+        {% endif %}
+
+        {% for p in models.paginator.page_range %}
+            {% if p == models.number %}
+                <span>{{ p }}</span>
+            {% else %}
+                <a href="?page={{ p }}">{{ p }}</a>&nbsp;
+            {% endif %}
+        {% endfor %}
+
+        {% if models.has_next %}
+            <a href="?page={{ models.next_page_number }}"> > </a>
+        {% endif %}
+    </div><!-- pagination END -->
+    {% endif %}	
+
+	</div>	
+{% endblock %}

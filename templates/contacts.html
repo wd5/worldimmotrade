@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block title %}{% trans "Контакты" %} - {{ domain }}{% endblock %}
+
+{% block footerLink %}
+    <a class="first" href="http://worldimmotrade.ru/">купить недвижимость за рубежом</a>
+{% endblock %}
+
+{% block content %}
+<div class="item_desc item_form">
+    <h2>{% trans "Контакты" %}</h2>
+
+    <p style="margin-bottom:10px">
+        {% trans "Адрес: Goerdelerstr. 10, 65197 Wiesbaden, Германия" %}
+    </p>
+    <table cellpadding="3" cellspacing="3">
+        <tr>
+            <td>{% trans "Телефон" %}:</td><td>+49 (0) 611 - 205 21 00</td>
+        </tr>
+        <tr>
+            <td>{% trans "Телефон" %}:</td><td>+49 (0) 611 - 205 23 69</td>
+        </tr>
+        <tr>
+            <td>{% trans "Факс" %}:</td><td>+49 (0) 611 - 205 23 60</td>
+        </tr>
+        <tr>
+            <td>{% trans "Электронный адрес" %}:</td><td><a href="mailto:info@worldimmotrade.com">info@worldimmotrade.com</a></td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <p>
+        Skype: worldimmotrade<br/>
+        ICQ: 623697332
+    </p>
+
+	<p style="margin-bottom:10px;margin-top:10px;">
+        {% trans "Адрес в России: 125167, г. Москва, Ленинградский пр-кт, дом № 37, корпус 3, офис 519" %}
+    </p>
+    <table cellpadding="3" cellspacing="3" style="margin-bottom:10px;">
+        <tr>
+            <td>{% trans "Телефон" %}:</td><td>+7 (499) 390 49 51 </td>
+        </tr>
+        <tr>
+            <td>{% trans "Электронный адрес" %}:</td><td><a href="mailto:info@worldimmotrade.com">info@worldimmotrade.com</a></td>
+        </tr>
+    </table>
+
+    <form action="/contacts/" method="post">{% csrf_token %}
+    <input type="hidden" value="1" name="send_contact">
+        <div class="item_form_row first">
+            <label>{% trans "Имя, Фамилия" %}:</label>
+            {%if contact_form.first_name.errors %}
+                {{ contact_form.first_name.errors }}
+            {% endif %}
+            {{ contact_form.first_name }}
+            {{ contact_form.last_name }}<span style="color:red">*</span>
+        </div>
+        <div class="item_form_row">
+            <label>{% trans "Телефон" %}:</label>
+            {{ contact_form.phone.errors }}
+            {{ contact_form.phone }}
+        </div>
+        <div class="item_form_row">
+            <label>E-Mail:</label>
+            {{ contact_form.email.errors }}
+            {{ contact_form.email }}<span style="color:red">*</span>
+        </div>
+        <div class="item_form_row">
+            <label>{% trans "Ваше сообщение" %}:</label>
+            {{ contact_form.message.errors }}
+            {{ contact_form.message }}<span style="color:red">*</span>
+        </div>
+        <div class="button" style="margin-right:20px;">
+            <input type="submit" class="rc5" value="{% trans "Отправить"|capfirst %}">
+        </div>
+    </form>
+</div>
+
+<div class="item_desc item_form">
+   <div style="display:none;"><h2><a href="#" onclick="$('#recall_form').toggle();">{% trans "Мы вам перезвоним" %}</a> ↓</h2></div>
+    <div {% if not request.POST.send_recall %}style="display:none;"{% endif %} id="recall_form">
+        <form action="/contacts/" method="post">{% csrf_token %}
+        <input type="hidden" value="1" name="send_recall">
+            <div class="item_form_row first">
+                <label>{% trans "Имя, Фамилия" %}:</label>
+                {%if recall_form.first_name.errors %}
+                    {{ recall_form.first_name.errors }}
+                {% endif %}
+                {{ recall_form.first_name }}
+                {{ recall_form.last_name }}<span style="color:red">*</span>
+            </div>
+            <div class="item_form_row">
+                <label>{% trans "Телефон" %}:</label>
+                {{ recall_form.phone.errors }}
+                {{ recall_form.phone }}<span style="color:red">*</span>
+            </div>
+            <div class="item_form_row">
+                <label>{% trans "Удобное для Вас время" %}:</label>
+                {{ recall_form.time.errors }}
+                {{ recall_form.time }}<span style="color:red">*</span>
+            </div>
+            <div class="item_form_row">
+                <label>{% trans "Ваше сообщение" %}:</label>
+                {{ recall_form.theme.errors }}
+                {{ recall_form.theme }}<span style="color:red">*</span>
+            </div>
+            <div class="button" style="margin-right:20px;">
+                <input type="submit" class="rc5" value="{% trans "Отправить"|capfirst %}">
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock %}

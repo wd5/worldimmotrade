@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n loop_extras %}
+
+{% block title %}{{model.title}} - {{ domain }}{% endblock %}
+
+{% block left_sidebar %}  {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block footerLink %}
+    <a class="first" href="http://worldimmotrade.ru/">купить недвижимость за границей</a>
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+        $(function() {
+            $('a[rel="lightbox"]').lightBox({
+                imageLoading:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-ico-loading.gif',
+                imageBtnPrev:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-prev.gif',
+                imageBtnNext:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-next.gif',
+                imageBtnClose:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-close.gif',
+                imageBlank:		'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-blank.gif'
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        .center {
+            width:636px;
+        }
+        table tbody td {
+            padding-bottom:5px;
+        }
+    </style>
+
+    <h2 class="page_title">{{ model.country.name }}</h2>
+    {% autoescape off %}
+        {{ model.content|lightbox }}
+    {% endautoescape %}
+{% endblock %}

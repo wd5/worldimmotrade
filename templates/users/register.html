@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+$(function(){
+    $("#register_form").relatedSelects({
+        onChangeLoad: '/world/load_json/',
+        defaultOptionText: '-------',
+        selects: {
+            'country':		{ loadingMessage:'Loading Regions...' },
+            'region':		{ loadingMessage:'Loading Cities...' },
+            'city':		{}
+        }
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+
+    {% trans "После регистрации на сайте Вам предоставляется возможность" %}:
+    {% if saler %}
+        <form action="/user/register/" method="post" id="register_form">{% csrf_token %}
+        <ul style="list-style:decimal;margin-left:25px;">
+            {% blocktrans %}
+            <li>пользоваться своим личным кабинетом, добавлять, редактировать и удалять свои объявления</li>
+            <li>выбирать платежный тариф и совершать оплату</li>
+            <li>получать уведомления о пользователях, интересующихся Вашей недвижимостью</li>
+            <li>удобно связываться с зарегистрированными покупателями</li>
+            <li>получать уведомления от пользователей, интересующихся Вашей недвижимостью</li>
+            {% endblocktrans %}
+        </ul>
+    {% else %}
+        <form action="/user/register/user/" method="post" id="register_form">{% csrf_token %}
+        <ul style="list-style:decimal;margin-left:25px;">
+            {% blocktrans %}
+            <li>пользоваться Вашим личным кабинетом</li>
+            <li>сохранять в личном кабинете понравившиеся объекты недвижимости</li>
+            <li>сохранять критерии поиска</li>
+            <li>получать уведомления о добавленных в систему объектах, соответствующих Вашим критериям поиска</li>
+            <li>удобно связываться с зарегистрированными агентами по недвижимости</li>
+            <li>получать новостную рассылку нашего сайта</li>
+            {% endblocktrans %}
+        </ul>
+    {% endif %}
+    <br/>
+    <div class="add_item">
+
+        <div class="tab_box">
+
+            <ul class="tabs">
+                <li><a href="#" class="rc5"><h2>{% trans "Регистрация"|capfirst %}</h2></a></li>
+            </ul>
+
+            <div class="tabs_info rc5">
+
+                {% for field in form %}
+                <div class="form_row form_left_margin">
+                    <div class="form_text {% if field.field.required%}form_text_required{% endif %}">
+                        <label>{{ field.label_tag }}</label>
+                    </div>
+                    <div class="form_input {% if field.errors %}form_errors{% endif %}">
+                       {{ field.errors }}
+                       {{ field }}
+                    </div>
+                    <div class="form_overflow"></div>
+                </div>
+                {% endfor %}
+
+                <div class="form_row form_left_margin">
+                    <div class="form_text"></div>
+                    <div class="form_input">
+                        <div class="button">
+                            <input type="submit" class="rc5" value="{% trans "Регистрация"|capfirst %}">
+                        </div>
+                    </div>
+                    <div class="form_overflow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+{% endblock %}
+

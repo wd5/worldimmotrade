@@ -1,0 +1,495 @@
+<style type="text/css">
+#searchForm {font-size:11px; font-family: Arial, Helvetica,sans-serif;display: block;width: 450px;background:#FFFFFF;color:#000000;border:#000000 0px solid;padding:5px;}
+#searchForm form,#searchForm img {margin: 0;padding:0;border:0;}
+#searchForm table {width:98%;}
+#searchForm td {font-family: arial, helvetica, san-serif; font-size: 11px;}
+#searchForm input,#searchForm select {background: #FFFFFF;padding: 1px 2px;font-size:11px; font-family: Arial, Helvetica,sans-serif;color:#000000;border:#000000 1px solid;} /* input box inside font color and outside border color */
+#searchForm .width {width:150px;}
+#searchForm p.masterHEADER { color:#000000; font-weight: bold; font-size: 12px;margin:5px 0 5px 2px;padding;text-align:left;}
+#searchForm .button {color: #FFFFFF;border: #000000 0px solid;cursor:hand;background:green;text-decoration:none;padding: 2px 3px;margin: 0;float: right;} /* search button text, border and background*/
+</style>
+
+<div id="searchForm">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <form action="/index.jsp?pageName=carSearch&amp;currencyCode=RUB&amp;additionalDataString=vrBookingSource%7Cindex&amp;locale=en_US&amp;cid=341867" method="POST" name="carForm"></form>
+							<tbody><tr>
+								<td>
+                                    <span class="search-bold">Search for Cars</span>
+									<table width="100%" border="0" cellspacing="0" cellpadding="2">
+										<tbody><tr>
+											<td>Enter a Pick-Up Location:<br><input type="text" size="25" name="city"></td>
+											<td colspan="2" nowrap="">Pickup:<br>
+                                                
+
+    <select name="pickUpMonth" onchange="javascript:amadChange(document.carForm.pickUpMonth, document.carForm.pickUpDay, document.carForm.dropOffMonth, document.carForm.dropOffDay);">
+        <option value="0" selected="">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option>
+    </select>
+    <select name="pickUpDay" onchange="amadChange(document.carForm.pickUpMonth, document.carForm.pickUpDay, document.carForm.dropOffMonth, document.carForm.dropOffDay)">
+        <option value="1" selected="">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+    </select>
+
+
+<a href="javascript:OpenCalendar('pickUpDay', document.carForm.pickUpDay.options[document.carForm.pickUpDay.selectedIndex].value, 'pickUpMonth', document.carForm.pickUpMonth.options[document.carForm.pickUpMonth.selectedIndex].value, null, null, 'carForm' )"><img src="http://images.ian.com/images/calendar.gif" border="0" height="18" width="20" alt="Calendar" align="top"></a>
+
+    <select name="pickUpTime">
+    
+        <option value="1AM">1AM</option>
+<option value="2AM">2AM</option>
+<option value="3AM">3AM</option>
+<option value="4AM">4AM</option>
+<option value="5AM">5AM</option>
+<option value="6AM">6AM</option>
+<option value="7AM">7AM</option>
+<option value="8AM">8AM</option>
+<option value="9AM" selected="">9AM</option>
+<option value="10AM">10AM</option>
+<option value="11AM">11AM</option>
+<option value="12PM">NOON</option>
+<option value="1PM">1PM</option>
+<option value="2PM">2PM</option>
+<option value="3PM">3PM</option>
+<option value="4PM">4PM</option>
+<option value="5PM">5PM</option>
+<option value="6PM">6PM</option>
+<option value="7PM">7PM</option>
+<option value="8PM">8PM</option>
+<option value="9PM">9PM</option>
+<option value="10PM">10PM</option>
+<option value="11PM">11PM</option>
+<option value="12AM">MDNT</option>
+
+    
+    </select>
+
+
+
+
+											</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td colspan="2" nowrap="">Drop-off:<br>
+                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <select name="dropOffMonth" onchange="javascript:dmddChange(document.carForm.dropOffMonth,document.carForm.dropOffDay);">
+        <option value="0" selected="">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option>
+    </select>
+    <select name="dropOffDay" onchange="dmddChange(document.carForm.dropOffMonth,document.carForm.dropOffDay)">
+        <option value="1" selected="">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+    </select>
+
+
+<a href="javascript:OpenCalendar('dropOffDay', document.carForm.dropOffDay.options[document.carForm.dropOffDay.selectedIndex].value, 'dropOffMonth', document.carForm.dropOffMonth.options[document.carForm.dropOffMonth.selectedIndex].value, null, null, 'carForm' )"><img src="http://images.ian.com/images/calendar.gif" border="0" height="18" width="20" alt="Calendar" align="top"></a>
+
+    <select name="dropOffTime">
+    
+        <option value="1AM">1AM</option>
+<option value="2AM">2AM</option>
+<option value="3AM">3AM</option>
+<option value="4AM">4AM</option>
+<option value="5AM">5AM</option>
+<option value="6AM">6AM</option>
+<option value="7AM">7AM</option>
+<option value="8AM">8AM</option>
+<option value="9AM" selected="">9AM</option>
+<option value="10AM">10AM</option>
+<option value="11AM">11AM</option>
+<option value="12PM">NOON</option>
+<option value="1PM">1PM</option>
+<option value="2PM">2PM</option>
+<option value="3PM">3PM</option>
+<option value="4PM">4PM</option>
+<option value="5PM">5PM</option>
+<option value="6PM">6PM</option>
+<option value="7PM">7PM</option>
+<option value="8PM">8PM</option>
+<option value="9PM">9PM</option>
+<option value="10PM">10PM</option>
+<option value="11PM">11PM</option>
+<option value="12AM">MDNT</option>
+
+    
+    </select>
+
+
+
+
+											</td>
+										</tr>
+                                        <tr>
+                                        <td colspan="3"><img src="http://images.ian.com/images/p.gif" height="5" width="100%" border="0"></td>
+                                        </tr>
+										<tr>
+											<td valign="top">
+Please Choose a <a href="javascript:OpenWindow('/cars/classes/index.jsp','class','420','469');">Type</a>:<br>
+                                            <select style="width:150" name="classCode">
+                                            <option value="ZZ">All Car Types</option><option value="MZ">Mini (Non-US)</option><option value="EZ">Economy</option><option value="CZ">Compact</option><option value="IZ">Intermediate</option><option value="SZ">Standard</option><option value="FZ">Full Size</option><option value="ZT">Convertible</option><option value="ZS">Sports Car</option><option value="PZ">Premium</option><option value="LZ">Luxury</option><option value="MV">Minivan</option><option value="FV">Full Size Van</option><option value="ZF">Sport Utility</option><option value="ZP">Pick-up Truck
+                                            </option></select>
+                                            </td>
+											<td valign="top">What company do you prefer?:<br>
+                                            <select name="allList" style="width:150">
+		                                        <option value="" selected="">All Available</option><option value="ZH">Simply Wheelz</option><option value="AL">Alamo</option><option value="AF">Americar</option><option value="AF">Americar</option><option value="ZU">Auto Europ</option><option value="ZI">Avis</option><option value="ZD">Budget</option><option value="DX">Deluxe Rent A Car</option><option value="DS">Discount</option><option value="ZR">Dollar</option><option value="EY">Economy Rent A Car</option><option value="ET">Enterprise</option><option value="EP">Europcar</option><option value="FX">Fox</option><option value="ZE">Hertz</option><option value="ZL">National</option><option value="NF">New Frontier</option><option value="ZA">Payless</option><option value="RR">Rent Rite</option><option value="SX">Sixt Gmbh</option><option value="VR">Specialty</option><option value="ZT">Thrifty</option><option value="SV">U-save</option><option value="AC">Ace</option><option value="AD">Advantage</option><option value="CV">Capps Vans</option><option value="CO">Continental</option><option value="TS">Its</option><option value="MW">Midway</option><option value="NU">Nu Car Rental</option><option value="ZP">Practical Car</option><option value="RT">Sakura Rent A Car
+                                            </option></select>
+                                            </td>
+                                            <td rowspan="2" align="right">
+                                                
+                                                    <input type="submit" name="Submit" value="  Search  " class="button">
+                                                
+                                            </td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+							<tr>
+								<td><img src="http://images.ian.com/images/p.gif" height="5" width="100%" border="0"></td>
+							</tr>
+                            <input type="hidden" name="submitted" value="true">
+                            <input type="hidden" name="validateCity" value="true">
+
+                            <input type="hidden" name="avail" value="true">
+                            <input type="hidden" name="pickUpLocation" value="A">
+                            <input type="hidden" name="passThrough" value="true">
+                            <input type="hidden" name="sortMethod" value="6">
+                            
+                        
+                        </tbody></table>
+</div>
+
+<script langage="javascript">
+<!--
+   //start new script code
+   // Checks if browser is Netscape 2.0x since the options array properties don't work with Netscape 2.0x
+    function isBrowserSupp() {
+        // Get the version of the browser
+        version =  parseFloat( navigator.appVersion );
+
+        if ( ( version >= 2.0 ) && ( version < 2.1 ) && ( navigator.appName.indexOf( "Netscape" ) != -1 ) ) {
+            return false;
+        } else {
+            return true;
+        }
+        return true;
+    }
+    function isLeapYear( yrStr ) {
+        var leapYear = false;
+        var year = parseInt( yrStr, 10 );
+        // every fourth year is a leap year
+        if ( year % 4 == 0 ) {
+            leapYear = true;
+            // unless it's a multiple of 100
+            if( year % 100 == 0 ) {
+                leapYear = false;
+                // unless it's a multiple of 400
+                if( year % 400 == 0 ) {
+                    leapYear=true;
+                }
+            }
+        }
+        return leapYear;
+    }
+    function getDaysInMonth( mthIdx, YrStr ) {
+        // all the rest have 31
+        var maxDays = 31
+        // expect Feb. (of course)
+        if( mthIdx == 1 ) {
+            if( isLeapYear( YrStr ) ) {
+                maxDays=29;
+            } else {
+                maxDays=28;
+            }
+        }
+        // thirty days hath...
+        if( mthIdx == 3 || mthIdx == 5 || mthIdx == 8 || mthIdx == 10 ) {
+            maxDays=30;
+        }
+        return maxDays;
+    }
+    //the function which does some magic to the date fields
+    // return non-zero if it is the last day of the month
+    function adjustDate( mthIdx, Dt ) {
+        var value = 0;
+
+        var today = new Date()
+        var theYear = parseInt( today.getFullYear(), 10 )
+
+        if( mthIdx < today.getMonth() ) {
+            theYear = ( parseInt( today.getFullYear(), 10 ) + 1 )
+        }
+        if( theYear < 100 ) {
+            theYear = "19" + theYear
+        } else {
+            if( ( theYear - 100 ) < 10 ) {
+                theYear = "0" + ( theYear - 100 )
+            } else {
+                theYear = ( theYear - 100 ) + ""
+            }
+            theYear = "20" + theYear
+        }
+      var numDays = getDaysInMonth( mthIdx, theYear );
+
+        if( mthIdx == 1 ) {
+            if( Dt.options.selectedIndex + 1 < numDays ) {
+                return 0;
+            } else {
+                Dt.options.selectedIndex=numDays - 1;
+                //check for leap year
+                if( numDays == 29 ) {
+                    return 99;
+                } else {
+                    return 1;
+                }
+            }
+        }
+
+        if( Dt.options.selectedIndex + 1 < numDays ) {
+            value = 0;
+        } else {
+            if ( Dt.options.selectedIndex + 1 > numDays ) {
+                Dt.options.selectedIndex--;
+                value = 3;
+            } else {
+                //index is 31 or 30
+                value = 2;
+            }
+        }
+        return value;
+    }
+
+    //changes departure month when arrival month is changed
+    function amadChange( inM, inD, outM, outD ) {
+        if ( !isBrowserSupp() ) {
+            return;
+        }
+
+        var res = adjustDate( inM.options.selectedIndex, inD );
+        if( res != 0 ) {
+               outD.options.selectedIndex = 0;
+               if ( outM.options.selectedIndex == 11 ) {
+                    outM.options.selectedIndex = 0
+               } else {
+                    outM.options.selectedIndex=inM.options.selectedIndex + 1;
+                    outD.options.selectedIndex = 1;
+               }
+        } else {
+            outM.options.selectedIndex = inM.options.selectedIndex;
+            if (outD.options.selectedIndex <= inD.options.selectedIndex) {
+                outD.options.selectedIndex = inD.options.selectedIndex + 2;
+            }
+        }
+        return;
+    }
+
+
+    function dmddChange( outM, outD ) {
+        if ( !isBrowserSupp() ) {
+            return;
+        }
+
+        adjustDate( outM.options.selectedIndex, outD );
+        return;
+    }
+
+function loadDates(arrivalMonthSelect,  arrivalDaySelect, departureMonthSelect, departureDaySelect)
+{
+	var calendar = new Date();
+	var calendar2 = new Date();
+	var cal
+	var cal2
+	var date;
+	var month;
+	var year;
+	var date2;
+	var month2;
+	var year2;
+
+	//Here is the variable to change for to advance the arrival Date
+	 var advanceArrival = 14;
+	//Here is the variable to change for to advance the departure Date
+	 var advanceDeparture = 16;
+
+
+	//Set the arrival Days
+	calendar.setDate(calendar.getDate()+ advanceArrival);
+	date = calendar.getDate();
+	month = calendar.getMonth();
+
+	//Set the Departure Days
+	calendar2.setDate(calendar2.getDate()+advanceDeparture);
+	date2 = calendar2.getDate();
+	month2 = calendar2.getMonth();
+
+	arrivalMonthSelect.value=month;
+	arrivalDaySelect.value=date;
+	departureMonthSelect.value=month2;
+	departureDaySelect.value=date2;
+}
+//-->
+</script>
+
+<script langauage="javascript">
+<!--
+function update(themonth,theday){
+    document.forms[fName].elements[formType+'Day'].options[theday - 1].selected = true;
+    document.forms[fName].elements[formType+'Month'].options[themonth].selected = true;
+
+    testWindow.close();
+}
+function loadCalendar(viewMonth) {
+	testWindow.document.close();
+	testWindow.document.open();
+
+	var day_of_week = new Array("Вс","Пн","Вторник","Среда","Чет","Пт","Суббота");
+	var month_of_year = new Array("Январь","Февраль","Март","Апрель","Май","Июнь","Июль","август","сентябрь","октябрь","Ноябрь","Декабрь");
+
+	var dateObj = new Date();
+	var year = dateObj.getFullYear();	 // Returns year
+	var month = dateObj.getMonth();  // Returns month (0-11)
+	var today = dateObj.getDate();   // Returns day (1-31)
+	var weekday = dateObj.getDay();  // Returns day (1-31)
+
+	var DAYS_OF_WEEK = 7;   // "constant" for number of days in a week
+	var DAYS_OF_MONTH = 31; // "constant" for number of days in a month
+	var cal;                // Used for printing
+
+	if (viewMonth < month) {
+		year = year + 1;
+	}
+
+	if(year < 1900){
+		year += 1900; //done to solve the problem of netscape and mozilla returning year in form 10X for years > 2000
+	}
+
+	month = viewMonth;
+	dateObj.setDate(1);      // Start the calendar day at '1'
+	dateObj.setMonth(month); // Start the calendar month at now
+	dateObj.setFullYear((year));
+
+	// VARIABLES FOR FORMATTING
+	var TR_start = '<TR>';
+	var TR_end = '</TR>';
+	var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=0 BORDER=1 BORDERCOLOR=CCCCCC><TR><TD WIDTH=20><B><CENTER>';
+	var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+	var TD_start = '<TD WIDTH="30"><CENTER>';
+	var TD_end = '</CENTER></TD>';
+	var prevM = month - 1;
+	var nextM = month + 1;
+
+	if (nextM == 12) {
+		nextM = 0;
+	}
+
+	if (prevM == -1) {
+		prevM = 11;
+	}
+
+	// BEGIN CODE FOR CALENDAR
+	cal =  '<html><head><title>Calendar</title></head><body>';
+	cal += '<style>a{cursor: hand}body,table,td{cursor: default;font-family:sans-serif;font-size:12px;color:black;}p.masterHEADER {background: gray; color:white; font-weight: bold; font-size: 13px;margin:0;padding:5px;text-align: center;}</style>';
+
+
+
+    cal += '<div style="border:black 0px solid;">';
+	cal += '<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="2" width="100%">' + TR_start;
+	cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '"><p class=masterHEADER>';
+	cal += month_of_year[month] + '   ' + year + '</p>' + TD_end + TR_end;
+	cal += TR_start;
+
+    ///////////////////////////////////
+    // DO NOT EDIT BELOW THIS POINT  //
+    ///////////////////////////////////
+
+	// LOOPS FOR EACH DAY OF WEEK
+	for(index=0; index < DAYS_OF_WEEK; index++) {
+        // PRINTS DAY
+        cal += TD_start + day_of_week[index] + TD_end;
+	}
+
+	cal += TD_end + TR_end;
+	cal += TR_start;
+
+	// FILL IN BLANK GAPS UNTIL TODAY'S DAY
+	for(index=0; index < dateObj.getDay(); index++) {
+	    cal += TD_start + '  ' + TD_end;
+    }
+
+	// LOOPS FOR EACH DAY IN CALENDAR
+    for(index=0; index < DAYS_OF_MONTH; index++) {
+        if( dateObj.getDate() > index ) {
+            // RETURNS THE NEXT DAY TO PRINT
+            week_day =dateObj.getDay();
+
+            // START NEW ROW FOR FIRST DAY OF WEEK
+            if(week_day == 0) {
+                cal += TR_start;
+            }
+
+            if(week_day != DAYS_OF_WEEK) {
+                // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+                var day  = dateObj.getDate();
+
+                // PRINTS DAY
+                cal += TD_start + "<span onclick='window.opener.update(" + month + "," + day + "," + year +")'>" + day + "</span>" + TD_end;
+            }
+
+            // END ROW FOR LAST DAY OF WEEK
+            if(week_day == DAYS_OF_WEEK) {
+                cal += TR_end;
+            }
+        }
+
+        // INCREMENTS UNTIL END OF THE MONTH
+        dateObj.setDate(dateObj.getDate()+1);
+
+    }// end for loop
+
+	cal += '</td></TR></TABLE></div><br>';
+    cal += '<div align="center"><a href="javascript:" onClick="window.opener.loadCalendar(' + prevM + ');"><<</a>    ';
+	cal += '<a href="javascript:" onClick="window.opener.loadCalendar(' + nextM + ');">>></a></div>';
+	cal += '<a href="javascript:window.close();" style="float:right">close</a>';
+	cal += '</body></html>';
+
+	//  PRINT CALENDAR
+	testWindow.document.write(cal);
+}
+
+var testWindow;
+var fieldName;
+var fName;
+
+function openCalendar(formName,type) {
+	formType=type;
+	fName=formName;
+	testWindow = window.open('','dates','width=300,height=225,resizable=1,status=1,menubar=0,location=0');
+	loadCalendar(document.forms[fName].elements[formType+'Month'].selectedIndex);
+}
+//-->
+</script>
+<!-- /Calendar Code -->
+<script defer="defer" type="text/javascript">
+	loadDates(document.carForm.pickUpMonth,  document.carForm.pickUpDay, document.carForm.dropOffMonth,document.carForm.dropOffDay)
+</script>

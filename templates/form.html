@@ -1,0 +1,40 @@
+{% load loop_extras cache %}
+<html>
+<body>
+
+
+<form action="" method="post">{% csrf_token %}
+    {% for field in form %}
+        {% if field.name == 'price_for_m2' %}{{ forloop|continue }}{% endif %}
+        {% if field.name == 'living_space_for_m2' %}{{ forloop|continue }}{% endif %}
+        {% if field.name == 'total_space_for_m2' %}{{ forloop|continue }}{% endif %}
+        {% if field.name == 'land_space_for_m2' %}{{ forloop|continue }}{% endif %}
+
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field|display_value }}
+
+
+            {% if field.name == "price" %}
+                {{ form.price_for_m2 }}m2
+            {% endif %}
+            {% if field.name == "living_space" %}
+                {{ form.living_space_for_m2 }}m2
+            {% endif %}
+            {% if field.name == "total_space" %}
+                {{ form.total_space_for_m2 }}m2
+            {% endif %}
+            {% if field.name == "land_space" %}
+                {{ form.land_space_for_m2 }}m2
+            {% endif %}
+        </div>
+
+        
+
+    {% endfor %}
+    <p><input type="submit" value="{% trans "Отправить сообщение" %}" /></p>
+</form>
+
+
+</body>
+</html>

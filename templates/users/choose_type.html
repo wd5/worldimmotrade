@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+    
+{% block content %}
+    <div class="add_item">
+        <div class="tab_box">
+            <br/>
+            <div class="button">
+                <a style="font-size:12px;" href="/user/register/" class="rc5">{% trans "Вы предлагаете недвижимость"|capfirst %}</a>
+                <a style="font-size:12px;margin-left:15px;" href="/user/register/user" class="rc5">{% trans "Вы ищите недвижимость"|capfirst %}</a>
+            </div>
+            <br/>
+        </div>
+    </div>
+{% endblock %}

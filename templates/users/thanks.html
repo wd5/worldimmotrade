@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    {% trans "Спасибо за регистрацию на нашем сайте." %}
+{% endblock %}

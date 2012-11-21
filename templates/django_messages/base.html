@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}  
+{% block bodyclass %}about{% endblock %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block sidebar_ololo %}
+<ul class="subnavilist">
+    <li><a href="{% url messages_inbox %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
+    <li><a href="{% url messages_outbox %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
+    <li><a href="{% url messages_compose %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
+    <li><a href="{% url messages_trash %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
+</ul>
+{% endblock %}

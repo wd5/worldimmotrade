@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <div class="box_title">{% trans "Выбор тарифа" %}</div>
+    <br/>
+    <form action="{% url tarif-confirmed %}" method="POST">{% csrf_token %}
+        <input type="hidden" name="tarif_id" value="{{ tarif.id }}">
+        <input type="hidden" name="monthes" value="{{ monthes }}">
+
+
+        <p style="font-size:14px;">
+            {% trans "Вы выбрали тариф" %}: <b>{{ tarif.name }}</b>
+            <br/>
+            {% trans "Количество месяцев" %}: <b>{{ monthes }}</b>
+            <br/>
+            {% trans "К оплате" %}: <b>{{ sum }}</b>
+
+            <br/>
+            <br/>
+        
+            <div class="button" style="margin-left:70px;">
+                <input type="submit" class="rc5" value="{% trans "Подтвердить и перейти к оплате"|capfirst %}">
+            </div>
+        </p>
+    </form>
+{% endblock %}

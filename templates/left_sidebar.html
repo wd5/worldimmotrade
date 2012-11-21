@@ -1,0 +1,94 @@
+{% load  i18n loop_extras cache %}
+
+<script type="text/javascript">
+    function toggleCoutryTabs(showTab, el)
+    {
+        if (showTab == '#ctab1') {
+            $('#ctab1').css('display', 'block');
+            $('#actab1').addClass("active");
+
+            $('#ctab2').css('display', 'none');
+            $('#actab2').removeClass("active");
+        }else{
+            $('#ctab2').css('display', 'block');
+            $('#actab2').addClass("active");
+            $('#ctab1').css('display', 'none');
+            $('#actab1').removeClass("active");
+        }
+    }
+</script>
+
+<div class="sidebare">
+        <div class="country_menu">
+
+            <!-- TAB BOX BEGIN -->
+
+            <div class="tab_box">
+
+                <ul class="tabs">
+                    <li class="no_margin_left active" id="actab1"><a href="#" onclick="toggleCoutryTabs('#ctab1');" class="rc5">{% trans "Поиск по странам"|capfirst %}</a></li>
+                    <li class="" id="actab2"><a href="#" class="rc5" onclick="toggleCoutryTabs('#ctab2');">{% trans "Информация о странах"|capfirst %}</a></li>
+                </ul>
+
+                <div class="tabs_info rc5" id="ctab1">
+                    <ul>
+                    {% cache 3600 clistcache active_lang %} 
+                        {% for c in countries %}
+                        <li class="no_border_top" style="border-bottom:1px solid silver; font-size:12px;">
+                            <b><img src="{{ MEDIA_URL }}/design/images/flags/{{ c.name_en|slugify }}.png" width="16" height="16"></b>
+                            <a href="/search/country/{{ c.id }}-{{ c.name_en|slugify }}">{{ c.name }}</a>
+                            <span>{{ c|count_objects }}</span>
+                        </li>
+                        {% endfor %}
+                    {% endcache %}
+                    </ul>
+                </div><!-- tabs_info END -->
+                <div class="tabs_info rc5" id="ctab2" style="display:none;">
+                    <ul>
+                 {% cache 3600 clistinfo active_lang %}  
+                        {% for c in countries %}
+                       <li class="no_border_top" style="border-bottom:1px solid silver; font-size:12px;">
+                            <b><img src="{{ MEDIA_URL }}/design/images/flags/{{ c.name_en|slugify }}.png" width="16" height="16"></b>
+                            <a href="/country/{{ c.id }}">{{ c.name }}</a>
+                        </li>
+                        {% endfor %}
+				{% endcache %}
+                    
+                    </ul>
+                </div><!-- tabs_info END -->
+            </div>
+
+            <!------- TAB BOX END ------>
+
+        </div><!-- country_menu END -->
+
+        <div class="currency_calc rc5 margin_top_box">
+            <b class="box_title">{% trans "Валютный <span>калькулятор</span>" %}</b>
+            <form>
+                <input type="text" id="currency_sum"
+               onkeyup="$('#converter_response').load('/ajax_converter/?from_c='+$('#currency_id').val() + '&sum='+$('#currency_sum').val());">
+                    <select name="currency_id" id="currency_id" onchange="$('#converter_response').load('/ajax_converter/?from_c='+$('#currency_id').val() + '&sum='+$('#currency_sum').val());">
+                        {% autoescape off %}
+                            {{ currencies }}
+                        {% endautoescape %}
+                    </select>
+                    <span>=</span>
+            </form>
+            <div id="converter_response">
+            </div>
+        </div><!-- currency_calc END -->
+
+        {%if 1 > 10%}
+        <div class="widget_news margin_top_box">
+            <div class="widget_news_title"><b class="box_title">{% trans "Новости" %}</b><a href="{% url view-all-news %}">{% trans "Все" %}</a></div>
+
+                {% for n in 3|latest_news %}
+                    <div class="widget_news_item">
+                        <span>{{ n.created }}</span>
+                        <b><a href="{% url view-news n.id %}">{{ n.title }}</a></b>
+                        <p>{{ n.content|striptags|truncate:"70" }}<p>
+                    </div>
+                {% endfor %}
+        </div><!-- widget_news END -->
+        {% endif %}
+</div>

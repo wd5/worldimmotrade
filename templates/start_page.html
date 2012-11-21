@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block description %}{% if current_language == 'ru'  %}Портал зарубежной недвижимости WorldImmotrade.ru. Купить / продать элитную недвижимость зарубежом.{% endif %}{% if current_language == 'de'  %}Overseas Property Portal WorldImmotrade.de. Kauf / Verkauf Luxusimmobilien im Ausland.{% endif %}{% if current_language == 'en'  %}Portal of real estate abroad WorldImmotrade.com. Buy / sell luxury properties abroad.{% endif %}{% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+$(function(){
+    $("#main_search_form").relatedSelects({
+        onChangeLoad: '/world/load_json/',
+        defaultOptionText: '-------',
+        selects: {
+            'country':		{ loadingMessage:'Loading Regions...' },
+            'region':		{ loadingMessage:'Loading Cities...' },
+            'city':		{}
+        }
+    });
+
+    $("#id_price_min").val('{% trans "Мин. цена" %}').click(function(){
+        $(this).val('');
+    }).focusout(function(){
+        if (!$(this).val()){
+            $(this).val('{% trans "Мин. цена" %}');
+        }
+    });
+    $("#id_price_max").val('{% trans "Макс. цена" %}').click(function(){
+        $(this).val('');
+    }).focusout(function(){
+        if (!$(this).val()){
+            $(this).val('{% trans "Макс. цена" %}');
+        }
+    });
+	$('#stocks_but').click(function(e){
+		e.preventDefault();
+		$('#stocks_content').slideToggle();
+	});
+});
+
+
+    function checkPrices()
+    {
+        if ($("#id_price_min").val() == '{% trans "Мин. цена" %}')
+        {
+           $("#id_price_min").val('');
+        }
+        if ($("#id_price_max").val() == '{% trans "Макс. цена" %}')
+        {
+           $("#id_price_max").val('');
+        }
+    }
+
+</script>
+<style type="text/css">
+   #id_price_min {
+       width:135px;
+   }
+   #id_price_max {
+       width:135px;
+   }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="/media/scripts/jquery.simpleslider.js"></script>
+
+      
+			<ul id="slider" style="margin-bottom:10px;"> 
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/1.jpg"/></li>
+				<!-- <li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/2.jpg"/></li> -->
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/3.jpg"/></li>
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/4.jpg"/></li>
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/5.jpg"/></li>
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/6.jpg"/></li>
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/7.jpg"/></li>
+				<li><img border="0" width="470" height="250" src="/media/design/images/slider/thumbs/8.jpg"/></li>
+			</ul>		
+       
+<script type="text/javascript"> 
+
+	$('ul#slider').simpleSlider({
+		alpha	        : "0.7",	        
+		bgColor	        : "#fff",
+		height	        : "50px",        
+		bgSpeed      	: "slow",      
+		timeOut			: "1500",
+	});
+
+</script>
+
+
+            <div class="widget_search" style="color:#000;">
+                <div class="form_box rc5">
+                	<div class="box_title">{% trans "Поиск" %}</div>
+
+                    <form action="/search/" method="get" id="main_search_form" name="center_sform">
+                        <table border="0" width="400px" style="margin-left:15px;">
+                            <tr valign="top">
+                                <td>
+                                    <div style="margin-bottom:3px">{{ form2.country }}</div>
+                                    <div style="margin-bottom:3px">{{ form2.region }}</div>
+                                    <div style="margin-bottom:3px">{{ form2.city }}</div>
+                                </td>
+                                <td>
+                                    <div style="margin-bottom:3px">{{ form2.estate_type }}</div>
+                                    <div style="margin-bottom:3px">{{ form2.price_min }}</div>
+                                    <div style="margin-bottom:3px">{{ form2.price_max }}</div>
+                                </td>
+                                <td align="left">
+                            <label><input type="radio" value="1" checked="checked" name="type">
+                                <span>{% trans "Покупка" %}</span>
+                            </label><br/>
+                            <label><input type="radio" value="2" name="type">
+                                <span>{% trans "Аренда" %}</span>
+                            </label>
+                            </td>
+                            </tr>
+                        </table>
+
+                        <div class="form_col">
+                            <div class="link left"><a href="/search/?estate_type=apartment">{% trans "Квартира"|capfirst %}</a></div>
+                            <div class="link left"><a href="/search/?estate_type=elite">{% trans "Элитная"|capfirst %}</a></div>
+                        </div>
+
+                        <div class="form_col">
+                            <div class="link left"><a href="/search/?estate_type=house">{% trans "Дом"|capfirst %}</a></div>
+                            <div class="link left"><a href="/search/?estate_type=commercial&estate_type=office&estate_type=store&estate_type=kafe&estate_type=hotel&estate_type=profitable&estate_type=warehouse&estate_type=production">{% trans "Коммерческая"|capfirst %}</a></div>
+                        </div>
+
+                        <div class="students">
+						{% if active_lang == 'ru' %}
+							<a href="{% url search-students %}"><img src="{{ MEDIA_URL }}/design/images/students/rus.png"></a>
+						{% endif %}
+						{% if active_lang == 'en' %}
+							<a href="{% url search-students %}"><img src="{{ MEDIA_URL }}/design/images/students/eng.png"></a>
+						{% endif %}
+						{% if active_lang == 'de' %}
+							<a href="{% url search-students %}"><img src="{{ MEDIA_URL }}/design/images/students/deu.png"></a>
+						{% endif %}						
+						</div>
+                        <div class="button" align="center">
+						<!--
+                            <a href="#" style="width:100px;" style="width:130px;margin-left:150px;" onclick="checkPrices();document.center_sform.submit();" class="rc5">{% trans "Найти" %}</a>-->
+<input type="submit" onclick="window.location = '/user/register/'" class="rc5" value="{% trans "Найти"|capfirst %}" style="width:130px;margin-right:-2px;">
+
+                        </div>
+                    </form>
+                </div><!-- form_box END -->
+            </div>
+            
+    <div class="share_button2 margin_top_box" style="background-color:silver;">
+        <a href="/page/shares/" id='stocks_but' class="rc5">{% trans "Акции и предложения"|capfirst %}</a>
+    </div>
+
+    <div id='stocks_content' style='display:none'>
+        {% if current_language == 'ru'  %}
+        <h3>Поздравляем! Вы как раз вовремя!</h3>
+        В честь запуска обновленной версии нашего интернет-портала зарубежной недвижимости 
+        предлагаем Вам ТОЛЬКО ТЕПЕРЬ – зарегистрироваться и опубликовать БЕСПЛАТНО неограниченное количество Ваших объявлений!
+        {% endif %}
+
+        {% if current_language == 'en'  %}
+        <h3>Congratulations!</h3>
+        Since we are beginning a new version of our portal, we would like to offer you to use our services free of charge!
+        {% endif %}
+
+        {% if current_language == 'de'  %}
+        <h3>Herzlichen Glückwunsch!</h3>
+        Da wir jetzt eine neue Version unseres Portals starten, möchten wir Ihnen anbieten, unseren Service kostenlos zu nutzen!
+        {% endif %}
+    </div>
+
+    <div class="booking_icons margin_top_box">
+        <ul>
+            <li><a href="/services/avia/"><img src="{{ MEDIA_URL }}/design/images/icons/avia.gif"></a></li>
+
+	{% if active_lang == 'ru' %}
+    <li><a href="http://www.hrs.com/web3/?client=ru__red&customerId=7014644" target="_blank"><img src="{{ MEDIA_URL }}/design/images/icons/hotel.gif"></a></li>
+	{% endif %}
+	{% if active_lang == 'en' %}
+    <li><a href="http://www.hrs.com/web3/?client=en__red&customerId=7014644" target="_blank"><img src="{{ MEDIA_URL }}/design/images/icons/hotel.gif"></a></li>
+	{% endif %}
+	{% if active_lang == 'de' %}
+    <li><a href="http://www.hrs.com/web3/?client=de_red&customerId=7014644" target="_blank"><img src="{{ MEDIA_URL }}/design/images/icons/hotel.gif"></a></li>
+	{% endif %}	
+
+
+	{% if active_lang == 'ru' %}
+<li><a target="_blank" href="http://www.emietwagen.de/Home.do?affiliateCode=worldimmotrade_ru"><img src="{{ MEDIA_URL }}/design/images/icons/auto.gif"></a></li>	
+	{% endif %}
+	{% if active_lang == 'en' %}
+<li><a target="_blank" href="http://www.emietwagen.de/Home.do?affiliateCode=worldimmotrade_en"><img src="{{ MEDIA_URL }}/design/images/icons/auto.gif"></a></li>		
+	{% endif %}
+	{% if active_lang == 'de' %}
+<li><a target="_blank" href="http://www.emietwagen.de/Home.do?affiliateCode=worldimmotrade_de"><img src="{{ MEDIA_URL }}/design/images/icons/auto.gif"></a></li>		
+	{% endif %}	
+
+
+	{% if active_lang == 'ru' %}
+		<li><a target="_blank" href="http://www.interhome.ru/%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9?partnerid=DE1001461"><img src="{{ MEDIA_URL }}/design/images/icons/palm.jpg"></a></li>
+	{% endif %}
+	{% if active_lang == 'en' %}
+		<li><a  target="_blank" href="http://www.interhome.de/english?partnerid=DE1001461"><img src="{{ MEDIA_URL }}/design/images/icons/palm.jpg"></a></li>
+	{% endif %}
+	{% if active_lang == 'de' %}
+		<li><a target="_blank" href="http://www.interhome.de/deutsch/?partnerid=DE1001461"><img src="{{ MEDIA_URL }}/design/images/icons/palm.jpg"></a></li>
+	{% endif %}	
+             
+        </ul>
+    </div>
+
+    {% if objects %}
+    <div class="featured margin_top_box">
+        <div class="box_title">{% trans "Топ <span>предложения</span>"%}</div>
+        <div class="featured_box">
+            {% for obj in objects %}
+            <div class="featured_item no_margin_left" style="margin-right:8px;">
+                <div class="featured_item_image">
+                    <a href="{% url apartment-view obj.id %}">
+                        <img src="{{ obj.main_image.photo|thumbnail:"144x109" }}"/>
+                    </a>
+                </div>
+                <div class="featured_item_title"><a href="/search/country/{{ obj.country.id }}-australia/">{{ obj.country }}</a></div>
+                <div class="featured_item_desc">
+                    <!--{% if obj.description %}
+                        {{ obj.description|truncate:"15" }}
+                    {% else %}
+                        {% trans "Нет описания." %}
+                    {% endif %}
+                    -->
+                </div>
+                <div class="featured_item_price">{{ obj.price|toCurrency:request }}</div>
+                <div class="featured_item_id"><span>ID:</span> {{ obj.id }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+	
+	<div class="content_box rc5 margin_top_box">
+	{% autoescape off %}
+		{{ main_text.content }}
+	{% endautoescape %}
+    </div>
+
+    {% if current_language == 'ru'  %}
+    <div class="breadcrumbs">
+<div xmlns:v="http://rdf.data-vocabulary.org/#">
+   <span typeof="v:Breadcrumb">
+     <a href="http://worldimmotrade.ru/" rel="v:url" property="v:title">
+      Главная
+    </a> ›
+   </span>
+   <span typeof="v:Breadcrumb">
+    <a href="http://worldimmotrade.ru/#property-abroad" rel="v:url" property="v:title">
+      Недвижимость за рубежом
+    </a>
+   </span>
+</div>
+    </div>
+    <br/>
+    {% endif %}
+
+{% endblock %}

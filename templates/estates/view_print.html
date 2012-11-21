@@ -1,0 +1,119 @@
+{% load i18n loop_extras %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/design/css/style.css" />
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/design/css/no_round_corners.css" />
+
+    <style type="text/css">
+        body {
+            background:none;
+        }
+
+    </style>
+
+<table border="0" align="center" width="100%">
+    <tr align="center">
+        <td>
+
+<div class="content_box rc5" style="width:800px;" align="left">
+    <div class="item">
+        <h1 style="font-size:16px;">
+            {{ form.name|display_value }}
+            <br/>
+            <span style="color:#dc143c;">{{ form.instance.price|toCurrency:request }}</span>
+        </h1>
+
+        <div class="item_gall">
+            <div class="item_img_big" style="float:left;">
+               {% if model.main_image %}
+                    <a href="{{ model.main_image.get_image_url }}">
+                        <img src="{{ model.main_image.photo|thumbnail:"445x200" }}" style="border:1px solid #d3d3d3;"/>
+                    </a>
+                {% else %}
+
+                {% endif %}
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+
+            <table border="0" class="view-object-table" width="100%">
+
+                    <tr class="even">
+                        <td class="label">ID</td>
+
+                        <td class="option">
+                            {{ form.instance.pk }}
+                        </td>
+                    </tr>
+
+            {% for field in form %}
+                    {% if field.name == 'for_students' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'only_for_students' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'description' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'object_location' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'name' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'price' %}{{ forloop|continue }}{% endif %}
+
+                    {% if field|display_value == "Не указано" or field|display_value == 'Нет' %}
+
+                    {% else %}
+                    <tr class="{% cycle 'odd' 'even' %}">
+                        <td class="label">{{ field.label_tag }}</td>
+
+                        <td class="option">
+                            {{ field|display_value }}
+
+                            {% if field.name == "price" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "living_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "total_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "land_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+
+
+        <div class="clear">
+            <br/>
+        </div>
+
+        <div class="item_desc">
+            <h2>{% trans "Описание объекта" %}</h2>
+            <p>
+                {% if form.description %}
+                    {{ form.description|display_value }}
+                {% else %}
+                    {% trans "Нет описания" %}.
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="item_desc">
+            <h2>{% trans "Контактное лицо" %}</h2>
+            <p>
+                {% for p in model.user.profile.display_info %}
+                    {{ p }}<br/>
+                {% endfor %}
+            </p>
+        </div>
+
+    </div><!-- item END -->
+
+</div>
+
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <h2 class="page_title">{{ model.title }}</h2>
+    <span style="color:#778899;font-size:11px;">{{ model.created }}</span>
+    <p class="page_content">
+    <br/>
+        {{ model.content }}
+    </p>
+    <p>
+        <br/><a href="javascript:history.back();">← {% trans "Назад"%}</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block title %}{{model.title}} - {{ domain }}{% endblock %}
+
+{% block footerLink %}
+    <a class="first" href="http://worldimmotrade.ru/">купить недвижимость за рубежом</a>
+{% endblock %}
+
+{% block content %}
+    <h2 class="page_title">{% trans "Мы все организуем за Вас" %}</h2>
+	
+	{% if active_lang == 'ru' %}
+    <p>У Вас нет времени, заниматься бронировкой полета, гостиницы и автомобиля?
+        Подгонять даты и сравнивать цены?
+        Вы хотите только получить на руки билеты, сесть в самолет и осмотреть объект,
+        который может стать Вашим будущим домом, квартирой или офисом?</p>
+    <br/>
+    <p>Мы поможем организовать Вашу поездку от начала до конца! Свяжитесь с нами напрямую или закажите обратную связь – мы Вам позвоним.</p>
+	{% endif %}
+
+	{% if active_lang == 'de' %}
+    <p>
+		Haben Sie keine Zeit um Ihr eigenes Fly and Drive zu schnüren? Fehlt Ihnen die Zeit zum Organisieren und Preise vergleichen? Sie möchten am liebsten direkt losfliegen um Ihr Wunschobjekt zu besichtigen?	
+	</p>
+	<div align="center"><b>Dann zögern Sie nicht!</b></div>
+    <br/>
+    <p>
+		Wenden Sie sich an uns, wir helfen Ihnen gerne weiter und buchen für Sie Flug, Hotel und Mietwagen. Ihre Zufriedenheit ist unser höchstes Ziel.	
+	</p>
+	{% endif %}	
+
+	{% if active_lang == 'en' %}
+		<p>
+			Do you not have the time to combine your own fly and drive? Are you under time pressure to organize and compare prices? You would like to take off immediately and fly to your dream location?		
+		</p>
+		<div align="center"><b>Then don´t hesitate!</b></div>
+		<br/>
+		<p>
+			Contact us! We will be more than happy to help you book your flight, hotel and get you a rent car. Your satisfaction is our top priority.			
+		</p>	
+	{% endif %}
+    <br/>
+    <table cellpadding="3" cellspacing="3">
+        <tr>
+            <td>{% trans "Телефон" %}:</td><td>+49 (0) 611 - 205 21 00</td>
+        </tr>
+        <tr>
+            <td>{% trans "Телефон" %}:</td><td>+49 (0) 611 - 205 23 69</td>
+        </tr>
+        <tr>
+            <td>{% trans "Факс" %}:</td><td>+49 (0) 611 - 205 23 60</td>
+        </tr>
+        <tr>
+            <td>E-Mail:</td><td><a href="mailto:info@worldimmotrade.com">info@worldimmotrade.com</a></td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <p>
+        Skype: worldimmotrade<br/>
+        ICQ: 623697332
+    </p>
+
+    <br/>
+    <br/>
+    <div class="item_desc item_form">
+        <h2>{% trans "Контакты" %}</h2>
+        <form action="" method="post">{% csrf_token %}
+        <input type="hidden" value="1" name="send_contact">
+            <div class="item_form_row first">
+                <label>{% trans "Имя, Фамилия" %}:</label>
+                {%if contact_form.first_name.errors %}
+                    {{ contact_form.first_name.errors }}
+                {% endif %}
+                {{ contact_form.first_name }}
+                {{ contact_form.last_name }}<span style="color:red">*</span>
+            </div>
+            <div class="item_form_row">
+                <label>{% trans "Телефон" %}:</label>
+                {{ contact_form.phone.errors }}
+                {{ contact_form.phone }}
+            </div>
+            <div class="item_form_row">
+                <label>E-Mail:</label>
+                {{ contact_form.email.errors }}
+                {{ contact_form.email }}<span style="color:red">*</span>
+            </div>
+            <div class="item_form_row">
+                <label>{% trans "Ваше сообщение" %}:</label>
+                {{ contact_form.message.errors }}
+                {{ contact_form.message }}<span style="color:red">*</span>
+            </div>
+            <div class="button" style="margin-right:20px;">
+                <input type="submit" class="rc5" value="{% trans "Отправить"|capfirst %}">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

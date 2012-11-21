@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache pagination_tags random_links %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block footerLink %}
+    {% if country_only %}
+        <a class="first" href="http://worldimmotrade.ru/">зарубежная недвижимость</a>
+    {% endif %}
+{% endblock %}
+
+{% block description %}{{ data|renderMetaDescription }}{% endblock %}
+
+
+{% block content %}
+    
+        {% autoescape off %}
+            {{data|countryH1}}
+        {% endautoescape %}
+
+    <script type="text/javascript">
+        function redirect_order(url)
+        {
+            url = url.replace('order=country', '');
+            url = url.replace('order=city', '');
+            url = url.replace('order=price_asc', '');
+            url = url.replace('order=price_desc', '');
+            url = url.replace('order=space_asc', '');
+            url = url.replace('order=space_desc', '');
+            url = url.replace('order=created_desc', '');
+            url = url.replace('order=created_asc', '');
+            url = url.replace('temp_by_temp', 'order');
+            window.location = window.location.pathname + url;
+        }
+    </script>
+
+    
+    {% if students %}
+        <div class="box_title">{% trans "Поиск жилья для студентов" %}</div>
+        <div style="margin-bottom:15px;">
+        {% blocktrans %}
+        В данном разделе отображаются исключительно те предложения,
+        которые предназначены для поселения студентов. Для более точного
+        поиска воспользуйтесь формой слева.
+        {% endblocktrans %}
+        </div>
+    {% endif %}
+
+    {% if estates_list %}
+        <div class="box_title">{% trans "Найдено недвижимости" %}: {{ estates_list.count }}</div>
+        <div class="sort" action="/search/" method="get">
+            {% trans "Сортировать по" %}: <form>
+            <select onchange="redirect_order($(this).val())">
+                <option disabled>---</option>
+                <option {% if request.GET.order == 'country' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}country">{% trans "Стране" %}</option>
+                <option {% if request.GET.order == 'city' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}city">{% trans "Городу" %}</option>
+                <option {% if request.GET.order == 'price_asc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}price_asc">{% trans "Цене по возрастанию" %}</option>
+                <option {% if request.GET.order == 'price_desc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}price_desc">{% trans "Цене по убыванию" %}</option>
+                <option {% if request.GET.order == 'space_asc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}space_asc">{% trans "Площади по возрастанию" %}</option>
+                <option {% if request.GET.order == 'space_desc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}space_desc">{% trans "Площади по убыванию" %}</option>
+
+                <option {% if request.GET.order == 'created_desc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}created_desc">{% trans "От новых к старым" %}</option>       
+                <option {% if request.GET.order == 'created_asc' %}selected="selected"{% endif %} value="{{ request.GET|addurlparam:"temp_by_temp" }}created_asc">{% trans "От старых к новым" %}</option>                            
+            </select>
+
+
+            <input type="text" value="{% trans "Искать по номеру ID" %}"
+                   onclick="if ($(this).val() == '{% trans "Искать по номеру ID" %}') {$(this).val('')}"
+                   onblur ="if ($(this).val() == '') {$(this).val('{% trans "Искать по номеру ID" %}')}"
+                   name="id">
+            </form>
+        </div>
+        <div class="content_box rc5 margin_top_box">
+            {% autopaginate estates_list 15 %}
+            {% for obj in estates_list %}
+                <div class="item_list">
+
+                    <div class="il_top">
+                        <a href="/estates/view/{{ obj.id }}/">{{ obj.name|truncate:"28" }}</a>
+                        {% if obj.is_new %}<img src="/media/design/images/icons/new.png">{% endif %}
+                        <span>{{ obj.price|toCurrency:request }}</span>
+                    </div>
+
+                    <div class="il_main">
+                        <div class="il_image">
+                            {% assign mainImage obj.main_image %}
+                            {% if mainImage %}
+                            <a href="#">
+                                <img src="{{ mainImage.photo|thumbnail:"167x111" }}"/>
+                            </a>
+                            {% else %}
+                                <div style="width:90px;font-weight:bold;font-size:26px;padding-top:40px;padding-left:80px">
+                                    ?
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="il_content">
+                            <p>
+                                {% trans "Площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                                {% trans "Жилая площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                                {% trans "Количество комнат" %}: {{ obj.rooms_count }}<br/>
+                                <!-- {% trans "Тип недвижимости" %}: {{ obj.estate_type|toEstateType }}<br/> -->
+                                {% trans "Тип недвижимости" %}: <a href="{% url filterByRegionEndType region=obj.region.id estate_type=obj.estate_type %}">{{ obj.estate_type|toEstateType }} {% trans "в" %} {{ obj.region }}</a><br/>
+                                {% trans "Просмотры" %}: {{ obj.views }}<br/>
+                            </p>
+                            <p style="margin-top:20px;">
+                                <span>ID:</span> {{ obj.id }}
+                            </p>
+                        </div>
+                    </div>
+
+                </div><!-- item_list END -->
+                {% endfor %}
+                {% paginate %}
+        </div>
+
+    {% if current_language == 'ru' and data.page <= 1 %}
+        <div class="text">
+        {% autoescape off %}
+            {{ data|countrySeoText }}
+
+            {% if data.showEstateTypeSeoText %}
+                {{data|estateTypeSeoText}}
+            {% endif %}
+        {% endautoescape %}
+        </div>
+    {% endif %}
+
+    {% else %}
+        {% trans "По вашему запросу недвижимости не найдено" %}.
+        {% if value_error %}
+            <br/>{% trans "Проверьте правильность ввода данных" %}.
+        {% endif %}
+    {% endif %}
+{% endblock %}

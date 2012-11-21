@@ -1,0 +1,14 @@
+{% load i18n %}
+{% blocktrans %}
+Здравствуйте {{ recipient }},
+
+Вы получили сообщение от пользователя {{ sender }},
+следующего содержания:
+{% endblocktrans %}
+-------
+{{ message|safe }}
+-------
+{% blocktrans %}
+Со страницы:
+{{ current_page }}
+{% endblocktrans %}

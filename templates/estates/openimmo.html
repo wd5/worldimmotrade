@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+<div class="box_title">{% trans "Open Immo" %}</div>
+<br/>
+<p>
+Для загрузки доступны только архивы .zip, в которых должны быть изображения в формате jpeg, а также файлы с описанием недвижимости в формате xml. Ос
+тальные файлы будут игнорироваться.<br/><br/>
+</p>
+	{% if uploaded %}
+		<div style="">
+			{% trans "Файл успешно загружен" %}
+			<br/><br/>
+		</div>
+	{% endif %}
+
+	{% if errors %}
+	<div style="color:red;margin-bottom:10px;">
+		{% for e in errors %}
+			{{ e }}<br/>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<form action="" enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+		<input type="file" name="file" />
+		<input type="submit" value="{% trans "Загрузить" %}">
+	</form>
+{% endblock %}

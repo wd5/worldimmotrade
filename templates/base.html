@@ -1,0 +1,381 @@
+{% load i18n loop_extras random_links %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{% if current_language == 'ru'  %}Зарубежная недвижимость: купить/продать элитную недвижимость зарубежом, портал недвижимости - WorldImmotrade{% endif %}{% if current_language == 'en'  %}Welcome to www.worldimmotrade.com - The Internet portal for foreign real estates!{% endif %}{% if current_language == 'de'  %}Immobilien in Spanien, Bulgarien und vielen anderen Ländern kaufen{% endif %}{% endblock %}</title>
+
+    <meta name="description" content="{% block description %}{% endblock %}">
+	{% if current_language == 'de'  %}
+	<meta name="robots" content="index,follow,noodp,noydir" />
+	<meta name="author" content="WORLD IMMOTRADE GmbH" />
+	<meta name="page-topic" content="Immobilien in Spanien kaufen, Immobilien in Bulgarien kaufen, Immobilien Türkei" /> 
+	<meta name="language" content="de,de-at,de-ch" />
+	<meta name="google-site-verification" content="xH9Jii2nwgv2VqcPIOP7PzBqB7Xp6V1Bz_o5DUvLou4" />
+	<meta http-equiv="pragma" content="NO-CACHE" />
+	<meta http-equiv="cache-control" content="NO-CACHE" />
+	{% endif %}
+	
+    {% autoescape off %}
+      {{ canonical }}
+    {% endautoescape %}
+
+    <script src="{{ MEDIA_URL }}/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="{{ MEDIA_URL }}/jquery/js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+    <script src="{{ MEDIA_URL }}/scripts/jquery.relatedselects.min.js" type="text/javascript"></script>
+    <script src="{{ MEDIA_URL }}/scripts/lightbox/js/jquery.lightbox-0.5.pack.js" type="text/javascript"></script>
+
+    <link href="{{ MEDIA_URL }}/jquery/css/blitzer/jquery-ui-1.8.9.custom.css" rel="stylesheet" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/design/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/design/css/no_round_corners.css" />
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/scripts/lightbox/css/jquery.lightbox-0.5.css" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/design/css/lp.css" />
+	
+
+	  <link rel="icon" href="{{ MEDIA_URL }}/design/favicon.ico" type="image/x-icon">
+	  <link rel="shortcut icon" href="{{ MEDIA_URL }}/design/favicon.ico" type="image/x-icon"> 
+
+    <link href="http://stg.odnoklassniki.ru/share/odkl_share.css" rel="stylesheet">
+    <script src="http://stg.odnoklassniki.ru/share/odkl_share.js" type="text/javascript" ></script>
+
+    <!-- ** IE6 PNG FIX (BEGIN) ** -->
+        <!--[if lt IE 7]>
+        <style type="text/css">
+        .country_menu .tabs_info li b img{ behavior: url("{{ MEDIA_URL }}/design/ie_hacks/iepngfix.htc") }
+        </style>
+        <script type="text/javascript" src="{{ MEDIA_URL }}/design/ie_hacks/iepngfix_tilebg.js"></script>
+        <![endif]-->
+    <!-- ** IE6 PNG FIX (END) ** -->
+
+    <!--[if lt IE 8]>
+    <style type="text/css">
+        .mainmenu ul ul{margin-top:0px;}
+    </style>
+    <![endif]-->
+
+    <script type="text/javascript">
+        $(function() {
+            $('.mainmenu ul li').hover(
+                function(){
+                    $(this).find('ul').css('display', 'block');
+                },
+                function(){
+                    $(this).find('ul').css('display', 'none');
+                }
+            );
+
+            setTimeout(function() { 
+				$( "ul.messages" ).hide( 'blind', {}, 1000);
+			}, 5000 );
+
+            $('#id_estate_type option').each(function(i,el){
+                if ( $(el).text().charAt(0) != '-' ){
+                    $(el).css('color', 'red');
+                    //$(el).css('font-size','12px');
+                }
+            });
+        });
+    </script>
+    {% block head %}{% endblock %}
+{% if current_language == 'ru'  %}
+                            {% autoescape off %}
+<meta name='yandex-verification' content='529361e3a80dc06f' />							
+                                 <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26526340-1']);
+  _gaq.push (['_addOrganic', 'yandex.ru', 'query']);
+  _gaq.push (['_addOrganic', 'images.yandex.ru', 'text']);
+  _gaq.push (['_addOrganic', 'blogs.yandex.ru', 'text']);
+  _gaq.push (['_addOrganic', 'video.yandex.ru', 'text']);
+  _gaq.push (['_addOrganic', 'search.bigmir.net', 'z']);
+  _gaq.push (['_addOrganic', 'search.i.ua', 'q']);
+  _gaq.push (['_addOrganic', 'mail.ru', 'q']);
+  _gaq.push (['_addOrganic', 'go.mail.ru', 'q']);
+  _gaq.push (['_addOrganic', 'images.google.ru', 'q']);
+  _gaq.push (['_addOrganic', 'maps.google.ru', 'q']);
+  _gaq.push (['_addOrganic', 'rambler.ru', 'words']);
+  _gaq.push (['_addOrganic', 'nova.rambler.ru', 'query']);
+  _gaq.push (['_addOrganic', 'nova.rambler.ru', 'words']);
+  _gaq.push (['_addOrganic', 'gogo.ru', 'q']);
+  _gaq.push (['_addOrganic', 'nigma.ru', 's']);
+  _gaq.push (['_addOrganic', 'poisk.ru', 'text']);
+  _gaq.push (['_addOrganic', 'go.km.ru', 'sq']);
+  _gaq.push (['_addOrganic', 'liveinternet.ru', 'ask']);
+  _gaq.push (['_addOrganic', 'gde.ru', 'keywords']);
+  _gaq.push (['_addOrganic', 'search.qip.ru', 'query']);
+  _gaq.push (['_addOrganic', 'webalta.ru', 'q']);
+  _gaq.push (['_addOrganic', 'sm.aport.ru', 'r']);
+  _gaq.push (['_addOrganic', 'affiliates.quintura.com', 'request']);
+  _gaq.push (['_addOrganic', 'akavita.by', 'z']);
+  _gaq.push (['_addOrganic', 'search.tut.by', 'query']);
+  _gaq.push (['_addOrganic', 'all.by', 'query']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  
+    function plusone_vote( obj ) {
+    _gaq.push(['_trackEvent','plusone',obj.state]);
+  };
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+                        {% endautoescape %}
+
+{% endif %}	
+{% if current_language == 'en'  %}
+                            {% autoescape off %}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26526340-2']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  
+    function plusone_vote( obj ) {
+    _gaq.push(['_trackEvent','plusone',obj.state]);
+  };
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+                        {% endautoescape %}
+
+{% endif %}
+{% if current_language == 'de'  %}
+                            {% autoescape off %}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26526340-3']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  
+    function plusone_vote( obj ) {
+    _gaq.push(['_trackEvent','plusone',obj.state]);
+  };
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+                        {% endautoescape %}
+
+{% endif %}
+
+<script src="/media/scripts/ga_social_tracking.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<style type="text/css">
+  .new_year{position: absolute; top: 0; left:0; width: 100%; height: 129px; background: url(/media/world_zyma.png) repeat-x;overflow: hidden;}
+</style>
+
+
+	<div class="all">
+
+		<div class="header">
+        
+        	<div class="logo">
+                <a href="/"><img src="{{ MEDIA_URL }}/design/images/logo.png" alt="World Immotrade"/></a>
+            </div>
+
+            <div class="langs">
+                <form action="{% url users-change-currency %}" style="float:left;" method="post">{% csrf_token %}
+                    <input type="hidden" name="redirect" value="{{ request.path }}?{{ request.META.QUERY_STRING }}">
+                    {% trans "Валюта" %}:
+                    <select name="currency" onchange="this.form.submit();">
+                        {% autoescape off %}
+                            {{ currencies }}
+                        {% endautoescape %}
+                    </select>
+                </form>
+
+            	<a href="http://worldimmotrade.de"><img src="{{ MEDIA_URL }}/design/images/lang_de.png" /></a>
+                <a href="http://worldimmotrade.com"><img width="24" height="18"  src="{{ MEDIA_URL  }}/design/images/lang2.png" /></a>
+                <a href="http://worldimmotrade.ru"><img src="{{ MEDIA_URL }}/design/images/lang_ru.png" /></a>
+            </div>
+
+            <div class="contacts">
+            	<span><em>+7 (499)</em> <span style="display:none">_</span>390-49-51</span>	
+            </div>
+
+            <div class="mainmenu" style="z-index:999;">
+            	<ul>
+                	<li class="no_margin_left {% ifequal request.path "/" %}active{% endifequal %}">
+                        <a href="/" class="first"><b>{% trans "Главная"|capfirst %}</b></a>
+                    </li>
+                	<li {% ifequal request.path "/page/about-us/" %}class="active"{% endifequal %}>
+                        <a href="/page/about-us/"><b>{% trans "О нас"|capfirst %}</b></a>
+                    </li>
+<li {% ifequal request.path "/page/our-services/" %}class="active"{% endifequal %}><a href="{% url view-page "our-services" %}">{% trans "Наши услуги"|capfirst  %}</a></li>
+<li {% ifequal request.path "/pricing/" %}class="active"{% endifequal %}><a href="/pricing/">{% trans "Тарифы"|capfirst  %}</a></li>
+<li {% ifequal request.path "/companies/" %}class="active"{% endifequal %}><a href="/companies/">{% trans "Компании"|capfirst  %}</a></li>
+<li {% ifequal request.path "/contacts/" %}class="active"{% endifequal %}><a href="/contacts/" class="last"><b>{% trans "Контакты"|capfirst  %}</b></a></li>
+
+                </ul>
+            </div>
+
+        </div><!-- header END -->
+
+        <div class="mainbody">
+
+            {% block left_sidebar %}{% endblock %}
+
+            <div class="center">
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <!-- top banner -->
+                <div style="margin-bottom:15px;">
+                    {% autoescape off %}
+                        {{ banners.top_center }}
+                    {% endautoescape %}
+                </div>
+                    {% block content %}{% endblock %}
+                <!-- footer banner -->
+                <div class="margin_top_box">
+                    {% autoescape off %}
+                        {{ banners.bottom_center }}
+                    {% endautoescape %}
+                </div>
+            </div><!-- center END -->
+
+            {% block right_sidebar %}{% endblock %}
+
+        </div><!-- mainbody END -->
+    
+        <div class="footer">
+
+        	<div class="footer_top">
+            	<ul>
+                	<li class="first"><a href="/page/advertise/">{% trans "Реклама на сайте"|capfirst %}</a></li>
+                    <li><a href="/page/jobs/">{% trans "Вакансии"|capfirst %}</a></li>
+                    <li><a href="/page/terms-of-partners/">{% trans "Условия"|capfirst %}</a></li>
+                    <li><a href="/page/imprint/">{% trans "Импрессум"|capfirst %}</a></li>
+                </ul>
+                <div class="f_icons">
+
+                </div>
+                <div class="f_logo"><img src="{{ MEDIA_URL }}/design/images/footerlogo2.jpg"></div>
+            </div>
+
+            <div class="footer_bot">
+
+            	<div class="f_bot_left">
+                	  <div class="f_partners" style="clear:both;">
+                    	<span>{% trans "Партнеры" %}:</span>
+                        <span><a href="http://www.home-poster.net/ru/" title="Недвижимость Украины">home-poster.net</a></span>&nbsp;
+                        <img src="{{ MEDIA_URL }}/design/images/temp/partner.png">
+                        <img src="{{ MEDIA_URL }}/design/images/temp/partner.png">
+                    </div>
+
+		                {% if current_language == 'de'  %}
+                    <p>Copyright © 2009-2011 worldimmotrade.de | {% trans "недвижимость за рубежом"%}</p>
+		                {% endif  %}
+
+                    {% if current_language == 'ru'  %}
+                    <p>Copyright © 2009-2011 worldimmotrade.ru | {% trans "недвижимость за рубежом"%}</p>
+                    {% endif  %}  
+
+                    {% if current_language == 'en'  %}
+                    <p>Copyright © 2009-2011 worldimmotrade.com | {% trans "недвижимость за рубежом"%}</p>
+                    {% endif  %}
+
+                    {% if current_language == 'ru'  %}
+                      {% autoescape off %}
+                        {{ data|renderFooterLink }}
+                      {% endautoescape %}
+                    {% endif %}
+                </div>
+			<div class="footerLink">
+			  {% if current_language == 'ru'  %}
+				  {% block footerLink %}{% endblock %}
+			  {% endif %}
+			</div>
+                <div class="f_bot_right">
+                    <p>Goerdelerstr. 10</p>
+                    <p>65197 Wiesbaden, {% trans "Германия" %}</p>
+                    <p>{% trans "Телефон" %}: <span>+49 (0) 611 - 205 21 00</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- all END -->
+	{% if current_language == 'ru'  %}
+                            {% autoescape off %}
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter10526167 = new Ya.Metrika({id:10526167, enableAll: true, ut:"noindex"});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/10526167?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+                        {% endautoescape %}
+{% endif %}
+
+	{% if current_language == 'en'  %}
+                            {% autoescape off %}
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter10526197 = new Ya.Metrika({id:10526197, enableAll: true, ut:"noindex"});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/10526197?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  {% endautoescape %}
+{% endif %}
+
+	{% if current_language == 'de'  %}
+  {% autoescape off %}
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter10526209 = new Ya.Metrika({id:10526209, enableAll: true, ut:"noindex"});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/10526209?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  {% endautoescape %}
+{% endif %}
+</body>
+<script src="{{ MEDIA_URL }}/design/js/rounded-corners-min.js" type="text/javascript"></script>
+</html>

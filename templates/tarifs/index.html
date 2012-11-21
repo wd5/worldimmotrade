@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <style type="text/css">
+        .tarifs_table thead th {
+            font-size:13px;
+            padding:3px;
+            background-color: #dc143c;
+            background-image:url({{ MEDIA_URL }}/design/images/mainmenu_bg.png);
+            background-position:1px 100%;
+            color:#fff;
+        }
+        .tarifs_table tbody tr td {
+            padding:5px;
+            padding-bottom:5px;
+        }
+        .tarifs_table tbody tr.even {
+            background-color:#f5f5f5;
+        }
+        .tarifs_table tbody tr.odd {
+            background-color:#edecec;
+        }
+        .tarifs_table tbody tr label {
+            cursor:pointer;
+        }
+        .tarifs_footer {
+            margin-top:15px;
+        }
+    </style>
+
+    <div class="box_title">{% trans "Мои Тарифы" %}</div>
+    <br/>
+    {% if current_tarif %}
+        {% trans "Текущий тариф" %}: <b>{{ current_tarif.tarif }}</b>
+        <br/>
+        Статус: <b>
+        {% if current_tarif.paid %}
+            {% trans "Оплачен до" %} {{ current_tarif.end_date }}
+        {% else %}
+            <a href="{% url tarif-paypage %}">{% trans "Ожидает оплаты" %}</a>
+            <a href="{% url tarif-cancel %}" style="color:#d3d3d3;">({% trans "Отменить" %})</a>
+        {% endif %}
+        </b>
+    <br/>
+    <br/>
+    {% endif %}
+    <form action="{% url tarif-select %}" method="POST">{% csrf_token %}
+        <table width="100%" class="tarifs_table">
+            <thead align="left">
+                <th>{% trans "Название" %}</th>
+                <th>{% trans "Количество обьектов" %}</th>
+                <th>{% trans "Цена" %}</th>
+                <th>{% trans "Цена за обьект" %}</th>
+            </thead>
+            <tbody>
+            {% for obj in model %}
+                <tr align="left" class="{% cycle "even" "odd" %}">
+                    <td>
+                        {% if not current_tarif %}
+                        <input type="radio" name="tarif_id" id="tarif_{{ obj.id }}" value="{{ obj.id }}">
+                        {% endif %}
+                        <label for="tarif_{{ obj.id }}">{{ obj.name }}</label>
+                    </td>
+                    <td>
+                    {% if obj.ad_count == 0 %}
+                        {% trans "неограничено" %}
+                    {% else %}
+                        {{ obj.ad_count }}
+                    {% endif %}
+                    </td>
+                    <td>{{ obj.price }}</td>
+                    <td>{{ obj.price_per_ad }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if not current_tarif %}
+        <div class="tarifs_footer">
+        <div style="float:left; margin-right:20px;margin-top:3px;">
+            {% trans "Количество месяцев" %}:
+            <select name="monthes">
+                <option value="1">1 {% trans "месяц" %}</option>
+                <option value="2">2 {% trans "месяца" %}</option>
+                <option value="4">3 {% trans "месяца" %}</option>
+                <option value="4">4 {% trans "месяца" %}</option>
+                <option value="5">5 {% trans "месяцев" %}</option>
+                <option value="6">6 {% trans "месяцев" %}</option>
+                <option value="7">7 {% trans "месяцев" %}</option>
+                <option value="8">8 {% trans "месяцев" %}</option>
+                <option value="9">9 {% trans "месяцев" %}</option>
+                <option value="10">10 {% trans "месяцев" %}</option>
+                <option value="11">11 {% trans "месяцев" %}</option>
+                <option value="12">12 {% trans "месяцев" %}</option>
+            </select>
+            </div>
+
+            <div class="button">
+                <input type="submit" class="rc5" value="{% trans "Заказать"|capfirst %}">
+            </div>
+        </div>
+        {% endif %}
+    </form>
+{% endblock %}

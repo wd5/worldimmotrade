@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% load i18n loop_extras %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+    $(function() {
+    	$('.item_img_thumbs a, .item_img_big a').lightBox({
+            imageLoading:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-ico-loading.gif',
+			imageBtnPrev:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-prev.gif',
+			imageBtnNext:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-next.gif',
+			imageBtnClose:	'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-btn-close.gif',
+			imageBlank:		'{{ MEDIA_URL }}/scripts/lightbox/images/lightbox-blank.gif'
+        });
+    });
+</script>
+
+    <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAQ_FT5Ukrs3DX9-cNCBZvrBQJ8sGri5D9HZAUaHmoKstt4ZtpQxQSNxK9FkSH6Qk6IfS0DxvbBexz7A" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    var map = null;
+    var geocoder = null;
+
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        map = new GMap2(document.getElementById("map_canvas"));
+        geocoder = new GClientGeocoder();
+	    showAddress('{{ form.instance.country }}, {{ form.instance.city }}');
+      }
+    }
+
+    function showAddress(address) {
+      if (geocoder) {
+        geocoder.getLatLng(
+          address,
+          function(point) {
+            if (!point) {
+
+            } else {
+              map.setCenter(point, 13);
+              var marker = new GMarker(point);
+              map.addOverlay(marker);
+            }
+          }
+        );
+      }
+    }
+
+    $(function() {
+        initialize();
+    })
+    </script>
+
+
+<div class="content_box rc5">
+    <div class="item">
+        <h1 style="font-size:16px;">
+            {{ form.name|display_value }}
+            <br/>
+            <span style="color:#dc143c;">{{ form.instance.price|toCurrency:request }}</span>
+        </h1>
+        <div class="favorit" style="margin-top:-11px;">
+            {% if request.user.is_authenticated and not user.profile.is_saler %}
+                {% if bookmarked %}
+                    <a href="{% url apartment-bookmark-remove model.id %}">{% trans "Убрать из закладок" %}</a>
+                {% else %}
+                    <a href="{% url apartment-bookmark model.id %}">{% trans "Запомнить объект" %}</a>
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <div class="item_gall">
+            <div class="item_img_big" style="float:left;">
+               {% if model.main_image %}
+                    <a href="{{ model.main_image.get_image_url }}">
+                        <img src="{{ model.main_image.photo|thumbnail:"445x200" }}" style="border:1px solid #d3d3d3;"/>
+                    </a>
+                {% else %}
+
+                {% endif %}
+            </div>
+            <div class="item_img_thumbs" style="clear:both;width:450;overflow:hidden;">
+            {% for photo in model.photo_set.all %}
+                {% if photo.get_image_url != model.main_image.get_image_url %}
+                    <a href="{{ photo.get_image_url }}">
+                        <img src="{{ photo.photo|thumbnail:"53x50" }}" />
+                    </a>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+
+            <table border="0" class="view-object-table" width="100%">
+
+                    <tr class="even">
+                        <td class="label">ID</td>
+
+                        <td class="option">
+                            {{ form.instance.pk }}
+                        </td>
+                    </tr>
+
+            {% for field in form %}
+                    {% if field.name == 'for_students' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'only_for_students' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'description' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'object_location' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'name' %}{{ forloop|continue }}{% endif %}
+                    {% if field.name == 'price' %}{{ forloop|continue }}{% endif %}
+
+                    {% if field|display_value == "Не указано" or field|display_value == 'Нет' %}
+
+                    {% else %}
+                    <tr class="{% cycle 'odd' 'even' %}">
+                        <td class="label">{{ field.label_tag }}</td>
+
+                        <td class="option">
+                            {{ field|display_value }}
+
+                            {% if field.name == "price" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "living_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "total_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                            {% if field.name == "land_space" %}
+                                m<sup>2</sup>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+
+                {% if model.document_set.all %} 
+                <tr class="{% cycle 'odd' 'even' %}">
+                    <td class="label">{% trans "Документы" %}</td>
+                     
+                    <td class="option">
+                    {% for doc in model.document_set.all  %}
+                        <a href="{{ doc.get_url }}"><img src="{{ doc.icon_url }}"/></a>
+                    {% endfor %}
+                    </td> 
+                </tr>
+                {% endif %}
+
+            </table>
+
+            <div align="right">
+               <a href="?print=1">{% trans "Распечатать" %}</a>
+            </div>
+
+        <div class="clear">
+            <br/>
+        </div>
+
+        <div class="item_desc">
+            <h2>{% trans "Описание объекта" %}</h2>
+            <p>
+                {% if form.description %}
+                    {{ form.description|display_value }}
+                {% else %}
+                    {% trans "Нет описания" %}.
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="item_desc">
+            <h2>{% trans "Местоположение" %}</h2>
+            {% if form.object_location %}
+                {{ form.object_location|display_value }}
+            {% else %}
+               {# Не указано. #}
+            {% endif %}
+            <div id="map_canvas" style="width: 440px; height: 300px"></div>
+            <span style="font-size:11px;color:#a9a9a9;">{% trans "Определение координат может быть не точным." %}</span>
+        </div>
+
+        <div class="item_desc">
+            <h2>{% trans "Контактное лицо" %}</h2>
+            <p>
+                {% for p in model.user.profile.display_info %}
+                    {{ p }}<br/>
+                {% endfor %}
+            </p>
+        </div>
+
+        <div class="item_desc item_form">
+            <h2>{% trans "Запрос" %}</h2>
+
+            {% if contact_form.errors %}
+            <div id="form-error">
+            <p>{% trans "При заполении формы возникли следующие ошибки" %}:</p>
+            <ul>
+                {% for field in contact_form %}
+                    {% if field.errors %}
+                    <li>{{ field.label }} - {{ field.errors|striptags }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+
+            <form action="" method="post">{% csrf_token %}
+            <input type="hidden" value="1" name="send_contact">
+                <div class="item_form_row first">
+                    <label style="width:100px;">{% trans "Имя, Фамилия" %}:</label>
+                    {{ contact_form.first_name }}
+                    {{ contact_form.last_name }} <span style="color:red">*</span>
+                </div>
+                <div class="item_form_row">
+                    <label style="width:105px;">{% trans "Телефон" %}:</label>
+                    {{ contact_form.phone }}
+                </div>
+                <div class="item_form_row">
+                    <label style="width:105px;" >E-Mail:</label>
+                    {{ contact_form.email }}<span style="color:red">*</span>
+                </div>
+                <div class="item_form_row">
+                    <label style="width:105px;" >{% trans "Ваше сообщение" %}:</label>
+                    {{ contact_form.message }}<span style="color:red">*</span>
+                </div>
+                <div class="button" style="margin-right:20px;">
+                    <input type="submit" class="rc5" value="{% trans "Отправить"|capfirst %}">
+                </div>
+            </form>
+        </div>
+
+    </div><!-- item END -->
+
+</div>
+{% endblock %}

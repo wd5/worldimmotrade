@@ -1,0 +1,2676 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-11 19:27+0300\n"
+"PO-Revision-Date: 2012-08-11 19:34+0300\n"
+"Last-Translator: andrew <firstrow@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.0\n"
+
+#: annoing/openImmo.py:70
+msgid "Укажите название города"
+msgstr "Geben Sie einen Ortsnamen"
+
+#: annoing/openImmo.py:111
+msgid "Укажите название региона"
+msgstr "Geben Sie den Namen der Region"
+
+#: apps/banners/models.py:8
+#: apps/estates/models.py:205
+#: apps/pages/models.py:9
+#: apps/pages/models.py:24
+#: apps/tarifs/models.py:10
+#: apps/world/models.py:8
+#: apps/world/models.py:25
+#: apps/world/models.py:38
+#: templates/pages/pricing.html:107
+#: templates/tarifs/index.html:54
+msgid "Название"
+msgstr "Titel"
+
+#: apps/banners/models.py:9
+msgid "Позиция"
+msgstr "Position"
+
+#: apps/banners/models.py:10
+msgid "Код"
+msgstr "Chiffre"
+
+#: apps/banners/models.py:16
+msgid "Баннер"
+msgstr "Banner"
+
+#: apps/banners/models.py:17
+msgid "Баннеры"
+msgstr "Banner"
+
+#: apps/estates/admin.py:43
+#: apps/estates/forms.py:35
+msgid "Название [ru]"
+msgstr "Titel (ru)"
+
+#: apps/estates/admin.py:44
+#: apps/estates/forms.py:36
+msgid "Название [en]"
+msgstr "Titel (en)"
+
+#: apps/estates/admin.py:45
+#: apps/estates/forms.py:37
+msgid "Название [de]"
+msgstr "Titel (de)"
+
+#: apps/estates/admin.py:46
+#: apps/estates/forms.py:38
+#: apps/estates/forms.py:80
+#: apps/estates/models.py:23
+msgid "Кухня"
+msgstr "Küche"
+
+#: apps/estates/admin.py:47
+#: apps/estates/forms.py:39
+#: apps/estates/forms.py:81
+#: apps/estates/forms.py:147
+#: apps/estates/forms.py:205
+#: apps/estates/models.py:34
+msgid "Комфорт"
+msgstr "Komfort"
+
+#: apps/estates/admin.py:90
+#: templates/estates/cart.html:40
+msgid "Опубликовать"
+msgstr "Veröffentlichen"
+
+#: apps/estates/admin.py:95
+#: templates/estates/list.html:22
+msgid "Снять публикацию"
+msgstr "Anzeige löschen"
+
+#: apps/estates/choices.py:6
+msgid "Встроенная кухня"
+msgstr "Einbauküche"
+
+#: apps/estates/choices.py:7
+msgid "Кухонная ниша"
+msgstr "Kochnische"
+
+#: apps/estates/choices.py:8
+msgid "Кухня-столовая"
+msgstr "Wohnküche"
+
+#: apps/estates/choices.py:9
+msgid "Кухня-остров"
+msgstr "Kochinsel"
+
+#: apps/estates/choices.py:10
+msgid "Открытая кухня"
+msgstr "Offene Küche"
+
+#: apps/estates/choices.py:14
+msgid "Лифт"
+msgstr "Aufzug"
+
+#: apps/estates/choices.py:15
+msgid "Сад/пользование садом"
+msgstr "Garten/Gartenmitbenutzung"
+
+#: apps/estates/choices.py:16
+msgid "Зимний сад"
+msgstr "Wintergarten"
+
+#: apps/estates/choices.py:17
+msgid "Балкон/Терраса"
+msgstr "Balkon/Terrasse"
+
+#: apps/estates/choices.py:18
+msgid "Кондиционер"
+msgstr "Klimaanlage"
+
+#: apps/estates/choices.py:19
+msgid "Камин"
+msgstr "Kamin"
+
+#: apps/estates/choices.py:20
+msgid "Сауна"
+msgstr "Sauna"
+
+#: apps/estates/choices.py:24
+msgid "Продажа"
+msgstr "Verkauf"
+
+#: apps/estates/choices.py:25
+#: templates/left_sidebar_search.html:75
+#: templates/start_page.html:111
+msgid "Аренда"
+msgstr "Miete"
+
+#: apps/estates/choices.py:26
+msgid "Субаренда"
+msgstr "Untermiete"
+
+#: apps/estates/choices.py:30
+#: apps/estates/choices.py:59
+#: apps/estates/choices.py:89
+#: templates/start_page.html:123
+msgid "Дом"
+msgstr "Haus"
+
+#: apps/estates/choices.py:31
+#: apps/estates/choices.py:60
+msgid "--Вилла/коттедж"
+msgstr "--Villa/Landhaus"
+
+#: apps/estates/choices.py:32
+#: apps/estates/choices.py:61
+msgid "--Дом на одного хозяина"
+msgstr "--Einfamilienhaus"
+
+#: apps/estates/choices.py:33
+#: apps/estates/choices.py:62
+msgid "--Дом на двух хозяев"
+msgstr "--Zwei-Familien-Haus"
+
+#: apps/estates/choices.py:34
+#: apps/estates/choices.py:63
+msgid "--Замок/особняк"
+msgstr "--Schloss/Villa"
+
+#: apps/estates/choices.py:35
+#: apps/estates/choices.py:64
+msgid "--Умный дом"
+msgstr "--Intelligentes Wohnen"
+
+#: apps/estates/choices.py:36
+#: apps/estates/choices.py:65
+#: apps/estates/choices.py:90
+#: templates/start_page.html:118
+msgid "Квартира"
+msgstr "Wohnung"
+
+#: apps/estates/choices.py:37
+#: apps/estates/choices.py:91
+msgid "Комната"
+msgstr "Zimmer"
+
+#: apps/estates/choices.py:38
+#: apps/estates/choices.py:67
+#: apps/estates/choices.py:92
+msgid "Подселение в квартире"
+msgstr "WG-geeignet"
+
+#: apps/estates/choices.py:39
+#: apps/estates/choices.py:93
+msgid "--Подселение из 2 комнат"
+msgstr "--2-Zimmer-Wohnung (WG-geeignet)"
+
+#: apps/estates/choices.py:40
+#: apps/estates/choices.py:94
+msgid "--Подселение из 3 комнат"
+msgstr "--3-Zimmer-Wohnung (WG-geeignet)"
+
+#: apps/estates/choices.py:41
+#: apps/estates/choices.py:95
+msgid "--Подселение из 4 комнат"
+msgstr "--4-Zimmer-Wohnung (WG-geeignet)"
+
+#: apps/estates/choices.py:42
+#: apps/estates/choices.py:96
+msgid "--Подселение из 5 и более комнат"
+msgstr "--WG-geeignete Wohnung (5 oder mehr Zimmer)"
+
+#: apps/estates/choices.py:43
+#: apps/estates/choices.py:72
+#: templates/start_page.html:119
+msgid "Элитная"
+msgstr "Luxusimmobilie"
+
+#: apps/estates/choices.py:44
+#: apps/estates/choices.py:73
+#: templates/start_page.html:124
+msgid "Коммерческая"
+msgstr "Gewerbeimmobilie"
+
+#: apps/estates/choices.py:45
+#: apps/estates/choices.py:74
+msgid "--Офис"
+msgstr "--Büro"
+
+#: apps/estates/choices.py:46
+#: apps/estates/choices.py:75
+msgid "--Магазин"
+msgstr "--Laden"
+
+#: apps/estates/choices.py:47
+#: apps/estates/choices.py:76
+msgid "--Кафе/ресторан"
+msgstr "--Cafe/Restaurant"
+
+#: apps/estates/choices.py:48
+#: apps/estates/choices.py:77
+msgid "--Гостиница"
+msgstr "--Hotel"
+
+#: apps/estates/choices.py:49
+#: apps/estates/choices.py:78
+msgid "--Доходный дом"
+msgstr "--Anlageimmobilie"
+
+#: apps/estates/choices.py:50
+#: apps/estates/choices.py:79
+msgid "--Склад"
+msgstr "--Lager"
+
+#: apps/estates/choices.py:51
+#: apps/estates/choices.py:80
+msgid "--Производство"
+msgstr "--Werkstatt"
+
+#: apps/estates/choices.py:52
+#: apps/estates/choices.py:81
+msgid "--Прочее"
+msgstr "--Sonstiges"
+
+#: apps/estates/choices.py:53
+#: apps/estates/choices.py:82
+msgid "Участок"
+msgstr "Grundstück"
+
+#: apps/estates/choices.py:54
+#: apps/estates/choices.py:83
+msgid "Жилье для отдыха"
+msgstr "Ferienimmobilie"
+
+#: apps/estates/choices.py:55
+#: apps/estates/choices.py:84
+#: apps/estates/choices.py:129
+#: apps/estates/choices.py:140
+#: apps/estates/choices.py:158
+#: apps/estates/choices.py:167
+#: apps/estates/choices.py:182
+#: apps/estates/choices.py:205
+msgid "Прочее"
+msgstr "Sonstiges"
+
+#: apps/estates/choices.py:100
+msgid "Мужчине"
+msgstr "an einen Mann"
+
+#: apps/estates/choices.py:101
+msgid "Женщине"
+msgstr "an eine Frau"
+
+#: apps/estates/choices.py:102
+#: apps/estates/forms.py:127
+#: apps/estates/forms.py:192
+msgid "Аренда для курящего"
+msgstr "Raucherwohnung"
+
+#: apps/estates/choices.py:103
+#: apps/estates/forms.py:128
+#: apps/estates/forms.py:193
+msgid "Аренда для некурящего"
+msgstr "Nichtraucherwohnung"
+
+#: apps/estates/choices.py:107
+msgid "В городе"
+msgstr "in der Stadt"
+
+#: apps/estates/choices.py:108
+msgid "В пригороде"
+msgstr "im Vorort"
+
+#: apps/estates/choices.py:109
+msgid "В деревне"
+msgstr "auf dem Land"
+
+#: apps/estates/choices.py:110
+msgid "В горах"
+msgstr "in den Bergen"
+
+#: apps/estates/choices.py:111
+msgid "В лесу"
+msgstr "im Wald"
+
+#: apps/estates/choices.py:112
+msgid "На побережье"
+msgstr "am Meer"
+
+#: apps/estates/choices.py:116
+msgid "Полуподвальный этаж"
+msgstr "Souterrain"
+
+#: apps/estates/choices.py:117
+msgid "Мансардный этаж"
+msgstr "Dachgeschoss"
+
+#: apps/estates/choices.py:118
+msgid "Пентхаус"
+msgstr "Penthouse"
+
+#: apps/estates/choices.py:122
+msgid "Газовое отопление"
+msgstr "Gasheizung"
+
+#: apps/estates/choices.py:123
+msgid "Центральное отопление"
+msgstr "Zentralheizung"
+
+#: apps/estates/choices.py:124
+msgid "Масляное(дизельное) отопление"
+msgstr "Ölheizung"
+
+#: apps/estates/choices.py:125
+msgid "Электрическое отопление"
+msgstr "Elektroheizung"
+
+#: apps/estates/choices.py:126
+msgid "Подогрев пола"
+msgstr "Fussbodenheizung"
+
+#: apps/estates/choices.py:127
+msgid "Солнечные батареи"
+msgstr "Solarzellen"
+
+#: apps/estates/choices.py:128
+msgid "Дровяное отопление"
+msgstr "Holzheizung"
+
+#: apps/estates/choices.py:133
+msgid "Пол - плитка"
+msgstr "Fliesenboden"
+
+#: apps/estates/choices.py:134
+msgid "Пол - ламинат"
+msgstr "Laminatboden"
+
+#: apps/estates/choices.py:135
+msgid "Пол - линолеум"
+msgstr "PVC"
+
+#: apps/estates/choices.py:136
+msgid "Пол - паркет"
+msgstr "Parkettboden"
+
+#: apps/estates/choices.py:137
+msgid "Ковровое покрытие"
+msgstr "Teppichboden"
+
+#: apps/estates/choices.py:138
+msgid "Деревянный пол"
+msgstr "Holzboden"
+
+#: apps/estates/choices.py:139
+msgid "Мраморный пол"
+msgstr "Marmorboden"
+
+#: apps/estates/choices.py:144
+msgid "Ванная с ванной"
+msgstr "Bad mit Wanne"
+
+#: apps/estates/choices.py:145
+msgid "Ванная с душевой кабиной"
+msgstr "Bad mit Dusche"
+
+#: apps/estates/choices.py:146
+msgid "Ванная с туалетом"
+msgstr "Bad mit WC"
+
+#: apps/estates/choices.py:147
+msgid "Ванная с окном"
+msgstr "Tageslichtbad"
+
+#: apps/estates/choices.py:151
+msgid "Кладовая"
+msgstr "Abstellraum"
+
+#: apps/estates/choices.py:152
+msgid "Гардеробная"
+msgstr "Ankleideraum"
+
+#: apps/estates/choices.py:153
+msgid "Гостевой туалет"
+msgstr "Gäste-WC"
+
+#: apps/estates/choices.py:154
+msgid "Помещение для велосипедов"
+msgstr "Fahrradkeller"
+
+#: apps/estates/choices.py:155
+msgid "Прачечная/сушилка"
+msgstr "Waschküche/Trockenraum"
+
+#: apps/estates/choices.py:156
+msgid "Подвал"
+msgstr "Keller"
+
+#: apps/estates/choices.py:157
+msgid "Винный погреб"
+msgstr "Weinkeller"
+
+#: apps/estates/choices.py:162
+msgid "Сигнализация"
+msgstr "Alarmanlage"
+
+#: apps/estates/choices.py:163
+msgid "Видеонаблюдение"
+msgstr "Videoüberwachung"
+
+#: apps/estates/choices.py:164
+msgid "Экстренный вызов помощи"
+msgstr "Notruf"
+
+#: apps/estates/choices.py:165
+msgid "Охранник"
+msgstr "Security"
+
+#: apps/estates/choices.py:166
+msgid "Датчики дыма"
+msgstr "Rauchmelder"
+
+#: apps/estates/choices.py:171
+msgid "Полная меблировка"
+msgstr "voll möbliert"
+
+#: apps/estates/choices.py:172
+msgid "Частичная меблировка"
+msgstr "teilmöbliert"
+
+#: apps/estates/choices.py:173
+msgid "Без мебели"
+msgstr "unmöbliert"
+
+#: apps/estates/choices.py:177
+msgid "Стиральная машина"
+msgstr "Waschmaschine"
+
+#: apps/estates/choices.py:178
+msgid "Холодильник"
+msgstr "Kühlschrank"
+
+#: apps/estates/choices.py:179
+msgid "Плита"
+msgstr "Herd"
+
+#: apps/estates/choices.py:180
+msgid "Микроволновая печь"
+msgstr "Mikrowelle"
+
+#: apps/estates/choices.py:181
+msgid "Пылесос"
+msgstr "Staubsauger"
+
+#: apps/estates/choices.py:186
+msgid "Звукоизоляция"
+msgstr "Lärmschutzverglasung"
+
+#: apps/estates/choices.py:187
+msgid "Защита от солнца"
+msgstr "Sonnenschutzverglasung"
+
+#: apps/estates/choices.py:188
+msgid "Теплоизоляция"
+msgstr "Wärmeschutzverglasung"
+
+#: apps/estates/choices.py:189
+msgid "Бронированное стекло"
+msgstr "Panzerverglasung"
+
+#: apps/estates/choices.py:193
+msgid "Алюминиевые рамы"
+msgstr "Alurahmen"
+
+#: apps/estates/choices.py:194
+msgid "Деревянные рамы"
+msgstr "Holzrahmen"
+
+#: apps/estates/choices.py:195
+msgid "Пластиковые рамы"
+msgstr "Kunststoffrahmen"
+
+#: apps/estates/choices.py:199
+msgid "С видом на море"
+msgstr "mit Meeresblick"
+
+#: apps/estates/choices.py:200
+msgid "С видом на горы"
+msgstr "mit Aussicht auf die Berge"
+
+#: apps/estates/choices.py:201
+msgid "С видом на лес"
+msgstr "mit Waldblick"
+
+#: apps/estates/choices.py:202
+msgid "С видом на озеро"
+msgstr "mit Seeblick"
+
+#: apps/estates/choices.py:203
+msgid "С видом на сад"
+msgstr "mit Gartenaussicht"
+
+#: apps/estates/choices.py:204
+msgid "С видом на Старый город"
+msgstr "mit Aussicht auf das Altstadtpanorama"
+
+#: apps/estates/choices.py:209
+msgid "Строящийся объект"
+msgstr "das Objekt befindet sich im Bau"
+
+#: apps/estates/choices.py:210
+msgid "Новый объект"
+msgstr "Neubau"
+
+#: apps/estates/choices.py:211
+msgid "После кап. ремонта"
+msgstr "komplett saniert"
+
+#: apps/estates/choices.py:212
+msgid "После модернизации"
+msgstr "nach Modernisierung"
+
+#: apps/estates/choices.py:213
+msgid "После сан.-тех. ремонта"
+msgstr "Sanitäranlagen komplett saniert"
+
+#: apps/estates/choices.py:214
+msgid "Необходим ремонт"
+msgstr "renovierungsbedürftig"
+
+#: apps/estates/forms.py:15
+#: apps/estates/forms.py:33
+#: apps/estates/forms.py:69
+#: apps/estates/forms.py:138
+#: apps/estates/forms.py:196
+#: apps/pages/admin.py:21
+#: apps/users/forms.py:15
+#: apps/world/models.py:20
+msgid "Страна"
+msgstr "Land"
+
+#: apps/estates/forms.py:33
+#: apps/estates/forms.py:138
+#: apps/estates/forms.py:196
+msgid "--Страна--"
+msgstr "--Land--"
+
+#: apps/estates/forms.py:56
+#: apps/estates/forms.py:98
+#: apps/estates/forms.py:139
+#: apps/estates/forms.py:197
+#: apps/users/forms.py:16
+#: apps/world/models.py:32
+msgid "Регион"
+msgstr "Region"
+
+#: apps/estates/forms.py:57
+#: apps/estates/forms.py:99
+#: apps/estates/forms.py:140
+#: apps/estates/forms.py:198
+#: apps/users/forms.py:17
+#: apps/world/models.py:45
+msgid "Город"
+msgstr "Stadt"
+
+#: apps/estates/forms.py:121
+#: apps/estates/forms.py:122
+#: apps/estates/forms.py:186
+#: apps/estates/forms.py:187
+msgid "--Тип Недвижимости--"
+msgstr "--Immobilienart--"
+
+#: apps/estates/forms.py:125
+#: apps/estates/forms.py:190
+msgid "Мужчина"
+msgstr "Mann"
+
+#: apps/estates/forms.py:126
+#: apps/estates/forms.py:191
+msgid "Женщина"
+msgstr "Frau"
+
+#: apps/estates/forms.py:139
+#: apps/estates/forms.py:197
+msgid "--Регион--"
+msgstr "--Region--"
+
+#: apps/estates/forms.py:140
+#: apps/estates/forms.py:198
+msgid "--Город--"
+msgstr "--Stadt--"
+
+#: apps/estates/forms.py:141
+#: apps/estates/forms.py:142
+#: apps/estates/forms.py:199
+#: apps/estates/forms.py:200
+msgid "--Тип недвижимости--"
+msgstr "--Immobilienart--"
+
+#: apps/estates/forms.py:143
+#: apps/estates/forms.py:201
+#: apps/estates/models.py:67
+#: templates/left_sidebar_search.html:221
+msgid "Тип этажа"
+msgstr "Etagentyp"
+
+#: apps/estates/models.py:45
+msgid "Сдается арендатору"
+msgstr "zu vermieten"
+
+#: apps/estates/models.py:56
+#: templates/left_sidebar_search.html:181
+msgid "Расположение"
+msgstr "Lage"
+
+#: apps/estates/models.py:78
+msgid "Тип отопления"
+msgstr "Heizungsart"
+
+#: apps/estates/models.py:89
+msgid "Покрытие пола"
+msgstr "Fussbodenbelag"
+
+#: apps/estates/models.py:100
+msgid "Ванная комната"
+msgstr "Bad"
+
+#: apps/estates/models.py:111
+msgid "Другие помещения"
+msgstr "andere Räume"
+
+#: apps/estates/models.py:122
+msgid "Системы безопасности"
+msgstr "Sicherheitsanlagen"
+
+#: apps/estates/models.py:133
+#: templates/left_sidebar_search.html:191
+msgid "Меблировка"
+msgstr "Möblierung"
+
+#: apps/estates/models.py:144
+msgid "Дополнительное оснащение"
+msgstr "zusätzliche Ausstattung"
+
+#: apps/estates/models.py:156
+msgid "Остекление"
+msgstr "Verglasung"
+
+#: apps/estates/models.py:168
+msgid "Стекольные рамы"
+msgstr "Fensterrahmen"
+
+#: apps/estates/models.py:179
+msgid "Вид из окна"
+msgstr "Aussicht"
+
+#: apps/estates/models.py:191
+msgid "Состояние"
+msgstr "Zustand"
+
+#: apps/estates/models.py:203
+msgid "Показывать на сайте"
+msgstr "auf der Webseite veröffentlichen"
+
+#: apps/estates/models.py:204
+msgid "Показывать на главной странице"
+msgstr "auf der Startseite veröffentlichen"
+
+#: apps/estates/models.py:206
+msgid "Тип сделки"
+msgstr "Vertragsart"
+
+#: apps/estates/models.py:207
+msgid "Также для студентов"
+msgstr "auch für Studenten geeignet"
+
+#: apps/estates/models.py:208
+msgid "Только для студентов"
+msgstr "nur für Studenten"
+
+#: apps/estates/models.py:215
+#: apps/tarifs/models.py:11
+#: templates/left_sidebar_search.html:90
+#: templates/pages/pricing.html:109
+#: templates/tarifs/index.html:56
+msgid "Цена"
+msgstr "Preis"
+
+#: apps/estates/models.py:216
+msgid "Номер объекта клиента"
+msgstr "Anbieter-Objekt-ID"
+
+#: apps/estates/models.py:218
+msgid "Комиссионные"
+msgstr "Provision"
+
+#: apps/estates/models.py:219
+msgid "Дополнительные расходы"
+msgstr "zusätzliche Ausgaben"
+
+#: apps/estates/models.py:220
+msgid "Предоплата/Залог"
+msgstr "Anzahlung"
+
+#: apps/estates/models.py:221
+msgid "Возможен торг"
+msgstr "Verhandlungsbasis"
+
+#: apps/estates/models.py:222
+#: templates/estates/cart.html:61
+#: templates/estates/list.html:43
+#: templates/estates/search_list.html:104
+#: templates/estates/search_list.html:105
+#: templates/estates/widgets.html:40
+msgid "Тип недвижимости"
+msgstr "Immobilienart"
+
+#: apps/estates/models.py:224
+msgid "Доступна с"
+msgstr "verfügbar ab"
+
+#: apps/estates/models.py:225
+msgid "Доступна по"
+msgstr "verfügbar bis"
+
+#: apps/estates/models.py:226
+msgid "Доступна немедленно"
+msgstr "sofort verfügbar"
+
+#: apps/estates/models.py:228
+#: templates/left_sidebar_search.html:100
+msgid "Год постройки"
+msgstr "Baujahr"
+
+#: apps/estates/models.py:230
+#: templates/estates/cart.html:59
+#: templates/estates/list.html:41
+#: templates/estates/search_list.html:102
+msgid "Жилая площадь"
+msgstr "Wohnfläche"
+
+#: apps/estates/models.py:232
+msgid "Общая площадь"
+msgstr "Fläche"
+
+#: apps/estates/models.py:234
+msgid "Площадь земельного участка"
+msgstr "Grundstücksfläche"
+
+#: apps/estates/models.py:236
+#: templates/left_sidebar_search.html:157
+#: templates/estates/cart.html:60
+#: templates/estates/list.html:42
+#: templates/estates/search_list.html:103
+msgid "Количество комнат"
+msgstr "Anzahl der Zimmer"
+
+#: apps/estates/models.py:237
+#: templates/left_sidebar_search.html:166
+msgid "Количество спальных комнат"
+msgstr "Anzahl der Schlafzimmer"
+
+#: apps/estates/models.py:238
+#: templates/left_sidebar_search.html:148
+msgid "Этаж"
+msgstr "Stock"
+
+#: apps/estates/models.py:240
+msgid "Этажей всего"
+msgstr "Anzahl der Stockwerke "
+
+#: apps/estates/models.py:243
+msgid "Количество кухонь"
+msgstr "Anzahl der Küchen"
+
+#: apps/estates/models.py:245
+msgid "Количество ванных комнат"
+msgstr "Anzahl der Bäder"
+
+#: apps/estates/models.py:247
+msgid "Количество отдельных туалетов"
+msgstr "Anzahl der Toiletten"
+
+#: apps/estates/models.py:255
+msgid "Количество гаражей/парковочных мест"
+msgstr "Anzahl der Garagen/Stellplätze"
+
+#: apps/estates/models.py:257
+msgid "Расстояние до вокзала"
+msgstr "Entfernung zum Bahnhof"
+
+#: apps/estates/models.py:258
+msgid "Расстояние до остановки общественного транспорта"
+msgstr "Entfernung zu öffentlichen Verkehrsmitteln"
+
+#: apps/estates/models.py:259
+msgid "Расстояние до аэропорта"
+msgstr "Entfernung zum Flughafen"
+
+#: apps/estates/models.py:260
+msgid "Расстояние до шоссе"
+msgstr "Entfernung zur Autobahn"
+
+#: apps/estates/models.py:261
+msgid "Расстояние до центра города"
+msgstr "Entfernung zur Stadtmitte"
+
+#: apps/estates/models.py:262
+msgid "Расстояние до детского сада/детской площадки"
+msgstr "Entfernung zum Kindergarten/Kinderspielplatz"
+
+#: apps/estates/models.py:263
+msgid "Расстояние до нколы"
+msgstr "Entfernung zur Schule"
+
+#: apps/estates/models.py:264
+msgid "Расстояние до ВУЗа"
+msgstr "Entfernung zur Universität/Hochschule"
+
+#: apps/estates/models.py:265
+msgid "Расстояние до торгового центра"
+msgstr "Entfernung zu Einkaufsmöglichkeiten"
+
+#: apps/estates/models.py:266
+msgid "Расстояние до моря"
+msgstr "Entfernung zum Meer"
+
+#: apps/estates/models.py:267
+msgid "Расстояние до пляжа"
+msgstr "Entfernung zum Strand"
+
+#: apps/estates/models.py:268
+msgid "Расстояние до зоны отдыха"
+msgstr "Entfernung zum Erholungsgebiet"
+
+#: apps/estates/models.py:269
+msgid "Расстояние до парка"
+msgstr "Entfernung zum Park"
+
+#: apps/estates/models.py:270
+msgid "Расстояние до лыжной трассы"
+msgstr "Entfernung zur Skipiste"
+
+#: apps/estates/models.py:271
+msgid "Расстояние до спорткомплекса"
+msgstr "Entfernung zum Sportzentrum"
+
+#: apps/estates/models.py:274
+msgid "Охраняется как исторический памятник"
+msgstr "denkmalgeschützt"
+
+#: apps/estates/models.py:275
+msgid "Возможна перепланировка"
+msgstr "umbaufähig"
+
+#: apps/estates/models.py:277
+#: apps/estates/models.py:412
+#: templates/estates/form.html:79
+msgid "Описание"
+msgstr "Beschreibung"
+
+#: apps/estates/models.py:278
+msgid "Расположение объекта"
+msgstr "Lage"
+
+#: apps/estates/models.py:279
+#: apps/pages/models.py:12
+#: apps/pages/models.py:26
+msgid "Создано"
+msgstr "erstellt"
+
+#: apps/estates/models.py:280
+#: apps/pages/models.py:13
+#: apps/pages/models.py:27
+msgid "Обновлено"
+msgstr "aktualisiert"
+
+#: apps/estates/models.py:281
+#: templates/estates/cart.html:62
+#: templates/estates/list.html:44
+#: templates/estates/search_list.html:106
+msgid "Просмотры"
+msgstr "Views"
+
+#: apps/estates/models.py:343
+#: apps/estates/models.py:344
+msgid "Недвижимость"
+msgstr "Immobilie"
+
+#: apps/estates/models.py:351
+msgid "Закладка"
+msgstr "Lesezeichen"
+
+#: apps/estates/models.py:352
+msgid "Закладки"
+msgstr "Lesezeichen"
+
+#: apps/estates/models.py:365
+msgid "Документ"
+msgstr "Dokument"
+
+#: apps/estates/models.py:366
+#: templates/view.html:143
+#: templates/estates/form.html:152
+#: templates/estates/view.html:197
+msgid "Документы"
+msgstr "Dokumente"
+
+#: apps/estates/models.py:406
+msgid "Изображение"
+msgstr "Bild"
+
+#: apps/estates/models.py:407
+#: templates/estates/form.html:126
+msgid "Изображения"
+msgstr "Bilder"
+
+#: apps/estates/views.py:698
+msgid "Жилье для студентов - WorldImmotrade"
+msgstr "Unterkunft für Studenten - WorldImmotrade"
+
+#: apps/estates/views.py:837
+msgid "Объект успешно создан."
+msgstr "das Objekt wurde erfolgreich erstellt"
+
+#: apps/estates/views.py:904
+msgid "Изменения сохранены"
+msgstr "Änderungen wurden gespeichert"
+
+#: apps/estates/views.py:991
+#: templates/view.html:195
+#: templates/estates/view.html:312
+msgid "Запрос"
+msgstr "Anfrage"
+
+#: apps/estates/views.py:993
+msgid "Сообщение отправлено со страницы:"
+msgstr "die Nachricht wurde von der Webseite gesendet"
+
+#: apps/estates/views.py:1009
+msgid "Сообщение от "
+msgstr "Mitteilung von"
+
+#: apps/estates/views.py:1014
+msgid "Спасибо. Ваше сообщение отправлено."
+msgstr "Danke! Ihre Nachricht wurde erfolgreich versendet!"
+
+#: apps/estates/templatetags/loop_extras.py:151
+msgid "Да"
+msgstr "Ja"
+
+#: apps/estates/templatetags/loop_extras.py:473
+#: apps/estates/templatetags/loop_extras.py:559
+#: templates/estates/search_list.html:105
+msgid "в"
+msgstr "in"
+
+#: apps/estates/templatetags/loop_extras.py:480
+#: templates/estates/widgets.html:15
+#: templates/estates/widgets.html.py:17
+msgid "Недвижимость в"
+msgstr "Real estate in"
+
+#: apps/pages/forms.py:11
+#: apps/users/models.py:30
+msgid "Имя"
+msgstr "Vorname"
+
+#: apps/pages/forms.py:12
+#: apps/users/models.py:31
+msgid "Фамилия"
+msgstr "Nachname"
+
+#: apps/pages/forms.py:13
+#: apps/users/models.py:38
+#: templates/base.html:306
+#: templates/contacts.html:22
+#: templates/contacts.html.py:25
+#: templates/contacts.html:71
+#: templates/contacts.html.py:105
+#: templates/view.html:218
+#: templates/estates/view.html:335
+#: templates/pages/organisation.html:49
+#: templates/pages/organisation.html:52
+#: templates/pages/organisation.html:84
+msgid "Телефон"
+msgstr "Telefonnr."
+
+#: apps/pages/forms.py:15
+msgid "Сообщение"
+msgstr "Nachricht"
+
+#: apps/pages/models.py:10
+msgid "URL"
+msgstr "URL (einheitlicher Quellenanzeiger)"
+
+#: apps/pages/models.py:11
+#: apps/pages/models.py:25
+#: apps/pages/models.py:41
+msgid "Содержание"
+msgstr "Inhalt"
+
+#: apps/pages/models.py:19
+msgid "Статическая страница"
+msgstr "statische Webseite"
+
+#: apps/pages/models.py:20
+msgid "Статические страницы"
+msgstr "statische Webseiten"
+
+#: apps/pages/models.py:33
+msgid "Новость"
+msgstr "Nachricht"
+
+#: apps/pages/models.py:34
+#: templates/left_sidebar.html:83
+#: templates/news_list.html:8
+msgid "Новости"
+msgstr "Nachrichten"
+
+#: apps/pages/models.py:44
+msgid "Информация о стране"
+msgstr "Landinformation"
+
+#: apps/pages/models.py:45
+#: templates/left_sidebar.html:30
+msgid "Информация о странах"
+msgstr "Länder - information"
+
+#: apps/pages/views.py:65
+#: apps/pages/views.py:99
+msgid "Сообщение из страницы контактов"
+msgstr "Nachricht von der Kontaktseite"
+
+#: apps/pages/views.py:79
+msgid "Прозьба перезвонить"
+msgstr "Bitte um Rückruf"
+
+#: apps/tarifs/models.py:12
+msgid "Цена за объявление"
+msgstr "Anzeigenpreis"
+
+#: apps/tarifs/models.py:13
+msgid "Количество объектов"
+msgstr "Anzahl der Objekte"
+
+#: apps/tarifs/models.py:14
+msgid "Количество объектов неограничено"
+msgstr "Unbegrenzte Anzahl von Objekten"
+
+#: apps/tarifs/models.py:21
+#: templates/estates/cart.html:13
+#: templates/pages/pricing.html:43
+msgid "Тариф"
+msgstr "Tarif"
+
+#: apps/tarifs/models.py:22
+#: templates/base.html:213
+#: templates/pages/pricing.html:7
+#: templates/pages/pricing.html.py:38
+msgid "Тарифы"
+msgstr "Tarife"
+
+#: apps/tarifs/models.py:30
+#: templates/tarifs/index.html:85
+#: templates/tarifs/select.html:18
+msgid "Количество месяцев"
+msgstr "Anzahl der Monate"
+
+#: apps/tarifs/models.py:31
+msgid "Оплачен"
+msgstr "bezahlt"
+
+#: apps/tarifs/models.py:32
+msgid "Дата начала"
+msgstr "Startdatum"
+
+#: apps/tarifs/models.py:33
+msgid "Дата окончания"
+msgstr "Enddatum"
+
+#: apps/tarifs/models.py:36
+msgid "Запрос тарифа"
+msgstr "Tarifanfrage"
+
+#: apps/tarifs/models.py:37
+msgid "Запросы тарифов"
+msgstr "Tarifanfragen"
+
+#: apps/tarifs/views.py:89
+msgid "Тариф активирован"
+msgstr "der Tarif ist aktiviert"
+
+#: apps/users/forms.py:36
+#: apps/users/forms.py:105
+#: apps/users/models.py:29
+msgid "Название фирмы"
+msgstr "Firmenname"
+
+#: apps/users/forms.py:37
+#: apps/users/forms.py:59
+#: apps/users/forms.py:106
+#: apps/users/forms.py:119
+#: apps/users/models.py:39
+msgid "Мобильный телефон"
+msgstr "Mobil"
+
+#: apps/users/forms.py:38
+#: apps/users/forms.py:60
+#: apps/users/forms.py:107
+#: apps/users/forms.py:120
+#: apps/users/models.py:40
+msgid "Номер факса"
+msgstr "Fax"
+
+#: apps/users/forms.py:39
+#: apps/users/forms.py:61
+#: apps/users/forms.py:131
+msgid "Пароль"
+msgstr "Passwort"
+
+#: apps/users/forms.py:40
+#: apps/users/forms.py:62
+msgid "Повторите пароль"
+msgstr "Passwort bestätigen"
+
+#: apps/users/forms.py:49
+#: apps/users/forms.py:68
+msgid "Занчения Пароль и Повторите пароль должны совпадать."
+msgstr "Passwortbestätigung muss mit dem Passwort identisch sein"
+
+#: apps/users/forms.py:130
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: apps/users/models.py:12
+msgid "Господин"
+msgstr "Herr"
+
+#: apps/users/models.py:13
+msgid "Госпожа"
+msgstr "Frau"
+
+#: apps/users/models.py:17
+msgid "Только Фамилия и номер телефона"
+msgstr "Name und Telefonnummer werden veröffentlicht"
+
+#: apps/users/models.py:18
+msgid "Только Фамилия и электронный адрес"
+msgstr "Name und E-Mail-Adresse werden veröffentlicht"
+
+#: apps/users/models.py:19
+msgid "Фамилия, номер телефона и E-Mail"
+msgstr "Name, Telefonnummer und E-Mail-Adresse werden veröffentlicht"
+
+#: apps/users/models.py:20
+msgid "Полные контактные данные"
+msgstr "Komplette Daten werden veröffentlicht"
+
+#: apps/users/models.py:21
+msgid "Ничего"
+msgstr "Keine"
+
+#: apps/users/models.py:28
+msgid "Обращение"
+msgstr "Anrede"
+
+#: apps/users/models.py:32
+msgid "Улица, номер дома"
+msgstr "Straße, Hausnr."
+
+#: apps/users/models.py:33
+msgid "Почтовый индекс"
+msgstr "PLZ"
+
+#: apps/users/models.py:37
+msgid "Ваш контактный язык"
+msgstr "Kontaktsprache"
+
+#: apps/users/models.py:41
+#: templates/contacts.html:31
+msgid "Электронный адрес"
+msgstr "E-Mail"
+
+#: apps/users/models.py:42
+msgid "Отображение контактных данных"
+msgstr "Welche Kontaktdaten sollen in Ihrer Anzeige veröffentlicht werden?"
+
+#: apps/users/models.py:43
+msgid "Получать новости и акции"
+msgstr "Ja, ich möchte den Newsletter mit interessanten Sonderaktionen und Informationen erhalten"
+
+#: apps/users/models.py:67
+msgid "Профиль пользователя"
+msgstr "Benutzerprofil"
+
+#: apps/users/models.py:68
+msgid "Профили пользователей"
+msgstr "Benutzerprofile"
+
+#: apps/users/views.py:41
+msgid "Пользователь с таким адресом уже зарегестрирован в системе"
+msgstr "der Benutzer mit diesen Daten ist bereits in unserem System registriert"
+
+#: apps/users/views.py:59
+msgid "worldimmotrade.com"
+msgstr "worldimmotrade.com"
+
+#: apps/users/views.py:88
+msgid "Вас забанили"
+msgstr "Benutzer wurde gesperrt"
+
+#: apps/users/views.py:90
+msgid "Ошибка авторизации. Пользователь не найден."
+msgstr "Die Authentifizierung war nicht erfolgreich, da ein unbekannter Benutzername oder ein ungültiges Passwort verwendet wurde"
+
+#: apps/users/views.py:117
+msgid "Изменения сохранены."
+msgstr "Änderungen wurden gespeichert"
+
+#: apps/world/models.py:9
+msgid "H1"
+msgstr ""
+
+#: apps/world/models.py:11
+msgid "Seo текст"
+msgstr ""
+
+#: apps/world/models.py:12
+msgid "Seo Title"
+msgstr ""
+
+#: apps/world/models.py:13
+#, fuzzy
+msgid "Радительский отменак"
+msgstr "zusätzliche Ausstattung"
+
+#: apps/world/models.py:21
+msgid "Страны"
+msgstr "Länder"
+
+#: apps/world/models.py:33
+msgid "Регионы"
+msgstr "Regionen"
+
+#: apps/world/models.py:46
+#: templates/estates/widgets.html:62
+msgid "Города"
+msgstr "Städte"
+
+#: instructions/DjangoSortedManyToManyForms.py:565
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Please correct the duplicate data for %(field)s."
+
+#: instructions/DjangoSortedManyToManyForms.py:569
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "Please correct the duplicate data for %(field)s, which must be unique."
+
+#: instructions/DjangoSortedManyToManyForms.py:571
+msgid "and"
+msgstr "and"
+
+#: instructions/DjangoSortedManyToManyForms.py:575
+#, python-format
+msgid "Please correct the duplicate data for %(field_name)s which must be unique for the %(lookup)s in %(date_field)s."
+msgstr "Please correct the duplicate data for %(field_name)s which must be unique for the %(lookup)s in %(date_field)s."
+
+#: instructions/DjangoSortedManyToManyForms.py:583
+msgid "Please correct the duplicate values below."
+msgstr "Please correct the duplicate values below."
+
+#: instructions/DjangoSortedManyToManyForms.py:858
+msgid "The inline foreign key did not match the parent instance primary key."
+msgstr "The inline foreign key did not match the parent instance primary key."
+
+#: instructions/DjangoSortedManyToManyForms.py:919
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "Select a valid choice. That choice is not one of the available choices."
+
+#: instructions/DjangoSortedManyToManyForms.py:1008
+msgid "Enter a list of values."
+msgstr "Enter a list of values."
+
+#: instructions/DjangoSortedManyToManyForms.py:1009
+#, python-format
+msgid "Select a valid choice. %s is not one of the available choices."
+msgstr "Select a valid choice. %s is not one of the available choices."
+
+#: instructions/DjangoSortedManyToManyForms.py:1011
+#, python-format
+msgid "\"%s\" is not a valid value for a primary key."
+msgstr "\"%s\" is not a valid value for a primary key."
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:19
+#: sources/django-messages-read-only/build/lib/django_messages/forms.py:20
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:52
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:12
+#: sources/django-messages-read-only/django_messages/admin.py:19
+#: sources/django-messages-read-only/django_messages/forms.py:20
+#: sources/django-messages-read-only/django_messages/models.py:52
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:12
+#: templates/django_messages/outbox.html:8
+#: templates/django_messages/view.html:12
+msgid "Recipient"
+msgstr "Recipient"
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:21
+#: sources/django-messages-read-only/django_messages/admin.py:21
+msgid "group"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:22
+#: sources/django-messages-read-only/django_messages/admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:29
+#: sources/django-messages-read-only/django_messages/admin.py:29
+msgid "All users"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:44
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:88
+#: sources/django-messages-read-only/django_messages/admin.py:44
+#: sources/django-messages-read-only/django_messages/models.py:88
+#, fuzzy
+msgid "Message"
+msgstr "Neu"
+
+#: sources/django-messages-read-only/build/lib/django_messages/admin.py:51
+#: sources/django-messages-read-only/django_messages/admin.py:51
+#, fuzzy
+msgid "Date/time"
+msgstr "Date"
+
+#: sources/django-messages-read-only/build/lib/django_messages/fields.py:53
+#: sources/django-messages-read-only/django_messages/fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/forms.py:21
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:49
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:6
+#: sources/django-messages-read-only/django_messages/forms.py:21
+#: sources/django-messages-read-only/django_messages/models.py:49
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:6
+#: templates/django_messages/inbox.html:8
+#: templates/django_messages/outbox.html:8
+#: templates/django_messages/trash.html:8
+#: templates/django_messages/view.html:6
+msgid "Subject"
+msgstr "Subject"
+
+#: sources/django-messages-read-only/build/lib/django_messages/forms.py:22
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:50
+#: sources/django-messages-read-only/django_messages/forms.py:22
+#: sources/django-messages-read-only/django_messages/models.py:50
+msgid "Body"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:9
+#: sources/django-messages-read-only/django_messages/management.py:9
+#, fuzzy
+msgid "Message Received"
+msgstr "Received"
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:9
+#: sources/django-messages-read-only/django_messages/management.py:9
+msgid "you have received a message"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:10
+#: sources/django-messages-read-only/django_messages/management.py:10
+#, fuzzy
+msgid "Message Sent"
+msgstr "Neu"
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:10
+#: sources/django-messages-read-only/django_messages/management.py:10
+msgid "you have sent a message"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:11
+#: sources/django-messages-read-only/django_messages/management.py:11
+msgid "Message Replied"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:11
+#: sources/django-messages-read-only/django_messages/management.py:11
+msgid "you have replied to a message"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:12
+#: sources/django-messages-read-only/django_messages/management.py:12
+#, fuzzy
+msgid "Reply Received"
+msgstr "Received"
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:12
+#: sources/django-messages-read-only/django_messages/management.py:12
+msgid "you have received a reply to a message"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:13
+#: sources/django-messages-read-only/django_messages/management.py:13
+msgid "Message Deleted"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:13
+#: sources/django-messages-read-only/django_messages/management.py:13
+#, fuzzy
+msgid "you have deleted a message"
+msgstr "Deleted Messages"
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:14
+#: sources/django-messages-read-only/django_messages/management.py:14
+msgid "Message Recovered"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/management.py:14
+#: sources/django-messages-read-only/django_messages/management.py:14
+msgid "you have undeleted a message"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:51
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:8
+#: sources/django-messages-read-only/django_messages/models.py:51
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:8
+#: templates/django_messages/inbox.html:8
+#: templates/django_messages/trash.html:8
+#: templates/django_messages/view.html:8
+msgid "Sender"
+msgstr "Sender"
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:53
+#: sources/django-messages-read-only/django_messages/models.py:53
+#, fuzzy
+msgid "Parent message"
+msgstr "Gesendet"
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:54
+#: sources/django-messages-read-only/django_messages/models.py:54
+msgid "sent at"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:55
+#: sources/django-messages-read-only/django_messages/models.py:55
+msgid "read at"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:56
+#: sources/django-messages-read-only/django_messages/models.py:56
+msgid "replied at"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:57
+#: sources/django-messages-read-only/django_messages/models.py:57
+msgid "Sender deleted at"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:58
+#: sources/django-messages-read-only/django_messages/models.py:58
+#, fuzzy
+msgid "Recipient deleted at"
+msgstr "Recipient"
+
+#: sources/django-messages-read-only/build/lib/django_messages/models.py:89
+#: sources/django-messages-read-only/django_messages/models.py:89
+#, fuzzy
+msgid "Messages"
+msgstr "Gesendet"
+
+#: sources/django-messages-read-only/build/lib/django_messages/utils.py:26
+#: sources/django-messages-read-only/django_messages/utils.py:26
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/utils.py:54
+#: sources/django-messages-read-only/django_messages/utils.py:54
+#, python-format
+msgid "Re%(prefix)s: %(subject)s"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/utils.py:60
+#: sources/django-messages-read-only/django_messages/utils.py:60
+#, fuzzy, python-format
+msgid "New Message: %(subject)s"
+msgstr "Neu"
+
+#: sources/django-messages-read-only/build/lib/django_messages/views.py:78
+#: sources/django-messages-read-only/build/lib/django_messages/views.py:115
+#: sources/django-messages-read-only/django_messages/views.py:78
+#: sources/django-messages-read-only/django_messages/views.py:115
+msgid "Message successfully sent."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/views.py:122
+#: sources/django-messages-read-only/django_messages/views.py:122
+#, python-format
+msgid "Re: %(subject)s"
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/views.py:158
+#: sources/django-messages-read-only/django_messages/views.py:158
+msgid "Message successfully deleted."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/views.py:185
+#: sources/django-messages-read-only/django_messages/views.py:185
+msgid "Message successfully recovered."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/base.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:4
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/new_message.html:10
+#: sources/django-messages-read-only/django_messages/templates/django_messages/base.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:4
+#: sources/django-messages-read-only/django_messages/templates/django_messages/new_message.html:10
+#: templates/right_sidebar.html:25
+#: templates/right_sidebar.html.py:43
+#: templates/django_messages/base.html:14
+#: templates/django_messages/inbox.html:4
+#: templates/django_messages/new_message.html:10
+msgid "Inbox"
+msgstr "Posteingang"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/base.html:9
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:4
+#: sources/django-messages-read-only/django_messages/templates/django_messages/base.html:9
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:4
+#: templates/right_sidebar.html:26
+#: templates/right_sidebar.html.py:44
+#: templates/django_messages/base.html:15
+#: templates/django_messages/outbox.html:4
+msgid "Sent Messages"
+msgstr "Gesendet"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/base.html:10
+#: sources/django-messages-read-only/django_messages/templates/django_messages/base.html:10
+#: templates/right_sidebar.html:27
+#: templates/right_sidebar.html.py:45
+#: templates/django_messages/base.html:16
+msgid "New Message"
+msgstr "Neu"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/base.html:11
+#: sources/django-messages-read-only/django_messages/templates/django_messages/base.html:11
+#: templates/right_sidebar.html:28
+#: templates/right_sidebar.html.py:46
+#: templates/django_messages/base.html:17
+msgid "Trash"
+msgstr "Papierkorb"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/compose.html:4
+#: sources/django-messages-read-only/django_messages/templates/django_messages/compose.html:4
+#: templates/django_messages/compose.html:5
+msgid "Compose Message"
+msgstr "Compose Message"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/compose.html:10
+#: sources/django-messages-read-only/django_messages/templates/django_messages/compose.html:10
+#: templates/django_messages/compose.html:15
+msgid "Send"
+msgstr "Send"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:8
+#: templates/django_messages/inbox.html:8
+msgid "Received"
+msgstr "Received"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:8
+#: templates/django_messages/inbox.html:8
+#: templates/django_messages/outbox.html:8
+#: templates/django_messages/trash.html:8
+msgid "Action"
+msgstr "Action"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:20
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:17
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:17
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:11
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:20
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:17
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:17
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:11
+#: templates/django_messages/inbox.html:20
+#: templates/django_messages/outbox.html:17
+#: templates/django_messages/trash.html:17
+#: templates/django_messages/view.html:11
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:21
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:18
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:21
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:18
+#: templates/django_messages/inbox.html:21
+#: templates/django_messages/outbox.html:18
+msgid "delete"
+msgstr "delete"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/inbox.html:27
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:24
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:24
+#: sources/django-messages-read-only/django_messages/templates/django_messages/inbox.html:27
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:24
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:24
+#: templates/django_messages/inbox.html:27
+#: templates/django_messages/outbox.html:24
+#: templates/django_messages/trash.html:24
+msgid "No messages."
+msgstr "No messages."
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/new_message.html:1
+#: sources/django-messages-read-only/django_messages/templates/django_messages/new_message.html:1
+#: templates/django_messages/new_message.html:1
+#, python-format
+msgid ""
+"Hello %(recipient)s,\n"
+"\n"
+"you received a private message from %(sender)s with\n"
+"the following contents:"
+msgstr ""
+"Hello %(recipient)s,\n"
+"you received a private message from %(sender)s with the following contents:"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/new_message.html:9
+#: sources/django-messages-read-only/django_messages/templates/django_messages/new_message.html:9
+#: templates/django_messages/new_message.html:9
+#, python-format
+msgid "Sent from %(site_url)s"
+msgstr "Sent from %(site_url)s"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/new_message.html:11
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:18
+#: sources/django-messages-read-only/django_messages/templates/django_messages/new_message.html:11
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:18
+#: templates/django_messages/new_message.html:11
+#: templates/django_messages/view.html:22
+msgid "Reply"
+msgstr "Reply"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/outbox.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/outbox.html:8
+#: templates/django_messages/outbox.html:8
+msgid "Sent"
+msgstr "Sent"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:4
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:4
+#: templates/django_messages/trash.html:4
+msgid "Deleted Messages"
+msgstr "Deleted Messages"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:10
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:8
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:10
+#: templates/django_messages/trash.html:8
+#: templates/django_messages/view.html:10
+msgid "Date"
+msgstr "Date"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:18
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:18
+#: templates/django_messages/trash.html:18
+msgid "undelete"
+msgstr "undelete"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/trash.html:27
+#: sources/django-messages-read-only/django_messages/templates/django_messages/trash.html:27
+#: templates/django_messages/trash.html:27
+msgid "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage."
+msgstr "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage."
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:4
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:4
+#: templates/django_messages/view.html:4
+msgid "View Message"
+msgstr "View Message"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/django_messages/view.html:20
+#: sources/django-messages-read-only/django_messages/templates/django_messages/view.html:20
+#: templates/django_messages/view.html:24
+msgid "Delete"
+msgstr "Delete"
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_deleted/notice.html:1
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_deleted/notice.html:1
+#, python-format
+msgid "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_received/notice.html:2
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_received/notice.html:2
+#, python-format
+msgid "You have received the message <a href=\"%(message_url)s\">%(message)s</a> from %(message_sender)s."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_recovered/notice.html:1
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_recovered/notice.html:1
+#, python-format
+msgid "You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_replied/notice.html:2
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_replied/notice.html:2
+#, python-format
+msgid "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> from %(message_recipient)s."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_reply_received/notice.html:2
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_reply_received/notice.html:2
+#, python-format
+msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+msgstr ""
+
+#: sources/django-messages-read-only/build/lib/django_messages/templates/notification/messages_sent/notice.html:2
+#: sources/django-messages-read-only/django_messages/templates/notification/messages_sent/notice.html:2
+#, python-format
+msgid "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %(message_recipient)s."
+msgstr ""
+
+#: sources/django-modeltranslation-0.2/build/lib/modeltranslation/tests.py:21
+#: sources/django-modeltranslation-0.2/modeltranslation/tests.py:21
+msgid "title"
+msgstr ""
+
+#: templates/base.html:187
+msgid "Валюта"
+msgstr "Währung"
+
+#: templates/base.html:207
+msgid "Главная"
+msgstr "Home"
+
+#: templates/base.html:210
+msgid "О нас"
+msgstr "Über uns"
+
+#: templates/base.html:212
+msgid "Наши услуги"
+msgstr "Unsere Leistungen"
+
+#: templates/base.html:214
+#: templates/users/companies.html:15
+msgid "Компании"
+msgstr "Immobilienmakler"
+
+#: templates/base.html:215
+#: templates/contacts.html:7
+#: templates/contacts.html.py:15
+#: templates/pages/organisation.html:72
+msgid "Контакты"
+msgstr "Kontakt"
+
+#: templates/base.html:259
+msgid "Реклама на сайте"
+msgstr "Werbung"
+
+#: templates/base.html:260
+msgid "Вакансии"
+msgstr "Jobs"
+
+#: templates/base.html:261
+msgid "Условия"
+msgstr "AGB"
+
+#: templates/base.html:262
+msgid "Импрессум"
+msgstr "Impressum"
+
+#: templates/base.html:274
+msgid "Партнеры"
+msgstr "Partners"
+
+#: templates/base.html:281
+#: templates/base.html.py:285
+#: templates/base.html:289
+msgid "недвижимость за рубежом"
+msgstr "Auslandsimmobilien"
+
+#: templates/base.html:305
+msgid "Германия"
+msgstr "Deutschland"
+
+#: templates/contacts.html:18
+msgid "Адрес: Goerdelerstr. 10, 65197 Wiesbaden, Германия"
+msgstr "Goerdelerstr. 10, 65197 Wiesbaden"
+
+#: templates/contacts.html:28
+#: templates/pages/organisation.html:55
+msgid "Факс"
+msgstr "Fax"
+
+#: templates/contacts.html:63
+#: templates/contacts.html.py:97
+#: templates/view.html:213
+#: templates/estates/view.html:330
+#: templates/pages/organisation.html:76
+msgid "Имя, Фамилия"
+msgstr "Vorname, Name"
+
+#: templates/contacts.html:81
+#: templates/contacts.html.py:115
+#: templates/view.html:226
+#: templates/estates/view.html:343
+#: templates/pages/organisation.html:94
+msgid "Ваше сообщение"
+msgstr "Ihre Mitteilung"
+
+#: templates/contacts.html:86
+#: templates/contacts.html.py:120
+#: templates/view.html:230
+#: templates/estates/view.html:347
+#: templates/pages/organisation.html:99
+msgid "Отправить"
+msgstr "senden"
+
+#: templates/contacts.html:92
+msgid "Мы вам перезвоним"
+msgstr "Wir rufen Sie zurück"
+
+#: templates/contacts.html:110
+msgid "Удобное для Вас время"
+msgstr "die für Sie passende Zeit"
+
+#: templates/form.html:35
+msgid "Отправить сообщение"
+msgstr "Nachricht senden"
+
+#: templates/left_sidebar.html:29
+msgid "Поиск по странам"
+msgstr "Suche nach Ländern"
+
+#: templates/left_sidebar.html:66
+msgid "Валютный <span>калькулятор</span>"
+msgstr "<span>Währungs- rechner</span>"
+
+#: templates/left_sidebar.html:83
+msgid "Все"
+msgstr "Alle"
+
+#: templates/left_sidebar_search.html:35
+msgid "<span>Поиск</span> жилья для студентов"
+msgstr "<span>Studentenwohnungen suchen</span>"
+
+#: templates/left_sidebar_search.html:38
+msgid "Расширенный <span>поиск</span>"
+msgstr "Erweiterte <span>Suche</span>"
+
+#: templates/left_sidebar_search.html:74
+#: templates/start_page.html:108
+msgid "Покупка"
+msgstr "Kauf"
+
+#: templates/left_sidebar_search.html:80
+msgid "Срок аренды"
+msgstr "Mietdauer"
+
+#: templates/left_sidebar_search.html:84
+#: templates/left_sidebar_search.html:94
+#: templates/left_sidebar_search.html:104
+#: templates/left_sidebar_search.html:114
+#: templates/left_sidebar_search.html:124
+#: templates/left_sidebar_search.html:152
+#: templates/left_sidebar_search.html:161
+#: templates/left_sidebar_search.html:170
+msgid "до"
+msgstr "bis"
+
+#: templates/left_sidebar_search.html:110
+#: templates/estates/bookmarks.html:41
+#: templates/estates/cart.html:58
+#: templates/estates/list.html:40
+#: templates/estates/search_list.html:101
+msgid "Площадь"
+msgstr "Fläche"
+
+#: templates/left_sidebar_search.html:120
+msgid "Доступна"
+msgstr "verfügbar"
+
+#: templates/left_sidebar_search.html:134
+msgid "Арендатор"
+msgstr "Mieter"
+
+#: templates/left_sidebar_search.html:145
+msgid "Дополнительно"
+msgstr "zusätzlich"
+
+#: templates/left_sidebar_search.html:201
+msgid "Оснащение"
+msgstr "Ausstattung"
+
+#: templates/left_sidebar_search.html:211
+msgid "Удобства"
+msgstr "Benutzerfreundlichkeit"
+
+#: templates/left_sidebar_search.html:228
+#: templates/start_page.html:140
+#: templates/start_page.html.py:141
+msgid "Найти"
+msgstr "Finden"
+
+#: templates/news_page.html:15
+msgid "Назад"
+msgstr "zurück"
+
+#: templates/right_sidebar.html:7
+#: templates/right_sidebar.html.py:36
+#: templates/right_sidebar.html:55
+msgid "Личный <span>кабинет</span>"
+msgstr " <span>Anmelden</span>"
+
+#: templates/right_sidebar.html:8
+#: templates/right_sidebar.html.py:37
+msgid "Приветствуем"
+msgstr "Willkommen!"
+
+#: templates/right_sidebar.html:10
+#: templates/right_sidebar.html.py:39
+msgid "Изменить мои данные"
+msgstr "Meine Daten ändern"
+
+#: templates/right_sidebar.html:11
+#: templates/tarifs/index.html:35
+msgid "Мои Тарифы"
+msgstr "Meine Tarife"
+
+#: templates/right_sidebar.html:12
+#: templates/estates/list.html:10
+msgid "Мои объекты"
+msgstr "Meine Objekte"
+
+#: templates/right_sidebar.html:13
+msgid "Добавить объект"
+msgstr "Objekt hinzufügen"
+
+#: templates/right_sidebar.html:14
+#: templates/estates/openimmo.html:8
+msgid "Open Immo"
+msgstr ""
+
+#: templates/right_sidebar.html:16
+#: templates/estates/cart.html:10
+msgid "Моя корзина"
+msgstr "Mein Warenkorb"
+
+#: templates/right_sidebar.html:18
+#: templates/right_sidebar.html.py:42
+msgid "Сообщения"
+msgstr "Nachrichten"
+
+#: templates/right_sidebar.html:32
+#: templates/right_sidebar.html.py:49
+msgid "Выход"
+msgstr "ausloggen"
+
+#: templates/right_sidebar.html:40
+#: templates/estates/bookmarks.html:10
+msgid "Мои закладки"
+msgstr "Meine Lesezeichen"
+
+#: templates/right_sidebar.html:60
+msgid "Забыли пароль?"
+msgstr "Haben Sie Ihr Passwort vergessen?"
+
+#: templates/right_sidebar.html:61
+msgid "Зарегистрироваться"
+msgstr "Registrieren"
+
+#: templates/right_sidebar.html:64
+#: templates/users/login.html:35
+msgid "Войти"
+msgstr "Einloggen"
+
+#: templates/right_sidebar.html:73
+msgid "Предложение <span>недвижимости</span>"
+msgstr "<span>Immobilien</span>"
+
+#: templates/right_sidebar.html:74
+#: templates/right_sidebar.html.py:76
+msgid "Предложить"
+msgstr "Anbieten"
+
+#: templates/right_sidebar.html:103
+msgid "Принимаем к<br /><span>оплате</span>"
+msgstr "<span>Zahlungsarten</span>"
+
+#: templates/start_page.html:22
+#: templates/start_page.html.py:26
+#: templates/start_page.html:39
+msgid "Мин. цена"
+msgstr "Niedrigster Preis"
+
+#: templates/start_page.html:29
+#: templates/start_page.html.py:33
+#: templates/start_page.html:43
+msgid "Макс. цена"
+msgstr "Höchster Preis"
+
+#: templates/start_page.html:91
+msgid "Поиск"
+msgstr "Suche"
+
+#: templates/start_page.html:149
+msgid "Акции и предложения"
+msgstr "Aktionen"
+
+#: templates/start_page.html:199
+msgid "Топ <span>предложения</span>"
+msgstr "Top-<span>Angebote</span>"
+
+#: templates/start_page.html:213
+msgid "Нет описания."
+msgstr "Keine Beschreibung verfügbar"
+
+#: templates/view.html:68
+#: templates/estates/view.html:122
+msgid "Убрать из закладок"
+msgstr "Lesezeichen löschen"
+
+#: templates/view.html:70
+#: templates/estates/view.html:124
+msgid "Запомнить объект"
+msgstr "Objekt speichern"
+
+#: templates/view.html:156
+#: templates/estates/view.html:212
+msgid "Распечатать"
+msgstr "ausdrucken"
+
+#: templates/view.html:164
+#: templates/estates/view.html:278
+#: templates/estates/view_print.html:92
+msgid "Описание объекта"
+msgstr "Objektbeschreibung"
+
+#: templates/view.html:169
+#: templates/estates/bookmarks.html:37
+#: templates/estates/view.html:283
+#: templates/estates/view_print.html:97
+msgid "Нет описания"
+msgstr "Keine Beschreibung verfügbar"
+
+#: templates/view.html:175
+#: templates/estates/view.html:289
+msgid "Местоположение"
+msgstr "Lage"
+
+#: templates/view.html:182
+#: templates/estates/view.html:296
+msgid "Определение координат может быть не точным."
+msgstr "Angaben zur Lage können abweichen"
+
+#: templates/view.html:186
+#: templates/estates/view.html:300
+#: templates/estates/view_print.html:103
+msgid "Контактное лицо"
+msgstr "Kontaktperson"
+
+#: templates/view.html:199
+#: templates/estates/form.html:65
+#: templates/estates/view.html:316
+msgid "При заполении формы возникли следующие ошибки"
+msgstr "Beim Ausfüllen des Formulars sind folgende Fehler aufgetreten"
+
+#: templates/admin/delete_selected_confirmation.html:9
+msgid "Home"
+msgstr "Startseite"
+
+#: templates/admin/delete_selected_confirmation.html:12
+msgid "Delete multiple objects"
+msgstr "Delete multiple objects"
+
+#: templates/admin/delete_selected_confirmation.html:21
+#, python-format
+msgid "Deleting the %(object_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr "Deleting the %(object_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+
+#: templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid "Are you sure you want to delete the selected %(object_name)s objects? All of the following objects and their related items will be deleted:"
+msgstr "Are you sure you want to delete the selected %(object_name)s objects? All of the following objects and their related items will be deleted:"
+
+#: templates/admin/delete_selected_confirmation.html:47
+msgid "Cancel"
+msgstr "Cancel"
+
+#: templates/admin/delete_selected_confirmation.html:48
+msgid "Yes, I'm sure"
+msgstr "Yes, I'm sure"
+
+#: templates/emails/contact.html:5
+#, python-format
+msgid ""
+"\n"
+"        Сообщение из страницы контактов:<br/><br/>\n"
+"        Имя:%(first_name)s %(last_name)s<br/>\n"
+"        Телефон: %(phone)s<br/>\n"
+"        E-Mail: %(email)s<br/>\n"
+"        Сообщение:%(message)s<br/>\n"
+"    "
+msgstr "Nachricht von der Kontaktseite:<br/><br/>  Name:%(first_name)s %(last_name)s<br/>Telefon:%(phone)s<br/>E-Mail: %(email)s<br/> Nachricht:%(message)s<br/>"
+
+#: templates/emails/notify.html:2
+#, python-format
+msgid ""
+"\n"
+"Здравствуйте %(recipient)s,\n"
+"\n"
+"Вы получили сообщение от пользователя %(sender)s,\n"
+"следующего содержания:\n"
+msgstr "Willkommen %(recipient)s! Sie haben Post vom Benutzer %(sender)s folgenden Inhalts"
+
+#: templates/emails/notify.html:11
+#, python-format
+msgid ""
+"\n"
+"Со страницы:\n"
+"%(current_page)s\n"
+msgstr "Von der Seite: %(current_page)s "
+
+#: templates/emails/recall.html:5
+#, python-format
+msgid ""
+"\n"
+"        Сообщение из страницы контактов. Прозьба перезвонить:<br/><br/>\n"
+"        Имя:%(first_name)s %(last_name)s<br/>\n"
+"        Телефон: %(phone)s<br/>\n"
+"        Время: %(time)s<br/>\n"
+"        Сообщение:%(theme)s<br/>\n"
+"    "
+msgstr "Nachricht von der Kontaktseite. Bitte um Rückruf:<br/><br/> Name:%(first_name)s %(last_name)s<br/> Telefon: %(phone)s<br/> Zeit: %(time)s<br/> Nachricht:%(theme)s<br/>"
+
+#: templates/emails/reg.html:1
+#, python-format
+msgid ""
+"%(mr_or_mrs)s,\n"
+"<p>\n"
+"Добро пожаловать в мир WORLD IMMOTRADE!\n"
+"</p>\n"
+"<p>\n"
+"Благодарим за регистрацию на нашем сайте. Теперь Вы можете пользоваться<br/>\n"
+"всеми преимуществами зарегистрированных пользователей:\n"
+"</p>\n"
+"<p>\n"
+"- пользоваться Вашим личным кабинетом;<br/>\n"
+"- сохранять в личном кабинете понравившиеся объекты недвижимости;<br/>\n"
+"- сохранять критерии поиска;<br/>\n"
+"- получать уведомления о добавленных в систему объектах, соответствующих Вашим критериям поиска;<br/>\n"
+"- удобно связываться с зарегистрированными агентами по недвижимости;<br/>\n"
+"- получать новостную рассылку нашего сайта.<br/>\n"
+"</p>\n"
+"<p>\n"
+"Данные входа в Ваш личный кабинет:<br/><br/>\n"
+"\n"
+"<p>\n"
+"Логин: %(email)s<br/>\n"
+"Пароль: (не отображается)\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Будем рады ответить на Ваши вопросы и принять Ваши предложения по адресу<br/>\n"
+"info@worldimmotrade.com<br/>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"С вопросами по работе сайта обращайтесь по адресу<br/>\n"
+"support@worldimmotrade.com<br/>\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Желаем Вам успехов!\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Команда WORLD IMMOTRADE\n"
+"</p>\n"
+msgstr "%(mr_or_mrs)s, <p>Herzlich Willkommen im Universum von WORLD IMMOTRADE!</p> <p>Vielen Dank, dass Sie sich bei uns registriert haben. Sie können von nun an alle Vorteile für registrierte Benutzer genießen:</p><p>-eigene Benutzerecke einrichten;<br/>-eigene Favoritenliste mit Wunschimmobilien erstellen;<br/>-Suchkriterien speichern;<br/>-Benachrichtigungen über neue Objekte,die Ihren Suchkriterien entsprechen, erhalten;<br/>-bequeme Kontaktaufnahme mit registrierten Immobilienmaklern;<br/>-Newsletter erhalten.<br/> </p> <p>Log-In-Daten für Ihre persönliche Benutzerecke:<br/><br/> <p>Log-In: %(email)s<br/>Kennwort(wird nicht angezeigt)</p> <p>Wir freuen uns auf Ihre Fragen und Vorschläge an folgende <br/><br/>Adresse:info@worldimmotrade.com.<br/>Fragen über die Nutzung unserer Webseite richten Sie bitte an support@worldimmotrade.com.<br/>Viel Erfolg wünscht Ihnen das Team von WORLD IMMOTRADE!</p>"
+
+#: templates/estates/bookmarks.html:80
+#: templates/estates/cart.html:97
+#: templates/estates/list.html:61
+msgid "Список недвижимости пустой"
+msgstr "Immobilienliste ist leer"
+
+#: templates/estates/cart.html:41
+#: templates/estates/form.html:134
+#: templates/estates/form.html.py:160
+msgid "Удалить"
+msgstr "löschen"
+
+#: templates/estates/form.html:78
+msgid "Объект"
+msgstr "Objekt"
+
+#: templates/estates/form.html:80
+msgid "Доп. данные"
+msgstr "zusätzliche Angaben"
+
+#: templates/estates/form.html:111
+#: templates/estates/form.html.py:115
+#: templates/estates/form.html:119
+#: templates/estates/form.html.py:178
+msgid "Далее"
+msgstr "weiter"
+
+#: templates/estates/form.html:125
+msgid "Файлы"
+msgstr "Daten"
+
+#: templates/estates/form.html:146
+msgid "Добавить еще одно изображение"
+msgstr "Bild hinzufügen"
+
+#: templates/estates/form.html:148
+#: templates/estates/form.html.py:174
+msgid "Разрешенный формат"
+msgstr " Erlaubte Formate sind "
+
+#: templates/estates/form.html:149
+msgid "Размер фото не должен превышать"
+msgstr "Die Bilder dürfen die Größe von 2  MB nicht überschreiten"
+
+#: templates/estates/form.html:172
+msgid "Добавить еще один документ"
+msgstr "Dokument hinzufügen"
+
+#: templates/estates/form.html:175
+msgid "Размер файла не должен превышать"
+msgstr "Die Dateigröße soll   nicht überschreiten"
+
+#: templates/estates/form.html:180
+#: templates/estates/form.html.py:181
+#: templates/users/edit_profile.html:56
+msgid "Сохранить"
+msgstr "speichern"
+
+#: templates/estates/list.html:23
+msgid "Просмотр"
+msgstr "Überprüfung"
+
+#: templates/estates/openimmo.html:16
+msgid "Файл успешно загружен"
+msgstr "Datei hochgeladen."
+
+#: templates/estates/openimmo.html:32
+msgid "Загрузить"
+msgstr "laden"
+
+#: templates/estates/search_list.html:41
+msgid "Поиск жилья для студентов"
+msgstr "Wohnungssuche für Studenten"
+
+#: templates/estates/search_list.html:43
+msgid ""
+"\n"
+"        В данном разделе отображаются исключительно те предложения,\n"
+"        которые предназначены для поселения студентов. Для более точного\n"
+"        поиска воспользуйтесь формой слева.\n"
+"        "
+msgstr "Hier werden ausschließlich Wohnungsangebote an Studenten dargestellt. Für genauere Suche verwenden Sie bitte das Formular links. "
+
+#: templates/estates/search_list.html:52
+msgid "Найдено недвижимости"
+msgstr "Immobilien gefunden"
+
+#: templates/estates/search_list.html:54
+msgid "Сортировать по"
+msgstr "sortieren nach"
+
+#: templates/estates/search_list.html:57
+msgid "Стране"
+msgstr "Land"
+
+#: templates/estates/search_list.html:58
+msgid "Городу"
+msgstr "Stadt"
+
+#: templates/estates/search_list.html:59
+msgid "Цене по возрастанию"
+msgstr "Preis (Niedrigster zuerst)"
+
+#: templates/estates/search_list.html:60
+msgid "Цене по убыванию"
+msgstr "Preis (Höchster zuerst)"
+
+#: templates/estates/search_list.html:61
+msgid "Площади по возрастанию"
+msgstr "Gesamtfläche (Kleinste zuerst)"
+
+#: templates/estates/search_list.html:62
+msgid "Площади по убыванию"
+msgstr "Gesamtfläche (Größte zuerst)"
+
+#: templates/estates/search_list.html:64
+msgid "От новых к старым"
+msgstr "Aktualität (neueste zuerst)"
+
+#: templates/estates/search_list.html:65
+msgid "От старых к новым"
+msgstr "Aktualität (älteste zuerst)"
+
+#: templates/estates/search_list.html:69
+#: templates/estates/search_list.html:70
+#: templates/estates/search_list.html:71
+msgid "Искать по номеру ID"
+msgstr "ID-Nummer"
+
+#: templates/estates/search_list.html:132
+msgid "По вашему запросу недвижимости не найдено"
+msgstr "Leider wurden keine Ergebnisse für Ihre Suchkriterien gefunden"
+
+#: templates/estates/search_list.html:134
+msgid "Проверьте правильность ввода данных"
+msgstr "Bitte überprüfen Sie Eingabefelder auf korrekte Dateneingabe"
+
+#: templates/estates/view.html:90
+msgid "Недвижимость за рубежом"
+msgstr "Immobilien im Ausland"
+
+#: templates/estates/widgets.html:9
+msgid "Другие страны"
+msgstr "Andere Länder"
+
+#: templates/pages/organisation.html:14
+msgid "Мы все организуем за Вас"
+msgstr "Wir organisieren alles für Sie"
+
+#: templates/pages/pricing.html:48
+msgid "Колич."
+msgstr "Anzahl Anzeigen"
+
+#: templates/pages/pricing.html:55
+msgid "Мес."
+msgstr "Anzahl Monate"
+
+#: templates/pages/pricing.html:58
+#: templates/pages/pricing.html.py:60
+msgid "Цена пакета"
+msgstr "Paketpreis"
+
+#: templates/pages/pricing.html:59
+#: templates/pages/pricing.html.py:61
+msgid "Цена 1 объяв."
+msgstr "Einzelpreis"
+
+#: templates/pages/pricing.html:90
+msgid ""
+"\n"
+"В данный момент на нашем интернет-портале действует один тариф <b>«Present»</b>,\n"
+"который является <span style=\"color: red;\">БЕСПЛАТНЫМ</span>. В случае  введения платных тарифов Вам будет сообщено минимум за месяц (30 дней) до начала действия новых тарифов.\n"
+"За это время Вы сможете решить – продолжить сотрудничество с нами или ограничиться только бесплатным ознакомительным сервисом.\n"
+"Желаем Вам успешного бизнеса и много клиентов! <span style=\"color: red;\">Ваш worldimmotrade.ru</span>\n"
+msgstr "Derzeit ist auf unserem Internet-Portal www.worldimmotrade.de gilt nur ein Tarif <b>«Present»</b> und er ist <span style=\"color: red;\">KOSTENLOS</span>! Das heißt, Sie inserieren unbegrenzte Zahl Ihrer Objekte und das für Sie GRATIS! Worldimmotrade.de behält sich vor zahlungspflichtige Tarife anzubieten. Dies geschieht mit einer Ankündigungszeit von mindestens einem Monat/30 Tage vor deren Einführung. Sie entscheiden dann, ob Sie weiter mit uns zusammen arbeiten möchten oder unsere Kooperation begrenzte sich nur auf den kostenfreien Service für das Kennenlernen. Wir wünschen Ihnen erfolgreiche Geschäfte  und viele neue Kunden! Ihr worldimmotrade.de Team"
+
+#: templates/pages/pricing.html:99
+msgid "Более 200 объявлений в месяц – мы Вам сделаем индивидуальное предложение!"
+msgstr "Sie möchten mehr als 200 Objekte inserieren? Sprechen Sie uns an! Wir erstellen Ihnen gerne ein persönliches Angebot."
+
+#: templates/pages/pricing.html:100
+msgid "*цена одного объявления за 1 месяц при полном использовании пакета"
+msgstr "* Entspricht einem Preis pro Anzeige pro Monat bei vollständiger Nutzung Ihres Kontingents - für Kunden in Deutschland zzgl. der gesetzlichen Mehrwertsteuer von 19% (nicht einzeln buchbar)."
+
+#: templates/pages/pricing.html:108
+#: templates/tarifs/index.html:55
+msgid "Количество обьектов"
+msgstr "Anzahl der Objekte"
+
+#: templates/pages/pricing.html:110
+#: templates/tarifs/index.html:57
+msgid "Цена за обьект"
+msgstr "Preis des Objekts"
+
+#: templates/registration/password_reset_done.html:9
+msgid "Пароль успешно восстановлен"
+msgstr "Passwort erfolgreich wiederhergestellt"
+
+#: templates/registration/password_reset_done.html:10
+msgid "Мы отправили Вам инструкции по восстановлению пароля. Проверьте свою почту"
+msgstr "Wir haben Ihnen eine E-Mail gesendet, mit der Sie Ihr Passwort wiederherstellen können.Bitte prüfen Sie Ihren Posteingang."
+
+#: templates/registration/password_reset_form.html:9
+msgid "Забыли свой пароль? Укажите свой e-mail адрес ниже, и мы отправим Вам инструкции по восстановлению."
+msgstr "Haben Sie Ihr Passwort vergessen?Geben Sie einfach Ihre E-Mail-Adresse ein und wir senden Ihnen eine E-Mail,mit der Sie Ihr Passwort wiederherstellen können"
+
+#: templates/registration/password_reset_form.html:17
+msgid "Восстановить"
+msgstr "wiederherstellen"
+
+#: templates/tarifs/confirmed.html:8
+msgid "Оплата"
+msgstr "Zahlung"
+
+#: templates/tarifs/confirmed.html:10
+#: templates/tarifs/select.html:20
+msgid "К оплате"
+msgstr "Zur Kasse"
+
+#: templates/tarifs/confirmed.html:23
+msgid "Оплатить с помощью PayPal"
+msgstr "zahlen mit PayPal"
+
+#: templates/tarifs/confirmed.html:43
+msgid "Оплатить с помощью Монета.ру"
+msgstr "zahlen mit Moneta.ru"
+
+#: templates/tarifs/confirmed.html:63
+msgid "Оплатить с помощью TeleCash"
+msgstr "zahlen mit TeleCash"
+
+#: templates/tarifs/index.html:38
+msgid "Текущий тариф"
+msgstr "laufender Tarif"
+
+#: templates/tarifs/index.html:42
+msgid "Оплачен до"
+msgstr "bezahlt bis"
+
+#: templates/tarifs/index.html:44
+msgid "Ожидает оплаты"
+msgstr "Warten auf Zahlung"
+
+#: templates/tarifs/index.html:45
+msgid "Отменить"
+msgstr "abbrechen"
+
+#: templates/tarifs/index.html:70
+#, fuzzy
+msgid "неограничено"
+msgstr "Zusammenarbeit"
+
+#: templates/tarifs/index.html:87
+msgid "месяц"
+msgstr "Monat"
+
+#: templates/tarifs/index.html:88
+#: templates/tarifs/index.html.py:89
+#: templates/tarifs/index.html:90
+msgid "месяца"
+msgstr "Monat"
+
+#: templates/tarifs/index.html:91
+#: templates/tarifs/index.html.py:92
+#: templates/tarifs/index.html:93
+#: templates/tarifs/index.html.py:94
+#: templates/tarifs/index.html:95
+#: templates/tarifs/index.html.py:96
+#: templates/tarifs/index.html:97
+#: templates/tarifs/index.html.py:98
+msgid "месяцев"
+msgstr "Monate"
+
+#: templates/tarifs/index.html:103
+msgid "Заказать"
+msgstr "bestellen"
+
+#: templates/tarifs/select.html:8
+msgid "Выбор тарифа"
+msgstr "Tarifwahl"
+
+#: templates/tarifs/select.html:16
+msgid "Вы выбрали тариф"
+msgstr "Sie haben einen Tarif ausgewählt"
+
+#: templates/tarifs/select.html:26
+msgid "Подтвердить и перейти к оплате"
+msgstr "bestätigen und zur Kasse"
+
+#: templates/users/choose_type.html:12
+msgid "Вы предлагаете недвижимость"
+msgstr "Sie bieten Immobilien an"
+
+#: templates/users/choose_type.html:13
+msgid "Вы ищите недвижимость"
+msgstr "Sie suchen Immobilien"
+
+#: templates/users/edit_profile.html:34
+msgid "Мои данные"
+msgstr "meine Daten"
+
+#: templates/users/login.html:13
+msgid "Авторизация"
+msgstr "Authentifizierung"
+
+#: templates/users/register.html:25
+msgid "После регистрации на сайте Вам предоставляется возможность"
+msgstr "Nach erfolgreicher Registrierung bekommen Sie die Möglichkeit"
+
+#: templates/users/register.html:29
+msgid ""
+"\n"
+"            <li>пользоваться своим личным кабинетом, добавлять, редактировать и удалять свои объявления</li>\n"
+"            <li>выбирать платежный тариф и совершать оплату</li>\n"
+"            <li>получать уведомления о пользователях, интересующихся Вашей недвижимостью</li>\n"
+"            <li>удобно связываться с зарегистрированными покупателями</li>\n"
+"            <li>получать уведомления от пользователей, интересующихся Вашей недвижимостью</li>\n"
+"            "
+msgstr "<li>persönliche Benutzerecke verwenden, ergänzen, bearbeiten und löschen von eigenen Anzeigen</li> <li>den passenden Zahlungstarif wählen und Zahlung vornehmen</li> <li>Nachrichten über andere Benutzer erhalten, die an Ihren Immobilien interessiert sind</li> <li>bequeme Kontaktaufnahme mit registrierten Käufern</li> <li>Nachrichten von Interessenten erhalten</li>"
+
+#: templates/users/register.html:40
+msgid ""
+"\n"
+"            <li>пользоваться Вашим личным кабинетом</li>\n"
+"            <li>сохранять в личном кабинете понравившиеся объекты недвижимости</li>\n"
+"            <li>сохранять критерии поиска</li>\n"
+"            <li>получать уведомления о добавленных в систему объектах, соответствующих Вашим критериям поиска</li>\n"
+"            <li>удобно связываться с зарегистрированными агентами по недвижимости</li>\n"
+"            <li>получать новостную рассылку нашего сайта</li>\n"
+"            "
+msgstr ""
+
+#: templates/users/register.html:56
+#: templates/users/register.html.py:78
+msgid "Регистрация"
+msgstr "Registrierung"
+
+#: templates/users/thanks.html:8
+msgid "Спасибо за регистрацию на нашем сайте."
+msgstr "Danke für die Registrierung auf unserer Webseite"
+
+#~ msgid "Тарифы при заключении контракта на 6 месяцев"
+#~ msgstr "Tarif für gewerbliche Anbieter bei einer Laufzeit von 6 Monaten."
+
+#~ msgid "*цена одного объявления при полном использовании пакета"
+#~ msgstr ""
+#~ "* Entspricht einem Preis pro Anzeige pro Monat bei vollständiger Nutzung "
+#~ "Ihres Kontingents - für Kunden in Deutschland zzgl. der gesetzlichen "
+#~ "Mehrwertsteuer von 19% (nicht einzeln buchbar)."
+
+#~ msgid "Недвижимость в %s купить/продать - WorldImmotrade"
+#~ msgstr "Immobilien in %s kaufen/verkaufen - WorldImmotrade"
+
+#~ msgid "Сотрудничество"
+#~ msgstr "Zusammenarbeit"
+
+#~ msgid "Недвижимость в %s"
+#~ msgstr "Immobilien in"
+
+#~ msgid ""
+#~ "\n"
+#~ "        <p>Добро пожаловать на <a href=\"/\">www.worldimmotrade.com</a> – "
+#~ "портал зарубежной недвижимости!</p>\n"
+#~ "        <h3 align=\"center\">Наш портал - это</h3>\n"
+#~ "\n"
+#~ "        <p><br/>\n"
+#~ "        поиск, предложение, покупка, продажа, аренда недвижимости "
+#~ "различных видов не только у себя в стране,\n"
+#~ "        но и по всему миру, в том числе студенческого жилья.\n"
+#~ "        </p>\n"
+#~ "\n"
+#~ "        <h4>Кроме того, на <a href=\"/\">www.worldimmotrade.com</a>:</"
+#~ "h4>\n"
+#~ "        <br/>\n"
+#~ "        <ul>\n"
+#~ "        <li>Удобная система поиска по странам и типам недвижимости</li>\n"
+#~ "        <li>Большой спектр критериев описания объекта</li>\n"
+#~ "        <li>3 языка, а значит – охват аудитории более 1,5 миллиарда "
+#~ "человек</li>\n"
+#~ "        <li>Клиенты и предложения по всему земному шару</li>\n"
+#~ "        <li>Информация о странах и процедурах приобретения недвижимости в "
+#~ "них</li>\n"
+#~ "        <li>Валютный калькулятор</li>\n"
+#~ "        <li>Удобные системы оплаты</li>\n"
+#~ "        <li>Ввозможность заказать на нашем портале полет, отель, машину в "
+#~ "аренду для того,\n"
+#~ "            чтобы сыкономить время и в кратчайшие сроки увидеть выбранный "
+#~ "вами объект</li>\n"
+#~ "        <li>Акции и скидки</li>\n"
+#~ "        <li>Возможность размещения рекламы и партнерская программа</li>\n"
+#~ "        <li>А также качество, профессионализм, надежность</li>\n"
+#~ "\n"
+#~ "        Успех клиентов для нас – главное, поэтому мы сделаем все, чтобы о "
+#~ "вашем объекте узнали во всем мире!\n"
+#~ "        "
+#~ msgstr ""
+#~ "<p>Herzlich Willkommen auf <a href=\"/\">www.worldimmotrade.com</a>, dem "
+#~ "Internetportal für Auslandsimmobilien!</p> <h3 align=\"center\">Bei uns "
+#~ "können Sie </h3><p><br/> verschiedene Arten von Immobilien (unter anderem "
+#~ "Studentenwohnungen) im In- und Ausland suchen, anbieten, kaufen, "
+#~ "verkaufen und mieten.</p> Komfortable Suche nach Ländern und "
+#~ "Immobilienarten/Ausführliche Objektbeschreibungen/Dreisprachige "
+#~ "Seitengestaltung,d.h. mehr als 1,5 Mrd. potentielle Nutzer/Kunden und "
+#~ "Immobilienangebote aus aller Welt/Immobilienbezogene Länderinformationen/"
+#~ "Währungsrechner/Bequeme Zahlungsarten/Zeitsparende Flug-, Auto- und "
+#~ "Hotelreservierungen,damit Sie Ihre Wunschimmobilie so schnell wie möglich "
+#~ "besichtigen können/Sonderaktionen und Ermäßigungen/Ihre Werbung auf "
+#~ "unserer Webseite und Partnerprogramme/Qualität,Professionalität und "
+#~ "Zuverlässigkeit/Erfolg unserer Kunden ist das Wichtigste für uns, deshalb "
+#~ "tun wir alles dafür, dass Ihr Objekt weltbekannt wird"
+
+#~ msgid "Добавить объект в формате XML"
+#~ msgstr "Objekt im XML-Format hinzufügen"

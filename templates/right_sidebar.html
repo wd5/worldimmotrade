@@ -1,0 +1,106 @@
+{% load i18n %}
+
+<div class="sidebare">
+    {% if user.is_authenticated %}
+        {% if user.profile.is_saler %}
+            <div class="login rc5 sidebare_box">
+                <div class="box_title">{% trans "Личный <span>кабинет</span>" %}</div>
+                <p>{% trans "Приветствуем" %}, {{ user.profile.first_name }} {{ user.profile.last_name }}</p>
+                <ul>
+                    <li><a href="/user/edit_profile/">{% trans "Изменить мои данные"|capfirst %}</a></li>
+                    <li><a href="{% url choose-tarif %}">{% trans "Мои Тарифы"|capfirst %}</a></li>
+                    <li><a href="/estates/list/">{% trans "Мои объекты"|capfirst %} ({{ total_objects }})</a></li>
+                    <li><a href="/estates/create/">{% trans "Добавить объект"|capfirst %}</a></li>
+                    <li><a href="/estates/openimmo/">{% trans "Open Immo"|capfirst %}</a></li>
+                    {# <li><a href="#">{% trans "Добавить объект в формате XML"|capfirst %}</a></li> #}
+                    <li class="my_cart_link"><a href="{% url cart %}">{% trans "Моя корзина"|capfirst %} ({{ total_objects_in_cart }})</a></li>
+
+                    <li><b>{% trans "Сообщения" %}</b></li>
+                    {% if active_lang == 'ru' %}
+                        <li><a href="{% url messages_inbox %} ">Входящие ({{ messages_inbox_count }})</a></li>
+                        <li><a href="{% url messages_outbox %} ">Отправленные</a></li>
+                        <li><a href="{% url messages_compose %} ">Новое письмо</a></li>
+                        <li><a href="{% url messages_trash %} ">Корзина</a></li>
+                    {% else %}
+                        <li><a href="{% url messages_inbox %} ">{% trans "Inbox" %} ({{ messages_inbox_count }})</a></li>
+                        <li><a href="{% url messages_outbox %} ">{% trans "Sent Messages" %}</a></li>
+                        <li><a href="{% url messages_compose %} ">{% trans "New Message" %}</a></li>
+                        <li><a href="{% url messages_trash %} ">{% trans "Trash" %}</a></li>
+                    {% endif %}
+
+                </ul>
+                <div class="button"><a href="/user/logout/" class="rc5">{% trans "Выход"|capfirst %}</a></div>
+            </div><!-- login END -->
+        {% else %}
+            <div class="login rc5 sidebare_box">
+                <div class="box_title">{% trans "Личный <span>кабинет</span>"%}</div>
+                <p>{% trans "Приветствуем"%}, {{ user.profile.first_name }} {{ user.profile.last_name }}</p>
+                <ul>
+                    <li><a href="/user/edit_profile/">{% trans "Изменить мои данные"%}</a></li>
+                    <li><a href="/estates/bookmarks/">{% trans "Мои закладки"%}</a></li>
+
+                    <li><b>{% trans "Сообщения"%}</b></li>
+                    <li><a href="{% url messages_inbox %} ">{% trans "Inbox" %} ({{ messages_inbox_count }})</a></li>
+                    <li><a href="{% url messages_outbox %} ">{% trans "Sent Messages" %}</a></li>
+                    <li><a href="{% url messages_compose %} ">{% trans "New Message" %}</a></li>
+                    <li><a href="{% url messages_trash %} ">{% trans "Trash" %}</a></li>
+                </ul>
+                <div class="button">
+                    <a href="/user/logout/" class="rc5">{% trans "Выход"|capfirst %}</a>
+                </div>
+            </div><!-- login END -->
+        {% endif %}
+    {% else %}
+        <div class="login rc5 sidebare_box">
+            <div class="box_title">{% trans "Личный <span>кабинет</span>"%}</div>
+            <form action="/user/login/" method="post">{% csrf_token %}
+                <input type="text" name="email" class="textbox" value="E-Mail" onclick="if ($(this).val() == 'E-Mail'){ $(this).val(''); }"/>
+                <input type="password" name="password" class="textbox" value="Пароль" onclick="if ($(this).val() == 'password'){ $(this).val(''); }"/>
+
+            <p><a href="/password/reset/">{% trans "Забыли пароль?"%}</a></p>
+            <p><a href="{% url users-register-select %}">{% trans "Зарегистрироваться"%}</a></p>
+            <div style="">
+                <div class="button" style="float:left;width:140px;margin-left:4px;">
+                    <input type="submit" class="rc5" value="{% trans "Войти"|capfirst %}">
+                </div>
+            </div>
+            </form>
+        </div><!-- login END -->
+    {% endif %}
+
+    {% if not request.user.is_authenticated %}
+    <div class="propositions rc5 margin_top_box">
+        <div class="box_title">{% trans "Предложение <span>недвижимости</span>"%}</div>
+        <!--<div class="button"  style="width:130px;" ><a href="/user/register/" class="rc5">{% trans "Предложить"%}</a></div> -->
+		<div class="button" style="width:140px;margin-left:10px;">
+            <input type="submit" onclick="window.location = '/user/register/'" class="rc5" value="{% trans "Предложить"|capfirst %}" style="width:140px;">
+		</div>
+     </div><!-- propositions END -->
+    {% endif %}
+
+     <!-- Banners -->
+     <div class="bunner_right margin_top_box">
+         {% autoescape off %}
+            {{ banners.top1_160x600 }}
+         {% endautoescape %}
+     </div>
+     <div class="margin_top_box">
+         {% autoescape off %}
+            {{ banners.top2_160x600 }}
+         {% endautoescape %}
+     </div>
+     <div class="bunner_right margin_top_box">
+         {% autoescape off %}
+            {{ banners.bottom1_125x125 }}
+         {% endautoescape %}
+     </div>
+     <div class="bunner_right margin_top_box">
+         {% autoescape off %}
+            {{ banners.bottom2_125x125 }}
+         {% endautoescape %}
+     </div>
+
+     <div class="margin_top_box"><div class="box_title">{% trans "Принимаем к<br /><span>оплате</span>"%}</div></div>
+     <div class="margin_top_box"><img src="{{MEDIA_URL}}/design/images/payment_methods.png" /></div>
+
+</div>

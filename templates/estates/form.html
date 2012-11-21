@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+$(function(){
+    $( "#id_aviable_from" ).datepicker({ dateFormat: 'dd.mm.yy' });
+    $( "#id_aviable_to" ).datepicker({ dateFormat: 'dd.mm.yy' });
+
+    $("#apartment_form").relatedSelects({
+        onChangeLoad: '/world/load_json/',
+        defaultOptionText: '-------',
+        selects: {
+            'country':		{ loadingMessage:'Loading Regions...' },
+            'region':		{ loadingMessage:'Loading Cities...' },
+            'city':		{}
+        }
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+
+    <script type="text/javascript">
+        $(function() {
+            var html_ul = '';
+            $("#tabs_div .tab").each(function(index,el){
+                html_ul = html_ul + '<li><a class="rc5" href="#'+$(el).attr('id')+'">'+$(el).attr('title')+'</a></li>';
+            });
+
+            html_ul = '<ul class="tabs" id="tabsNavigation">'+html_ul+'</ul>';
+
+            $("#tabs_div").prepend(html_ul).tabs();
+            // Delete jquery ui classes.
+            $("#tabs_div").removeClass('ui-widget ui-widget-content ui-corner-all');
+            $('#tabsNavigation').removeClass().addClass('tabs');
+            $('#tabsNavigation li').removeClass().first().addClass('ui-state-selected ui-state-active');
+        });
+
+        function clonePhotoFile()
+        {
+            $("#photo_files").append('<input type="file" name="photo"><br/>');
+        }
+        function cloneDocumentFile()
+        {
+            $("#document_files").append('<input type="file" name="document"><br/>');
+        }
+    </script>
+
+    <form action="" method="post" id="apartment_form" enctype="multipart/form-data">{% csrf_token %}
+        <div class="add_item"> 
+            <!------- TAB BOX BEGIN ------>
+            <div class="tab_box" id="tabs_div">
+
+            <div class="tabs_info rc5">
+        
+                <div class="form_box">
+
+                    {% if form.errors %}
+                    <div id="form-error">
+                    <p>{% trans "При заполении формы возникли следующие ошибки"|capfirst %}:</p>
+                    <ul>
+                        {% for field in form %}
+                            {% if field.errors %}
+                            <li>{{ field.label }} - {{ field.errors|striptags }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    </div>
+                    {% endif %}
+
+                    {% for field in form %}
+
+                    {% if field.name == 'name_ru' %} <div id="tab1" title="{% trans "Объект"|capfirst %}" class="tab"> {% endif %}
+                    {% if field.name == 'price' %} <div id="tab2" title="{% trans "Описание"|capfirst %}" class="tab"> {% endif %}
+                    {% if field.name == 'description_ru' %} <div id="tab3" title="{% trans "Доп. данные"|capfirst %}" class="tab"> {% endif %}
+                
+                    <div class="form_row">
+                        <div class="form_text {% if field.field.required%}form_text_required{% endif %}">
+                            <label>{{ field.label_tag }}</label>
+                        </div>
+                        <div class="form_input {% if field.errors %}form_errors{% endif %}">
+                            {{ field }}
+
+                            {%  if field.name|slice:"4" == 'dist' %}
+                                км
+                            {% endif %}
+
+                            {% if field.name == "price" %}
+                                {# m² #}
+                            {% endif %}
+                            {% if field.name == "living_space" %}
+                                m²
+                            {% endif %}
+                            {% if field.name == "total_space" %}
+                                m²
+                            {% endif %}
+                            {% if field.name == "land_space" %}
+                               m²
+                            {% endif %}
+                            {% if field.field.required%}<span style="color:red;"> *</span> {% endif %}
+                        </div>
+                        <div class="form_overflow"></div>
+                    </div>
+
+                    {% if field.name == 'city' %} 
+                        <div class="button"><a href="#" onclick='$("#tabs_div").tabs("select",1);scroll(0,0); return true;' class="rc5">{% trans "Далее"|capfirst %}</a></div>
+                        </div> 
+                    {% endif %}
+                    {% if field.name == 'condition' %} 
+                        <div class="button"><a href="#" onclick='$("#tabs_div").tabs("select",2);scroll(0,0); return true;' class="rc5">{% trans "Далее"|capfirst %}</a></div>
+                        </div> 
+                    {% endif %}
+                    {% if field.name == 'object_location_de' %} 
+                        <div class="button"><a href="#" onclick='$("#tabs_div").tabs("select",3);scroll(0,0); return true;' class="rc5">{% trans "Далее"|capfirst %}</a></div>
+                        </div>                         
+                    {% endif %}
+
+                {% endfor %}
+            
+                <div class="tab" id="tab4" title="{% trans "Файлы"|capfirst %}">
+                    <h4>{% trans "Изображения"|capfirst %}</h4>
+
+                    {% if form.instance.id %}
+                        {% for photo in form.instance.photo_set.all %}
+                           <div style="float:left;width:105;height:110px;margin-bottom:10px;">
+                           <a href="{{ photo.get_image_url }}">
+                               <img src="{{ photo.photo|thumbnail:"100x100" }}" />
+                           </a>
+                           <br/><label><input type="checkbox" name="delete_image" value="{{ photo.id }}" /> {% trans "Удалить"|capfirst %}</label>
+                           </div>
+                        {% endfor %}
+                        <div style="clear:both;"></div>
+                        <br/>
+                    {% endif %}
+
+                    <div id="photo_files">
+                        <input type="file" name="photo"><br/>
+                        <input type="file" name="photo"><br/>
+                        <input type="file" name="photo"><br/>
+                    </div>    
+                    + <a href="#" onclick="clonePhotoFile();">{% trans "Добавить еще одно изображение"|capfirst %}</a>
+                    <div style="padding-top:3px;">
+                        {% trans "Разрешенный формат"|capfirst %}: gif, jpg, png.<br/>
+                        {% trans "Размер фото не должен превышать"|capfirst %} 2мб.
+                    </div>
+                    <br/><br/>
+                    <h4>{% trans "Документы"|capfirst %}</h4>
+
+                    {% if form.instance.id %}
+                        {% for doc in form.instance.document_set.all %}
+                           <div style="float:left;margin-bottom:10px;">
+                           <a href="{{ doc.get_url }}">
+                                <img src="{{ doc.icon_url }}" />
+                           </a>
+                           <br/><label><input type="checkbox" name="delete_doc" value="{{ doc.id }}" /> {% trans "Удалить"|capfirst %}</label>
+                           </div>
+                        {% endfor %}
+                        <div style="clear:both;"></div>
+                        <br/>
+                    {% endif %}
+
+                    <div id="document_files">
+                        <input type="file" name="document"><br/>
+                        <input type="file" name="document"><br/>
+                        <input type="file" name="document"><br/>
+                    </div>
+                    + <a href="#" onclick="cloneDocumentFile();">{% trans "Добавить еще один документ"|capfirst %}</a>
+                    <div style="padding-top:3px;">
+                        {% trans "Разрешенный формат"|capfirst %}: pdf, doc, docx, xls.<br/>
+                        {% trans "Размер файла не должен превышать"|capfirst %} 2мб.
+                    </div>
+
+                    <div class="button"><a href="#" onclick='$("#tabs_div").tabs("select",4);scroll(0,0); return true;' class="rc5">{% trans "Далее"|capfirst %}</a></div>
+                </div>
+                <div class="tab" id="tab5" title="{% trans "Сохранить"|capfirst %}">
+                    <input type="submit" value="{% trans "Сохранить"|capfirst %}" />
+                </div>
+
+                </div><!-- form_box END -->
+                 
+            </div><!-- tabs_info END -->
+        </div>
+        <!------- TAB BOX END ------>
+    </div><!-- add_item END -->
+</form>
+{% endblock %}

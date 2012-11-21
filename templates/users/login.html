@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <form action="/user/login/" method="post">{% csrf_token %}
+        <div class="add_item">
+            <div class="tab_box">
+
+                <ul class="tabs">
+                    <li><a href="#" class="rc5"><h2>{% trans "Авторизация"|capfirst %}</h2></a></li>
+                </ul>
+
+                <div class="tabs_info rc5">
+
+                    {% for field in form %}
+                    <div class="form_row form_left_margin">
+                        <div class="form_text {% if field.field.required%}form_text_required{% endif %}">
+                            <label>{{ field.label_tag }}</label>
+                        </div>
+                        <div class="form_input {% if field.errors %}form_errors{% endif %}">
+                           {{ field.errors }}
+                           {{ field }}
+                        </div>
+                        <div class="form_overflow"></div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="form_row form_left_margin">
+                        <div class="form_text"></div>
+                        <div class="form_input">
+                            <div class="button">
+                                <input type="submit" class="rc5" value="{% trans "Войти"|capfirst %}">
+                              </div>
+                        </div>
+                        <div class="form_overflow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

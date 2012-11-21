@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <div class="box_title">{% trans "Оплата" %}</div>
+    <br/>
+        <span style="font-size:14px;">{% trans "К оплате" %}: <b>{{ sum }}</b></span>
+    <br/>
+    <br/>
+
+    <!-- Begin PayPal -->
+    <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="info@worldimmotrade.com">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="item_name" value="{{ tarif_request.tarif.name }}">
+        <input type="hidden" name="amount" value="{{ sum }}">
+
+        <div class="button" style="margin-left:70px;">
+            <input type="submit" class="rc5" value="{% trans "Оплатить с помощью PayPal"|capfirst %}">
+        </div>
+    </form>
+    <!-- End PayPal -->
+
+    <br/>
+
+    <!-- Begin Moneta.RU -->
+    <form method="post" action="https://www.moneta.ru/assistant.htm">
+        <input type="hidden" name="MNT_ID" value="00000001">
+        <input type="hidden" name="MNT_TRANSACTION_ID" value="FF790ABCD">
+        <input type="hidden" name="MNT_CURRENCY_CODE" value="EUR">
+        <input type="hidden" name="MNT_AMOUNT" value="{{ sum }}">
+        <input type="hidden" name="MNT_TEST_MODE " value="1">
+        <input type="hidden" name="MNT_SUCCESS_URL"
+               value="https://www.magazin.ru/success.htm">
+        <input type="hidden" name="MNT_FAIL_URL"
+              value="https://www.magazin.ru/failure.htm">
+
+        <div class="button" style="margin-left:70px;">
+            <input type="submit" class="rc5" value="{% trans "Оплатить с помощью Монета.ру"|capfirst %}">
+        </div>
+    </form>
+    <!-- End Moneta.RU -->
+
+    <br/>
+
+        <form method="post" action="https://www.ipg-online.com/connect/gateway/processing">
+            <input type="hidden" name="txntype" value="sale">
+            <input type="hidden" name="timezone" value="GMT"/>
+            <input type="hidden" name="storename" value="1292933401"/>
+
+            <input type="hidden" name="txndatetime" value="{{ txndatetime }}"/>
+            <input type="hidden" name="hash" value="{{ hash }}"/>
+
+            <input type="hidden" name="mode" value="fullpay"/>
+            <input type="hidden" name="chargetotal" value="{{ sum }}"/>
+            <input type="hidden" name="currency" value="978"/>
+
+            <div class="button" style="margin-left:70px;">
+                <input type="submit" class="rc5" value="{% trans "Оплатить с помощью TeleCash"|capfirst %}">
+            </div>
+
+        </form>
+
+{% endblock %}

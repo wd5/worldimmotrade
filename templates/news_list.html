@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n loop_extras %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+    <h2>{% trans "Новости"%}</h2>
+    {% if news_list.object_list %}
+        {% for model in news_list.object_list %}
+            <br/>
+            <a href="{% url view-news model.id %}">
+                <h2 class="news_title">{{ model.title }}</h2>
+            </a>
+            <span style="color:#778899;font-size:11px;">{{ model.created }}</span>
+            <p class="page_content">
+                {{ model.content|striptags|truncate:"200" }}
+            </p>
+            {% endfor %}
+
+            {% if news_list.paginator.count > per_page %}
+                <div style="margin-top:10px;">
+                    {% if news_list.has_previous %}
+                        <a href="?page={{ news_list.previous_page_number }}"> < </a>
+                    {% endif %}
+
+                    {% for p in news_list.paginator.page_range %}
+                        {% if p == news_list.number %}
+                            <span>{{ p }}</span>
+                        {% else %}
+                            <a href="?page={{ p }}">{{ p }}</a>&nbsp;
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if news_list.has_next %}
+                        <a href="?page={{ news_list.next_page_number }}"> > </a>
+                    {% endif %}
+                </div><!-- pagination END -->
+            {% endif %}
+
+    {% endif %}
+{% endblock %}

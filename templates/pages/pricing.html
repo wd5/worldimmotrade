@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block title %}{% trans "Тарифы"|capfirst %} - {{ domain }}{% endblock %}
+
+{% block footerLink %}
+    <a class="first" href="http://worldimmotrade.ru/">купить недвижимость за рубежом</a>
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+        .tarifs_table thead th {
+            font-size:13px;
+            padding:3px;
+            background-color: #dc143c;
+            background-position:1px 100%;
+            color:#fff;
+        }
+        .tarifs_table tbody tr td {
+            padding:5px;
+            padding-bottom:5px;
+        }
+        .tarifs_table tbody tr.even {
+            background-color:#f5f5f5;
+        }
+        .tarifs_table tbody tr.odd {
+            background-color:#edecec;
+        }
+        .tarifs_table .red {
+            color:red;
+            font-weight:bold;
+        }
+    </style>
+
+    <div class="box_title">{% trans "Тарифы"|capfirst %}</div>
+    <br/>
+
+    <table width="100%" class="tarifs_table">
+        <thead align="left">
+            <th>{% trans "Тариф" %}</th>
+            <th>
+        {% if current_language == 'ru' %}
+        Колич. объяв.
+        {% else %}
+            {% trans "Колич." %}
+        {% endif  %}
+        </th>
+            <th>
+        {% if current_language == 'ru' %}
+        Колич. мес.
+        {% else  %}
+            {% trans "Мес." %}
+        {% endif  %}
+        </th>
+            <th>{% trans "Цена пакета" %}</th>
+            <th>{% trans "Цена 1 объяв." %}</th>
+            <th>{% trans "Цена пакета" %}</th>
+            <th>{% trans "Цена 1 объяв." %}</th>
+        </thead>
+        <tbody>
+            <tr align="lefy" class="{% cycle "even" "odd" %}">
+                <td class="red">Present</td>
+                <td>
+        {% if current_language == 'ru' %}
+            неогр.
+        {% endif  %}
+        {% if current_language == 'en' %}
+            unlimit.
+        {% endif  %}
+        {% if current_language == 'de' %}
+            unbegr.
+        {% endif  %}
+        </td>
+                <td>3</td>
+                <td>0,00 €</td>
+                <td>0,00 €</td>
+                <td class="red" ></td>
+                <td class="red" ></td>
+            </tr>
+        </tbody>
+
+        </tbody>
+    </table>
+
+<br/>
+
+{% blocktrans %}
+В данный момент на нашем интернет-портале действует один тариф <b>«Present»</b>,
+который является <span style="color: red;">БЕСПЛАТНЫМ</span>. В случае  введения платных тарифов Вам будет сообщено минимум за месяц (30 дней) до начала действия новых тарифов.
+За это время Вы сможете решить – продолжить сотрудничество с нами или ограничиться только бесплатным ознакомительным сервисом.
+Желаем Вам успешного бизнеса и много клиентов! <span style="color: red;">Ваш worldimmotrade.ru</span>
+{% endblocktrans %}
+
+    <div>
+<!--
+{% trans "Более 200 объявлений в месяц – мы Вам сделаем индивидуальное предложение!" %}<br/>
+{% trans "*цена одного объявления за 1 месяц при полном использовании пакета" %}
+-->
+
+</div>
+    <!--
+    <table width="100%" class="tarifs_table">
+        <thead align="left">
+            <th>{% trans "Название" %}</th>
+            <th>{% trans "Количество обьектов" %}</th>
+            <th>{% trans "Цена" %}</th>
+            <th>{% trans "Цена за обьект" %}</th>
+        </thead>
+        <tbody>
+        {% for obj in model %}
+            <tr align="left" class="{% cycle "even" "odd" %}">
+                <td>
+                    <label for="tarif_{{ obj.id }}">{{ obj.name }}</label>
+                </td>
+                <td>{{ obj.ad_count }}</td>
+                <td>{{ obj.price }}</td>
+                <td>{{ obj.price_per_ad }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    -->
+{% endblock %}

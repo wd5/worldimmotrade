@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block left_sidebar %} {% include "left_sidebar.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block title %}{{model.title}} - {{ domain }}{% endblock %}
+
+{% block footerLink %}
+    <a class="first" href="http://worldimmotrade.ru/">купить недвижимость за рубежом</a>
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+        .page_content p {
+            margin-bottom: 10px;
+        }
+    </style>
+    <h1 class="page_title">{{ model.title }}</h1>
+    <div class="page_content">
+    {% autoescape off %}
+        {{ model.content }}
+    {% endautoescape %}
+    </div>
+{% endblock %}

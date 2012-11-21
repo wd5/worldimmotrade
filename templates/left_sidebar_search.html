@@ -1,0 +1,249 @@
+{% load  i18n loop_extras cache %}
+<script type="text/javascript">
+    $(function(){
+        $( "#id_aviable_start" ).datepicker({ dateFormat: 'dd.mm.yy' });
+        $( "#id_aviable_end" ).datepicker({ dateFormat: 'dd.mm.yy' });
+        $(".slider .title").each(function(index){
+
+            if ($(this).next(".slider_content").hasClass('opened')){
+                $(this).children(".ui-icon").removeClass('ui-icon-triangle-1-e').addClass('ui-icon-triangle-1-s');
+            };
+
+            $(this).click(function(){
+                $(this).next(".slider_content").toggle('blind', {}, 250);
+                if ($(this).children(".ui-icon").hasClass('ui-icon-triangle-1-e')){
+                    $(this).children(".ui-icon").removeClass('ui-icon-triangle-1-e').addClass('ui-icon-triangle-1-s');
+                }else{
+                    $(this).children(".ui-icon").removeClass('ui-icon-triangle-1-s').addClass('ui-icon-triangle-1-e');
+                }
+            });
+        });
+    });
+</script>
+
+<div class="sidebare">
+    {% if students %}
+     <!--noindex-->
+        <form action="/search/students/" method="get" id="sidebar_search_form" name="sidebar_sform">
+    {% else %}
+     <!--noindex-->
+        <form action="/search/" method="get" id="sidebar_search_form" name="sidebar_sform">
+    {% endif %}
+        <div class="rc5 margin_bottom_box sidebare_box">
+            {% if students %}
+                <div class="box_title">
+                    {% trans "<span>Поиск</span> жилья для студентов"%}
+                </div>
+            {% else %}
+                <div class="box_title">{% trans "Расширенный <span>поиск</span>"%}</div>
+            {% endif %}
+            <div class="form_col">
+                <div class="select">
+                    {{ search_form.country }}
+                </div>
+            </div>
+
+            <div class="form_col">
+                <div class="select">
+                    {{ search_form.region }}
+                </div>
+            </div>
+
+            <div class="form_col">
+                <div class="select">
+                    {{ search_form.city }}
+                </div>
+            </div>
+
+            <div class="form_col">
+                <div class="select">
+                    {% if students %}
+                        {{ search_form.estate_type_students }}
+                    {% else %}
+                        {{ search_form.estate_type }}
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if students %}
+                <div style="display:none;">
+                    <input type="radio" value="2" name="type">
+                </div>
+            {% else %}
+            <div class="form_col">
+                <label><input type="radio" value="1" {% if request.GET.type == '1' %} checked="checked" {% endif %} name="type"><span> {% trans "Покупка"%}</span></label>
+                <label><input type="radio" value="2" {% if request.GET.type == '2' %} checked="checked" {% endif %} name="type"><span> {% trans "Аренда"%}</span></label>
+            </div>
+            {% endif %}
+
+            {% if students %}
+            <p class="form_title_big">{% trans "Срок аренды"%}</p>
+            <div class="form_col">
+                <div class="small_box">
+                    {{ search_form.aviable_start }}
+                    {% trans "до"%}
+                    {{ search_form.aviable_end }}
+                </div>
+            </div>
+            {% endif %}
+
+            <p class="form_title_big">{% trans "Цена" %} {{ currency_char }}</p>
+            <div class="form_col">
+                <div class="small_box">
+                    {{ search_form.price_min }}
+                    {% trans "до"%}
+                    {{ search_form.price_max }}
+                </div>
+            </div>
+
+            {% if not students %}
+            <p class="form_title_big">{% trans "Год постройки" %}</p>
+            <div class="form_col">
+                <div class="small_box">
+                    {{ search_form.year_start }}
+                    {% trans "до" %}
+                    {{ search_form.year_end }}
+                </div>
+            </div>
+            {% endif %}
+
+            <p class="form_title_big">{% trans "Площадь" %} <span style="font-size:12px">(m<sup>2</sup>)</span></p>
+            <div class="form_col">
+                <div class="small_box">
+                    {{ search_form.total_space_start }}
+                    {% trans "до" %}
+                    {{ search_form.total_space_end }}
+                </div>
+            </div>
+
+            {% if not students %}
+            <p class="form_title_big">{% trans "Доступна" %}</p>
+            <div class="form_col">
+                <div class="small_box">
+                    {{ search_form.aviable_start }}
+                    {% trans "до" %}
+                    {{ search_form.aviable_end }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if students %}
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Арендатор" %}
+                </div>
+                <div class="slider_content {% if request.GET.rent_for %} opened {% else %} closed {% endif %}">
+                     {{ search_form.rent_for }}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Дополнительно" %}
+                </div>
+                <div class="slider_content {% if open_additional_slider %}opened{% else %}closed{% endif %}">
+                        <p class="form_title_small">{% trans "Этаж" %}</p>
+                        <div class="form_col">
+                            <div class="small_box">
+                                {{ search_form.floor_start }}
+                                {% trans "до" %}
+                                {{ search_form.floor_end }}
+                            </div>
+                        </div>
+
+                        <p class="form_title_small">{% trans "Количество комнат" %}</p>
+                        <div class="form_col">
+                            <div class="small_box">
+                                {{ search_form.rooms_start }}
+                                {% trans "до" %}
+                                {{ search_form.rooms_end }}
+                            </div>
+                        </div>
+
+                        <p class="form_title_small">{% trans "Количество спальных комнат" %}</p>
+                        <div class="form_col">
+                            <div class="small_box">
+                                {{ search_form.sleep_rooms_start }}
+                                {% trans "до" %}
+                                {{ search_form.sleep_rooms_end }}
+                            </div>
+                        </div>
+                </div>
+            </div>            
+
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Расположение" %}
+                </div>
+                <div class="slider_content {% if request.GET.location %} opened {% else %} closed {% endif %}">
+                     {{ search_form.location }}
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Меблировка" %}
+                </div>
+                <div class="slider_content {% if request.GET.furnishings %} opened {% else %} closed {% endif %}">
+                     {{ search_form.furnishings }}
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Оснащение" %}
+                </div>
+                <div class="slider_content {% if request.GET.comfort %} opened {% else %} closed {% endif %}">
+                      {{ search_form.comfort }}
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Удобства" %}
+                </div>
+                <div class="slider_content {% if request.GET.additional_equipment %} opened {% else %} closed {% endif %}">
+                      {{ search_form.additional_equipment }}
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="title">
+                    <span style="float:left;" class="ui-icon ui-icon-triangle-1-e"></span>
+                    {% trans "Тип этажа" %}
+                </div>
+                <div class="slider_content {% if request.GET.floor_type %} opened {% else %} closed {% endif %}">
+                      {{ search_form.floor_type }}
+                </div>
+            </div>
+
+            <div class="button"><a href="#" onclick="document.sidebar_sform.submit();" class="rc5">{% trans "Найти"|capfirst %}</a></div>
+        </div>
+    </form>
+    <!--/noindex-->
+
+    {% include "estates/widgets.html" %}
+
+</div>
+
+<script type="text/javascript">
+$(function(){
+    $("#sidebar_search_form").relatedSelects({
+        onChangeLoad: '/world/load_json/',
+        defaultOptionText: '-------',
+        selects: {
+            'country':		{ loadingMessage:'Loading Regions...' },
+            'region':		{ loadingMessage:'Loading Cities...' },
+            'city':		{}
+        }
+    });
+});
+</script>

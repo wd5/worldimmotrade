@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+
+    {% if estates_list.object_list %}
+        <div class="box_title">{% trans "Моя корзина"|capfirst %}</div>
+		<div style="color:#F6232F">
+            {% if current_tarif  %}
+                {% trans "Тариф" %}: {{ current_tarif.tarif.name }}
+
+            {% else %}
+                {% if active_lang == 'ru' %}
+                <div style="color:#F6232F">Для того, чтобы опубликовать объект, нужно выбрать <a href="/tarifs/">тарифный план</a>.</div>
+                {% endif %}
+            
+                {% if active_lang == 'en' %}
+                You need to choose the <a href="/tarifs/">tariff Plan</a> to publish the object.
+                {% endif %}
+            
+                {% if active_lang == 'de' %}
+                Sie müssen den <a href="/tarifs/">Tarif wählen</a>, um das Objekt zu veröffentlichen.
+                {% endif %}
+            {% endif %}
+		</div>
+		
+        <div class="content_box rc5 margin_top_box">
+            {% for obj in estates_list.object_list %}
+            <div class="item_list">
+
+                <div class="il_top">
+                    <a href="/estates/edit/{{ obj.id }}/">{{ obj.name|truncate:"28" }}</a>
+                    <span>{{ obj.price }}</span>
+                </div>
+
+                <div style="margin-bottom:5px;margin-top:0px;">
+                    <a href="{% url publish %}?id={{ obj.id }}">{% trans "Опубликовать" %}</a>
+                    <a href="{% url delete-apartment %}?id={{ obj.id }}">{% trans "Удалить" %}</a>
+                </div>
+
+                <div class="il_main">
+                    <div class="il_image">
+                        {% if obj.main_image %}
+                        <a href="#">
+                            <img src="{{ obj.main_image.photo|thumbnail:"167x111" }}"/>
+                        </a>
+                        {% else %}
+                            <div style="width:90px;font-weight:bold;font-size:26px;padding-top:40px;padding-left:80px">
+                                ?
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="il_content">
+                        <p>
+                            {% trans "Площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                            {% trans "Жилая площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                            {% trans "Количество комнат" %}: {{ obj.rooms_count }}<br/>
+                            {% trans "Тип недвижимости" %}: {{ obj.estate_type|toEstateType }}<br/>
+			    {% trans "Просмотры" %}: {{ obj.views }}<br/>
+                        </p>
+                        <p style="margin-top:10px;">
+                            <span>ID:</span> {{ obj.id }}
+                            <a href="#">{{ obj.country }},</a>
+                            <a href="#">{{ obj.city }}</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- item_list END -->
+            {% endfor %}
+
+            {% if estates_list.paginator.count > per_page %}
+            <div class="pagination">
+                {% if estates_list.has_previous %}
+                    <a href="?page={{ estates_list.previous_page_number }}"> < </a>
+                {% endif %}
+
+                {% for p in estates_list.paginator.page_range %}
+                    {% if p == estates_list.number %}
+                        <span>{{ p }}</span>
+                    {% else %}
+                        <a href="?page={{ p }}">{{ p }}</a>&nbsp;
+                    {% endif %}
+                {% endfor %}
+
+                {% if estates_list.has_next %}
+                    <a href="?page={{ estates_list.next_page_number }}"> > </a>
+                {% endif %}
+            </div><!-- pagination END -->
+            {% endif %}
+
+        </div>
+    {% else %}
+        {% trans "Список недвижимости пустой" %}.
+    {% endif %}
+{% endblock %}

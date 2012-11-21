@@ -1,0 +1,14 @@
+{% load i18n %}
+<html>
+<body>
+    <div>
+    {% blocktrans %}
+        Сообщение из страницы контактов:<br/><br/>
+        Имя:{{ first_name }} {{ last_name }}<br/>
+        Телефон: {{ phone }}<br/>
+        E-Mail: {{ email }}<br/>
+        Сообщение:{{ message }}<br/>
+    {% endblocktrans %}
+    </div>
+</body>
+</html>

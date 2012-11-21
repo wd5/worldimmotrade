@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+
+    {% if bookmarks.object_list %}
+        <div class="box_title">{% trans "Мои закладки" %}</div>
+        <div class="content_box rc5 margin_top_box">
+            {% for obj in bookmarks.object_list %}
+            <div class="item_list">
+
+                <div class="il_top">
+                    <a href="/estates/view/{{ obj.apartment.id }}/">{{ obj.apartment.name|truncate:"28" }}</a>
+                    <span>{{ obj.apartment.price|toCurrency:request }}</span>
+                </div>
+
+                <div class="il_main">
+                    <div class="il_image">
+                        {% if obj.apartment.main_image %}
+                        <a href="#">
+                            <img src="{{ obj.apartment.main_image.photo|thumbnail:"167x111" }}"/>
+                        </a>
+                        {% else %}
+                            <div style="width:90px;font-weight:bold;font-size:26px;padding-top:40px;padding-left:80px">
+                                ?
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="il_content">
+                        <p style="height:55px;">
+                            {% if obj.apartment.description %}
+                                {{ obj.apartment.description|truncate:"135" }}
+                            {% else %}
+                                {% trans "Нет описания" %}.
+                            {% endif %}
+                        </p>
+                        <p>
+                            <span>{% trans "Площадь" %}:</span> {{ obj.apartment.living_space }}
+                            {% if obj.apartment.living_space_for_m2 %}
+                                m<sup>2</sup>
+                            {% endif %}
+                        </p>
+                        <p>
+                            <span>ID:</span> {{ obj.apartment.id }}
+                            <a href="#">{{ obj.apartment.country }},</a>
+                            <a href="#">{{ obj.apartment.region }},</a>
+                            <a href="#">{{ obj.apartment.city }}</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- item_list END -->
+            {% endfor %}
+
+            {% if bookmarks.paginator.count > per_page %}
+            <div class="pagination">
+                {% if bookmarks.has_previous %}
+                    <a href="?page={{ bookmarks.previous_page_number }}"> < </a>
+                {% endif %}
+
+                {% for p in bookmarks.paginator.page_range %}
+                    {% if p == bookmarks.number %}
+                        <span>{{ p }}</span>
+                    {% else %}
+                        <a href="?page={{ p }}">{{ p }}</a>&nbsp;
+                    {% endif %}
+                {% endfor %}
+
+                {% if bookmarks.has_next %}
+                    <a href="?page={{ bookmarks.next_page_number }}"> > </a>
+                {% endif %}
+            </div><!-- pagination END -->
+            {% endif %}
+
+        </div>
+    {% else %}
+        {% trans "Список недвижимости пустой" %}.
+    {% endif %}
+{% endblock %}

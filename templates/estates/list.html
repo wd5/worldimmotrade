@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n loop_extras cache pagination_tags %}
+
+{% block left_sidebar %} {% include "left_sidebar_search.html" %} {% endblock %}
+{% block right_sidebar %} {% include "right_sidebar.html" %} {% endblock %}
+
+{% block content %}
+
+    {% if estates_list %}
+        <div class="box_title">{% trans "Мои объекты" %}: {{ estates_list.count }}</div>
+        <div class="content_box rc5 margin_top_box">
+            {% autopaginate estates_list 15 %}
+            {% for obj in estates_list %}
+            <div class="item_list">
+
+                <div class="il_top">
+                    <a href="/estates/edit/{{ obj.id }}/">{{ obj.name|truncate:"28" }}</a>
+                    <span>{{ obj.price }}</span>
+                </div>
+
+                <div style="margin-bottom:5px;margin-top:0px;">
+                    <a href="{% url unpublish %}?id={{ obj.id }}">{% trans "Снять публикацию" %}</a>
+            <a href="/estates/view/{{ obj.id }}">{% trans "Просмотр" %}</a>
+                </div>
+
+                <div class="il_main">
+                    <div class="il_image">
+                        {% if obj.main_image %}
+                        <a href="#">
+                            <img src="{{ obj.main_image.photo|thumbnail:"167x111" }}"/>
+                        </a>
+                        {% else %}
+                            <div style="width:90px;font-weight:bold;font-size:26px;padding-top:40px;padding-left:80px">
+                                ?
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="il_content">
+                        <p>
+                            {% trans "Площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                            {% trans "Жилая площадь" %}: {{ obj.living_space }} m<sup>2</sup><br/>
+                            {% trans "Количество комнат" %}: {{ obj.rooms_count }}<br/>
+                            {% trans "Тип недвижимости" %}: {{ obj.estate_type|toEstateType }}<br/>
+                            {% trans "Просмотры" %}: {{ obj.views }}<br/>
+                        </p>
+                        <p style="margin-top:20px;">
+                            <span>ID:</span> {{ obj.id }}
+                            <a href="#">{{ obj.country }},</a>
+                            <a href="#">{{ obj.city }}</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- item_list END -->
+            {% endfor %}
+
+            {% paginate %}
+
+        </div>
+    {% else %}
+        {% trans "Список недвижимости пустой" %}.
+    {% endif %}
+{% endblock %}

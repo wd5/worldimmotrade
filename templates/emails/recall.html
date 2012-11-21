@@ -1,0 +1,14 @@
+{% load i18n %}
+<html>
+<body>
+    <div>
+    {% blocktrans %}
+        Сообщение из страницы контактов. Прозьба перезвонить:<br/><br/>
+        Имя:{{ first_name }} {{ last_name }}<br/>
+        Телефон: {{ phone }}<br/>
+        Время: {{ time }}<br/>
+        Сообщение:{{ theme }}<br/>
+    {% endblocktrans %}
+    </div>
+</body>
+</html>
