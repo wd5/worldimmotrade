@@ -779,69 +779,11 @@ def robots(request):
     return HttpResponse(html)
 
 @login_required()
-def create_xml_objects(request):
-    '''Create new appartments via xml'''
-    get_object_or_404(UserProfile, user=request.user, is_saler=True)
-
-    if 'xml_file' in request.FILES:
-        #TODO: Add checks for file size < 2 mb and check for file type
-        xml_file = request.FILES['xml_file'].read()
-        loaded_appartments = 0
-        invalid_appartments = 0
-        errors = []
-
-        from xml.etree import cElementTree as ET
-
-        try:
-            root = ET.fromstring(xml_file)
-        except:
-            errors.append('XML file %s has incorrect format!' % request.FILES['xml_file'].name)
-            return direct_to_template(request, 'estates/xml_load_form.html', { 'errors' : errors } )
-
-        for appartment in root:
-            # Reading appartment options
-            appartment_options = {}
-            for options in appartment:
-                try:
-                    value = eval(options.text)
-                    appartment_options[options.tag] = value
-                except:
-                    appartment_options[options.tag] = options.text
-
-            form = ApartmentForm(appartment_options)
-            if form.is_valid():
-                form2 = form.save(commit=False)
-                form2.user = request.user
-                form2.save()
-                form.save_m2m()
-                loaded_appartments += 1
-
-            else:
-                invalid_appartments += 1
-                errors = form.errors
-            from pydev import pydevd
-            pydevd.settrace('192.168.1.34', port=9889, stdoutToServer=True, stderrToServer=True)
-
-
-
-        return direct_to_template(request, 'estates/xml_load_form.html', { 'errors' : errors,
-                                                                          'loaded' : loaded_appartments,
-                                                                          'invalid' : invalid_appartments,
-                                                                          'total' : invalid_appartments + loaded_appartments,
-                                                                          'uploaded' : True
-                                                                          })
-
-
-    return direct_to_template(request, 'estates/xml_load_form.html')
-
-@login_required()
 def create(request):
     ''' Create new apartment '''
     get_object_or_404(UserProfile, user=request.user, is_saler=True)
 
     form = ApartmentForm(request.POST or None, request.FILES or None)
-    #from pydev import pydevd
-    #pydevd.settrace('192.168.1.34', port=9889, stdoutToServer=True, stderrToServer=True)
     if form.is_valid():
         form2 = form.save(commit=False)
         form2.user = request.user
@@ -858,9 +800,9 @@ def create(request):
             if f.name.lower().split(".")[-1] in allowed_extensions:  
                 new_file_name = "%s%s" % (hashlib.sha1("%s%s" % (random.random(),time.time())).hexdigest(), '.jpg')
                 path = os.path.realpath(settings.MEDIA_ROOT + 'uploads/%s/%s/%s' % (request.user.id, form2.id, new_file_name))
-
-                try:
-                    os.mkdirs('/srv/www/vhosts/worldimmotrade.ru/httpdocs/immotrade/media/uploads/%s/%s' % (request.user.id, form2.id))
+                
+		try:
+		    os.mkdirs('/srv/www/vhosts/worldimmotrade.ru/httpdocs/immotrade/media/uploads/%s/%s' % (request.user.id, form2.id))
                     p2 = '/srv/www/vhosts/worldimmotrade.ru/httpdocs/immotrade/media/uploads/%s/%s' % (request.user.id, form2.id)
                     import commands
                     commands.getstatusoutput('chmod -R 0777 %s' % (p2))
