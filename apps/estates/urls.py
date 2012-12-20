@@ -3,7 +3,6 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     url(r'^create/$', 'estates.views.create', name='apartment-create'),
-    url(r'^create_xml/$', 'estates.views.create_xml_objects', name='create-appartments-via-xml'),
     url(r'^list/$', 'estates.views.estates_list', name='apartment-list'),
     url(r'^edit/(\d+)/$', 'estates.views.edit', name='apartment-edit'),
     url(r'^view/(\d+)/$', 'estates.views.view', name='apartment-view'),
